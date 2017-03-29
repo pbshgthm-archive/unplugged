@@ -1,0 +1,25 @@
+REQUIRED FUNCTIONS
+
+user_update(id,User)
+user_add(User)
+user_get(id)
+
+circle_get(id)
+circle_add(Circle)
+circle_update(id,Circle)
+
+article_get(id)
+article_add(Article)
+article_update(id,Article)
+
+
+feed_add(Feed)
+feed_remove(time)
+feed_get(id)
+
+archive_add(Feed)
+archive_get(id)
+
+#########################
+
+
