@@ -1,18 +1,18 @@
 # unplugged
+<br/>
+User models done.<br/>
+Circle models done.<br/>
+User controls partial.<br/>
+Circle Controls Partial.<br/>
+Signup portal done.<br/>
+User front-end done.<br/>
+Circle front-end done.<br/>
+Signup front-end done.<br/>
 
-User models done.
-Circle models done.
-User controls partial.
-Circle Controls Partial.
-Signup portal done.
-User front-end done.
-Circle front-end done.
-Signup front-end done.
 
-
-Discover yet to begin.
-Validation yet to be done.
-Session and Secutity yet to integrated.
-Canvas yet to begin.
-Interconnections yet to begin.
-Controls yet to be completed.
+Discover yet to begin.<br/>
+Validation yet to be done.<br/>
+Session and Secutity yet to integrated.<br/>
+Canvas yet to begin.<br/>
+Interconnections yet to begin.<br/>
+Controls yet to be completed.<br/>
