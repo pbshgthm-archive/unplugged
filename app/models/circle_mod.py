@@ -3,7 +3,8 @@ from app import db
 from sqlalchemy.orm import load_only
 
 class Circle(db.Model):
-    __tablename__ = 'users'
+    __tablename__ = 'circles'
+    #was 'users' changed it to circles.
     id = db.Column(db.Integer,primary_key = True , autoincrement = True)
     name = db.Column(db.String)
     handle = db.Column(db.String,unique = True)
