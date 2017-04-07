@@ -19,8 +19,11 @@ db = SQLAlchemy(app)
 
 from app.controls.user_cont import mod_user
 from app.controls.frame_cont import mod_frame
+from app.controls.canvas_cont import mod_article, mod_comment
 
 app.register_blueprint(mod_user)
 app.register_blueprint(mod_frame)
+app.register_blueprint(mod_article)
+app.register_blueprint(mod_comment)
 
 db.create_all()

@@ -17,7 +17,8 @@ class User(db.Model):
     intersts=db.Column(db.PickleType)
     notification = db.Column(db.PickleType)
     archived = db.Column(db.PickleType)
-    picture=db.Column(db.Stringdb)
+    picture=db.Column(db.String)
+    #changed Stringdb to String
 
     def __init__(self,name,handle,password,tagline,
         about,email,place,intersts,circles,picture):
