@@ -10,7 +10,7 @@ class Article(db.Model):
     title = db.Column(db.String)
     content = db.Column(db.String)
     picture_location = db.Column(db.String)
-    #comments = db.relationship('Comment',backref="article" ,cascade="all, delete-orphan" , lazy='dynamic')
+    comments = db.relationship('Comment',backref="article" ,cascade="all, delete-orphan" , lazy='dynamic')
 
     def __init__(self, user_id, title, content, picture_location):
         self.user_id = user_id
@@ -26,9 +26,7 @@ class Comment(db.Model):
     __tablename__ = 'comments'
     comment_id = db.Column(db.Integer,primary_key=True , autoincrement = True)
     user_id = db.Column(db.Integer,  ForeignKey("users.id"))
-    article_id = db.Column(db.Integer,  ForeignKey(Article.article_id))
     content = db.Column(db.String)
-    article = db.relationship(Article ,backref = 'comments')
 
     def __init__(self, user_id, content):
         self.user_id = user_id
