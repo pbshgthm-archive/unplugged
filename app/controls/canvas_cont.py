@@ -73,8 +73,8 @@ def editArticleForm(handle, article_id):
 
 ########COMMENTS########
 
-def initialise_comment(handle, article_id):
-    user_id = handle
+def initialise_comment(user_id, article_id):
+    user_id = user_id
     article_id = article_id
     content = "My super cool pro comment!"
     
@@ -87,5 +87,8 @@ def initialise_comment(handle, article_id):
 @mod_comment.route("/<article_id>/<user_id>/addComment" , methods = ["GET"])
 def addComment(article_id,user_id):
     comment = initialise_comment(user_id, article_id)
+    return render_template("comment_editor.html" , article = article)
+
+    
     
     
