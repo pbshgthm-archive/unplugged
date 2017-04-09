@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Article Editor</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"> </script>
+      
+    </head>
+    <body>
+
+        <!-- Will later move this script to a separate file-->
+         <script>
+            
+                var send_data = function()
+                {
+                    console.log("send data was called");
+                    var content = $("#content").html();
+                    var comment_id = {{comment.comment_id}}
+                    $.post("http://127.0.0.1:8000/"+comment_id+"/editComment", {"content":content}, function(){return "we did it!"});
+                 
+                };
+
+                window.onload = function(){
+                    console.log("this script runs");
+                    document.getElementById("done").onclick = send_data;
+                };
+
+        </script>    
+
+
+       
+
+        <div id="content" contenteditable="true">{{comment.content| safe }}</div>
+        <button id="done"> done </button>
+        
+        
+    </body>
+</html>

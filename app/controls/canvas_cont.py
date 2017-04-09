@@ -3,6 +3,7 @@ from flask import Blueprint, request, render_template, \
 from sqlalchemy.orm import load_only              
 
 from app.models.canvas_mod import Article,Comment
+from app.models.user_mod import User
 from app import db
 
 mod_article = Blueprint('articles', __name__)
@@ -26,7 +27,11 @@ def addAuthenticated(handle):
     return True
 
 
-def editAuthenticated(handle,article_id):
+def editAuthenticated(user_id,article_id):
+    #to be filled later
+    return True
+
+def commentAuthenticated(user_id,comment_id):
     #to be filled later
     return True
 
@@ -51,13 +56,14 @@ def editArticle(article_id):
     #for now, will change later:
     current_article.picture_location = request.form["picture_location"]
     db.session.commit()
-    return redirect("/"+str(current_article.article_id)+"/viewArticle")
+    return redirect("/"+str(current_article.article_id)+"/"+str(current_article.user_id)+"/viewArticle")
 
 #returns the article in read only form, along with comments, and action buttons
-@mod_article.route('/<article_id>/viewArticle' , methods=["GET"])
-def viewArticle(article_id):
+@mod_article.route('/<article_id>/<user_id>/viewArticle' , methods=["GET"])
+def viewArticle(article_id,user_id):
     article=Article.query.filter_by(article_id=article_id).first()
-    return render_template("article.html",article = article)
+    user=User.query.filter_by(id=user_id).first()
+    return render_template("article.html",article = article,user = user)
 
 
 #returns the article editor along with the given article_id
@@ -73,6 +79,7 @@ def editArticleForm(handle, article_id):
 
 ########COMMENTS########
 
+#initialises the comment and returns the comment instance
 def initialise_comment(user_id, article_id):
     user_id = user_id
     article_id = article_id
@@ -84,11 +91,27 @@ def initialise_comment(user_id, article_id):
 
     return comment_instance
 
+#returns comment editor to add a new comment
 @mod_comment.route("/<article_id>/<user_id>/addComment" , methods = ["GET"])
 def addComment(article_id,user_id):
     comment = initialise_comment(user_id, article_id)
-    return render_template("comment_editor.html" , article = article)
+    return render_template("comment_editor.html" , comment = comment)
 
-    
-    
+#returns comment editor with the comment already loaded
+@mod_comment.route("/<user_id>/<comment_id>/editComment", methods = ["GET"])
+def editComment(user_id, comment_id):
+    if commentAuthenticated(user_id, comment_id):
+        comment=Comment.query.filter_by(comment_id=comment_id).first()
+        return render_template("comment_editor.html" ,comment = comment)
+    else:
+        return "Not allowed"
+        # to make an arror page later
+
+#Takes the data from the comment editor and updates the database
+@mod_comment.route('/<comment_id>/editComment' , methods = ['POST']) 
+def editComent(comment_id):
+    current_comment=Comment.query.filter_by(comment_id=comment_id).first()
+    current_comment.content = request.form["content"]
+    db.session.commit()
+    return redirect("/"+str(current_comment.article_id)+"/"+str(current_comment.user_id)+"/viewArticle")
     

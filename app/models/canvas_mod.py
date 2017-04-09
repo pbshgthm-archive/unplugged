@@ -1,6 +1,7 @@
 from flask_sqlalchemy import SQLAlchemy
 from app import db
 from sqlalchemy.orm import load_only
+from app.models.user_mod import User
 from sqlalchemy import *
 
 class Article(db.Model):
@@ -10,6 +11,7 @@ class Article(db.Model):
     title = db.Column(db.String)
     content = db.Column(db.String)
     picture_location = db.Column(db.String)
+    user = db.relationship(User ,backref = 'articles')
     #comments = db.relationship('Comment',backref="article" ,cascade="all, delete-orphan" , lazy='dynamic')
 
     def __init__(self, user_id, title, content, picture_location):
@@ -30,8 +32,9 @@ class Comment(db.Model):
     content = db.Column(db.String)
     article = db.relationship(Article ,backref = 'comments')
 
-    def __init__(self, user_id, content):
+    def __init__(self, user_id, article_id, content):
         self.user_id = user_id
+        self.article_id = article_id
         self.content = content
 
     def __repr__(self):
