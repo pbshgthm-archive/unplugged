@@ -14,6 +14,9 @@
 
         <div id="title"> {{article.title | safe}} </div>
         <div id="content"> {{article.content | safe}} </div>
+        <div id="image" > 
+            <img src= {{ article.picture_location | safe}} alt="no picture" width="200" height="200">
+        </div>
 
         <h2> Comments </h2>
 

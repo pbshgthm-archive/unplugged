@@ -1,10 +1,25 @@
-from flask import Blueprint, request, render_template, \
-                  flash, g, session, redirect, url_for, jsonify
+import os
+from flask import *
 from sqlalchemy.orm import load_only              
-
+from werkzeug.utils import secure_filename
 from app.models.canvas_mod import Article,Comment
 from app.models.user_mod import User
 from app import db
+from config import *
+
+
+######IMAGE UPLOAD PREPROCESSING####
+# APP_ROOT = os.path.dirname(os.path.abspath(__file__))
+# UPLOAD_FOLDER = os.path.join(APP_ROOT, 'static/article_pictures')
+# app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+#ALLOWED_EXTENSIONS = set(['txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'])
+
+def allowed_file(filename):
+    return '.' in filename and \
+           filename.rsplit('.', 1)[1] in ALLOWED_EXTENSIONS
+
+#####################################
+
 
 mod_article = Blueprint('articles', __name__)
 mod_comment = Blueprint('comments', __name__)
@@ -53,8 +68,17 @@ def editArticle(article_id):
     current_article=Article.query.filter_by(article_id=article_id).first()
     current_article.title = request.form["title"]
     current_article.content = request.form["content"]
-    #for now, will change later:
-    current_article.picture_location = request.form["picture_location"]
+    
+    file = request.files['image']
+    if file and allowed_file(file.filename):
+        filename = "picture_"+str(article_id)+".png"
+        #file_abs_path = os.path.join(UPLOAD_FOLDER, filename)
+        current_article.picture_location = os.path.join(UPLOAD_FOLDER, filename)
+        file.save(current_article.picture_location)
+    else:
+        pass
+        #error page that say wrong file type if wrong
+
     db.session.commit()
     return redirect("/"+str(current_article.article_id)+"/"+str(current_article.user_id)+"/viewArticle")
 

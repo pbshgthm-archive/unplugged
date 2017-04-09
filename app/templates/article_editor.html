@@ -19,14 +19,29 @@
             
                 var send_data = function()
                 {
-                    console.log("send data was called");
                     var title = $("#title").html();
                     var content = $("#content").html();
-                    var picture_location = $("#picture_location").html();
+                    var image = $('#image')[0].files[0]; 
+
+                    var formData = new FormData();
+                    formData.append('title', title);
+                    formData.append('content', content);
+                    formData.append('image',image);    
+                    console.log("send data was called");
+                    
+
                     var article_id = {{ article.article_id }};
                     console.log(content);
-                    $.post("http://127.0.0.1:8000/"+article_id+"/editArticle", {"title":title, "content":content, "picture_location":picture_location}, function(){return "we did it!"});
-                 
+                   
+                    
+                    $.ajax({
+                            url: "http://127.0.0.1:8000/"+article_id+"/editArticle",
+                            data: formData,
+                            type: 'POST',
+                            contentType: false, 
+                            processData: false, 
+                            success: function(){return "we did it!"}
+                        });
                 };
 
                 window.onload = function(){
@@ -39,14 +54,19 @@
 
         </script>    
 
+         <!--$.post("http://127.0.0.1:8000/"+article_id+"/editArticle", formData, function(){return "we did it!"});-->
+
 
        
 
         <div id="title" contenteditable="true">{{article.title  | safe}} </div>
         <div id="content" contenteditable="true">{{article.content| safe }}</div>
-        <div id="picture_location" contenteditable="true"> {{article.picture_location | safe}}</div>
-
+        <!--div id="picture_location" contenteditable="true"> {{article.picture_location | safe}}</div-->
+            
+        <input id='image' type='file' name='file' />
         <button id="done"> done </button>
+
+   
         
         
     </body>
