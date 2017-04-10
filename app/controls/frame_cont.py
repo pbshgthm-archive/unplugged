@@ -13,6 +13,11 @@ mod_frame = Blueprint('frame', __name__)
 def home():   
     return "Home"
 
+
+
+
+
+
 @mod_frame.route('/profiletest')
 def test():   
     user= User.query.all()[-1]
@@ -24,9 +29,21 @@ def test_cir():
     return render_template("circle.html")
 
 
+@mod_frame.route('/<handle>/canvas')
+def canvas(handle):   
+    user= User.query.all()[-1]
+    return render_template("canvas.html",user=user)
+
+
+
 @mod_frame.route('/usertest')
 def test_usr():   
-    return render_template("profile.html")
+    return render_template("test.html")
+
+
+@mod_frame.route('/discover')
+def discover():   
+    return render_template("discover.html")
 
 
 @mod_frame.route('/signup',methods = ['POST','GET'])
