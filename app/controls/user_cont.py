@@ -1,6 +1,6 @@
 from flask import Blueprint, request, render_template, \
                   flash, g, session, redirect, url_for, jsonify
-from sqlalchemy.orm import load_only              
+from sqlalchemy.orm import load_only
 
 from app.models.user_mod import User
 from app import db
@@ -16,8 +16,5 @@ def viewprofile(handle):
 @mod_user.route('/allusers')
 def allusers():
 	users= User.query.all()
-	user_list=[{"id":i.id,"handle":i.handle} for i in users]
+	user_list=[{"id":i.id,"handle":i.handle,"name":i.name} for i in users]
 	return jsonify(user_list)
-    
-    
-                
