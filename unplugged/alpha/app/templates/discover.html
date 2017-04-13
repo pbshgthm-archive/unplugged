@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="static/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="static/css/discover.css"> 
+    <link rel="stylesheet" type="text/css" href="static/css/font-awesome.css">   
+    <meta charset="utf-8">
+    
+
+<title>Discover</title>
+</head>
+
+<body>
+    <div class="fixed-header">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>                        
+                </button>
+                <div class="navbar-name">Unplugged</div>
+            </div>
+            <nav class="main-menu">
+                <ul>
+                    <li><a href="!!!!!!!!!!">Profile</a></li>
+                    <li><a href="page.html">Canvas</a></li>
+                    <li><a href="list.html">Feeds</a></li> 
+                    <li><a href="!!!!!!!!!!">Circles</a></li>
+                    <li><a class="fa nav fa-bell fa-1x "></a></li>
+                    <li><a class="fa nav fa-search fa-1x "></a></li>
+
+                </ul>
+                
+            </nav>
+        </div>
+    </div>
+
+ 
+
+<!-- ############################################################################################################################################################################################################################################ -->
+
+
+<div style="height: 150px;"></div>
+  
+
+ 
+
+<div class="container" >
+  <div class="col-lg-1"></div>
+  <section class="col-md-10 content">
+   
+  <div class=" col-lg-12 background " >      
+     
+          
+            
+              <h3 align="center" class="main-title"> Discover </h3><br/><br/>
+              <form>
+              <input type="text" name="search" placeholder="   Search..">
+              </form>
+                <div style="height: 100px;"></div>
+              </div> 
+
+             
+          </div>         
+
+
+  </section>
+
+</div>
+    
+
+
+<div class="container" >
+  <div class="col-lg-1"></div>
+  <section class="col-md-10 content">
+   
+  <div class=" col-lg-12 background box" >      
+     
+
+
+
+
+    
+            <div class="result-type">
+                <ul>
+                    <li><a href="!!!!!!!!!!">People</a></li>
+                    <li><a href="page.html">Circles</a></li>
+                    <li><a href="list.html">Feeds</a></li> 
+                    <li><a href="!!!!!!!!!!">Topics</a></li>
+                    <li><a href="!!!!!!!!!!">Articles</a></li>
+                </ul>
+                
+            </div>
+    
+
+
+
+          
+            
+                <div style="height: 100px;"></div>
+              </div> 
+
+             
+          </div>         
+
+
+  </section>
+
+</div>
+
+
+        
+
+
+
+
+
+<div class="container">
+<div class="col-lg-1"></div>
+   <h2 class="footer col-lg-10 box">Made with      <img src="static/icons/hrt.png" width="15  px"><br/><br/><i>Unplugged Project</i></h2>
+
+</div>
+
+</div>
+
+
+
+
+<!-- ############################################################################################################################################################################################################################################ -->
+
+
+
+
+
+
+<script src="static/js/jquery.min.js"></script>
+<script src="static/js/bootstrap.min.js"></script>
+<script src="static/js/jquery.singlePageNav.min.js"></script>
+
+
+<script>
+
+// Check scroll position and add/remove background to navbar
+function checkScrollPosition() {
+    if($(window).scrollTop() > 50) {
+      $(".fixed-header").addClass("scroll");
+  } else {        
+      $(".fixed-header").removeClass("scroll");
+  }
+}
+
+$(document).ready(function () {   
+    // Single page nav
+    $('.fixed-header').singlePageNav({
+        offset: 59,
+        filter: ':not(.external)',
+        updateHash: true        
+    });
+
+    checkScrollPosition();
+
+    // nav bar
+    $('.navbar-toggle').click(function(){
+        $('.main-menu').toggleClass('show');
+    });
+
+    $('.main-menu a').click(function(){
+        $('.main-menu').removeClass('show');
+    });
+});
+
+$(window).on("scroll", function() {
+    checkScrollPosition();    
+});
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</body>
+</html>

@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/">
+  <channel>
+    <title>Machine Learning</title>
+    <link>https://flipboard.com/topic/machinelearning</link>
+    <atom:link href="https://flipboard.com/topic/machinelearning?rss" rel="self" type="application/rss+xml" />
+    <description></description>
+    <pubDate>Tue, 11 Apr 2017 11:26:27 GMT</pubDate>
+    <generator>Flipboard</generator>
+    <item>
+      <title>The Dark Secret at the Heart of AI</title>
+      <link>https://www.technologyreview.com/s/604087/the-dark-secret-at-the-heart-of-ai/</link>
+      <guid isPermaLink="false">flipboard-y_WxTfKOTgC5VSsTm6N7eg:a:301513584-1491903414</guid>
+      <pubDate>Tue, 11 Apr 2017 09:36:54 GMT</pubDate>
+      <author>by Will Knight</author>
+      <description>Last year, a strange self-driving car was released onto the quiet roads of Monmouth County, New Jersey. The experimental vehicle, developed by …</description>
+      <media:content url="https://d267cvn3rvuq91.cloudfront.net/i/images/mj17-aiblackbox2.jpg?sw=1080&#x26;cx=0&#x26;cy=0&#x26;cw=1544&#x26;ch=1999" medium="image" type="image/jpeg" width="1080" height="1398" />
+      <category domain="https://flipboard.com/topic/programming">Programming</category>
+    </item>
+    <item>
+      <title>Neural Networks Demystified</title>
+      <link>http://www.business2community.com/brandviews/upwork/neural-networks-demystified-01817734</link>
+      <guid isPermaLink="false">flipboard-6JmIwh_9RZKx5zraFOvAPg:a:50143815-1491879333</guid>
+      <pubDate>Tue, 11 Apr 2017 02:55:33 GMT</pubDate>
+      <author>Tyler Keenan</author>
+      <description>We know that computers are better than people at crunching series of numbers, but what about tasks that are more complex? How do you teach a computer …</description>
+      <media:content url="http://cdn.business2community.com/wp-content/uploads/2017/04/Neural-Networks-Demystified_header.jpg.jpg" medium="image" type="image/jpeg" width="940" height="400" />
+      <category domain="https://flipboard.com/topic/programming">Programming</category>
+    </item>
+    <item>
+      <title>How to fool artificial intelligence</title>
+      <link>http://www.bbc.com/future/story/20170410-how-to-fool-artificial-intelligence?ocid=global_future_rss</link>
+      <guid isPermaLink="false">flipboard-b6WCBSZhQC2glnsWZ2PtRA:a:19046810-1491905493</guid>
+      <pubDate>Tue, 11 Apr 2017 10:11:33 GMT</pubDate>
+      <author>Aviva Hope Rutkin</author>
+      <description>Machines still have a long way to go before they learn like humans do – and that’s a potential danger to privacy, safety, and more.&#x26;lt;p&#x26;gt;The year is 2022. You’re riding along in a self-driving car on a routine trip through the city. The car comes to a stop sign it’s passed a hundred times before – but …</description>
+      <media:content url="http://ichef.bbci.co.uk/wwfeatures/wm/live/1280_640/images/live/p0/4z/kz/p04zkzzm.jpg" medium="image" type="image/jpeg" width="1280" height="640" />
+      <category domain="https://flipboard.com/topic/programming">Programming</category>
+    </item>
+    <item>
+      <title>Google’s new AI doesn’t need to talk to the cloud</title>
+      <link>http://bgr.com/2017/04/10/googles-new-ai-doesnt-need-to-talk-to-the-cloud/</link>
+      <guid isPermaLink="false">flipboard-zxpTWd4xQBmg1CclnxNIpQ:a:52163335-1491894907</guid>
+      <pubDate>Tue, 11 Apr 2017 07:15:07 GMT</pubDate>
+      <author>By Zach Epstein</author>
+      <description>Google probably competes with the NSA for first place in knowing a lot about basically everyone. That’s understandable given the large number of …</description>
+      <media:content url="http://cdn.bgr.com/2017/03/google-android-o-developer-preview-features.jpg?quality=98&#x26;strip=all" medium="image" type="image/jpeg" width="1070" height="675" />
+      <category domain="https://flipboard.com/topic/google">Google</category>
+    </item>
+    <item>
+      <title>Google's AI Is Changing the Way a 3,000-Year-Old Game Is Played</title>
+      <link>https://futurism.com/googles-ai-is-changing-the-way-a-3000-year-old-game-is-played/</link>
+      <guid isPermaLink="false">flipboard-nibXQSmASFSDo8po3BTNzA:a:20277955-1491892663</guid>
+      <pubDate>Tue, 11 Apr 2017 06:37:43 GMT</pubDate>
+      <author>Dom Galeon</author>
+      <description>Winning Streak&#x26;lt;p&#x26;gt;Google’s DeepMind artificial intelligence (AI) wowed the world when it won in a series of Go against 18-time world champion Lee Sedol. …</description>
+      <media:content url="https://futurism.com/wp-content/uploads/2017/04/alphago.png" medium="image" type="image/png" width="1400" height="600" />
+      <category domain="https://flipboard.com/topic/artificialintelligence">Artificial Intelligence</category>
+    </item>
+    <item>
+      <title>The most popular open source projects on GitHub in each country</title>
+      <link>https://medium.freecodecamp.com/the-most-popular-open-source-projects-on-github-in-each-country-f31812959e91</link>
+      <guid isPermaLink="false">flipboard-JqBo63sCRn-oI_-X-87ULQ:a:84454391-1491884140</guid>
+      <pubDate>Tue, 11 Apr 2017 04:15:40 GMT</pubDate>
+      <description>Here’s 2016’s most popular open source project on GitHub for each country:&#x26;lt;p&#x26;gt;And the second most popular project for each country:&#x26;lt;p&#x26;gt;Here are the top …</description>
+      <media:content url="https://cdn-images-1.medium.com/max/800/1*QGJc6ic2w0w4AAj_wrQa1Q.jpeg" medium="image" type="image/jpeg" width="800" height="600" />
+      <category domain="https://flipboard.com/topic/programming">Programming</category>
+    </item>
+    <item>
+      <title>Google Makes Your Smartphone Smarter With Federated Learning</title>
+      <link>https://www.forbes.com/sites/kevinmurnane/2017/04/11/google-makes-your-smartphone-smarter-with-federated-learning/</link>
+      <guid isPermaLink="false">flipboard-2XcmipVqQra2-EINrml9NQ:a:3199486-1491888060</guid>
+      <pubDate>Tue, 11 Apr 2017 05:21:00 GMT</pubDate>
+      <author>Kevin Murnane, Contributor</author>
+      <description>Google is working on a machine learning technique that allows deep learning models that reside on a mobile device to learn directly from the user’s input without having to send the user’s data to the cloud. The result is immediate improvements in performance for the user, subsequent improvements …</description>
+      <media:content url="https://cdn.flipboard.com/forbes.com/182ee7b7bac6fea0e3c06fbb89d425e28f618e24/original.jpg" medium="image" type="image/jpeg" width="1200" height="675" />
+      <category domain="https://flipboard.com/topic/deeplearning">Deep Learning</category>
+    </item>
+    <item>
+      <title>Artificial intelligence: Lessons from the field</title>
+      <link>http://www.zdnet.com/article/artificial-intelligence-lessons-from-the-field/</link>
+      <guid isPermaLink="false">flipboard--cTfLyP_SYe7mzg-sg94OA:a:105559329-1491866413</guid>
+      <pubDate>Mon, 10 Apr 2017 23:20:13 GMT</pubDate>
+      <author>Bob Violino</author>
+      <description>How one field service management provider is benefiting from the technology.&#x26;lt;p&#x26;gt;Artificial intelligence (AI) is having a huge impact on businesses in a …</description>
+      <media:content url="http://zdnet3.cbsistatic.com/hub/i/r/2014/09/18/b498f3ca-3f1d-11e4-b6a0-d4ae52e95e57/resize/770xauto/4530cae80beeb83e56d7627741fae98a/artificial-intelligence-job-killer-or-your-next-boss.png" medium="image" type="image/png" width="770" height="577" />
+      <category domain="https://flipboard.com/topic/artificialintelligence">Artificial Intelligence</category>
+    </item>
+    <item>
+      <title>How Amazon Go (probably) makes “just walk out” groceries a reality</title>
+      <link>https://arstechnica.com/information-technology/2017/04/how-amazon-go-probably-makes-just-walk-out-groceries-a-reality/</link>
+      <guid isPermaLink="false">flipboard-GC5RQicHTXycWLE4hrpm5w:a:26549983-1491852278</guid>
+      <pubDate>Mon, 10 Apr 2017 19:24:38 GMT</pubDate>
+      <author>Haomiao Huang</author>
+      <description>Amazon new age grocery likely wasn't possible even five years ago.&#x26;lt;p&#x26;gt;These days, most announcements by tech companies are pretty meh. Details either …</description>
+      <media:content url="https://cdn.arstechnica.net/wp-content/uploads/2016/12/IMG_3078-800x533.jpg" medium="image" type="image/jpeg" width="800" height="533" />
+      <category domain="https://flipboard.com/topic/programming">Programming</category>
+    </item>
+    <item>
+      <title>What Will Happen When Your Company’s Algorithms Go Wrong?</title>
+      <link>https://hbr.org/2017/04/what-will-happen-when-your-companys-algorithms-go-wrong</link>
+      <guid isPermaLink="false">flipboard--rdrAZo3QR2lv7yZWeB1eQ:a:105559329-1491866303</guid>
+      <pubDate>Mon, 10 Apr 2017 23:18:23 GMT</pubDate>
+      <author>Roman V. Yampolskiy</author>
+      <description>When you’re ready to incorporate artificial intelligence technologies in your business, the analysis you should perform is this: What can possibly go wrong? What is our product or service expected to do? What happens if it fails to do so? Do we have a damage mitigation plan? Consider the …</description>
+      <media:content url="https://cdn.flipboard.com/hbr.org/8202e089faabf407cb9d7d4bd9818e9a3139617e/original.jpg" medium="image" type="image/jpeg" width="1200" height="675" />
+      <category domain="https://flipboard.com/topic/artificialintelligence">Artificial Intelligence</category>
+    </item>
+    <item>
+      <title>Google's Machine Learning Chips Beat Intel and Nvidia (GOOG, INTC)</title>
+      <link>http://www.investopedia.com/news/googles-machine-learning-chips-beat-intel-and-nvidia-goog-intc/</link>
+      <guid isPermaLink="false">flipboard-O6SihPv-S9STjbnLc4B_Zg:a:1966565343-1491881227</guid>
+      <pubDate>Tue, 11 Apr 2017 03:27:07 GMT</pubDate>
+      <author>Rakesh Sharma</author>
+      <description>Alphabet Inc. (GOOG) subsidiary Google is stealing a march on the likes of Intel Corporation (INTC) and Nvidia Corporation (NVDA). The Mountain View, …</description>
+      <category domain="https://flipboard.com/topic/programming">Programming</category>
+    </item>
+    <item>
+      <title>A Brilliantly Psychedelic Deep Machine Learning Interpretation of The Joy of Painting With Bob Ross</title>
+      <link>https://laughingsquid.com/a-brilliantly-psychedelic-deep-machine-learning-interpretation-of-the-joy-of-painting-with-bob-ross/</link>
+      <guid isPermaLink="false">flipboard-RMb5hmf4TDmAi4FlIeKyzg:a:653919226-1491832986</guid>
+      <pubDate>Mon, 10 Apr 2017 14:03:06 GMT</pubDate>
+      <description>Artistic engineer Alex Ruben aka artBoffin has created “Deeply Artificial Trees“, a brilliantly psychedelic video interpretation of an episode the …</description>
+      <media:content url="https://laughingsquid.com/wp-content/uploads/2017/04/a-brilliantly-psychedelic-deep-m.jpg" medium="image" type="image/jpeg" width="640" height="360" />
+      <category domain="https://flipboard.com/topic/painting">Painting</category>
+    </item>
+    <item>
+      <title>VR analytics startup Virtualitics raises $4.4 million</title>
+      <link>https://venturebeat.com/2017/04/10/vr-analytics-startup-virtualitics-raises-4-4-million/</link>
+      <guid isPermaLink="false">flipboard-acKf3a_3ThS5F2NHV2Rguw:a:1104921172-1491905485</guid>
+      <pubDate>Tue, 11 Apr 2017 10:11:25 GMT</pubDate>
+      <author>Dean Takahashi</author>
+      <description>Virtual reality needs analytics to show developers where people are visiting in virtual worlds. And Virtualitics has raised $4.4 million to provide analytics for VR and augmented reality applications.&#x26;lt;p&#x26;gt;Pasadena, Calif.-based Virtualitics has created data visualization and analytics tools for VR and …</description>
+      <media:content url="https://cdn.flipboard.com/venturebeat.com/d623ec7375e0d2bb51b17796868ce7b6dd421add/original.jpg" medium="image" type="image/jpeg" width="600" height="314" />
+      <category domain="https://flipboard.com/topic/analytics">Analytics</category>
+    </item>
+    <item>
+      <title>Nvidia Pits Tesla P40 Inference GPU Against Google’s TPU</title>
+      <link>http://www.tomshardware.com/news/nvidia-tesla-p40-google-tpu,34101.html</link>
+      <guid isPermaLink="false">flipboard-R9fPLFkuSwm7z8Grw9_baw:a:2918270-1491870134</guid>
+      <pubDate>Tue, 11 Apr 2017 00:22:14 GMT</pubDate>
+      <author>Lucian Armasu</author>
+      <description>Nvidia compared its Tesla P40 GPU against Google's TPU and it came out on top. However, the comparison may not be quite fair given that we don't know …</description>
+      <category domain="https://flipboard.com/topic/nvidia">Nvidia</category>
+    </item>
+    <item>
+      <title>Elinchrom Updates &#x26; Releases Affordable Deep Umbrellas</title>
+      <link>https://www.slrlounge.com/elinchrom-deep-umbrella-new-release-affordable/</link>
+      <guid isPermaLink="false">flipboard-qsORpP1NQL-yCw2RSUkd7Q:a:10669595-1491880598</guid>
+      <pubDate>Tue, 11 Apr 2017 03:16:38 GMT</pubDate>
+      <description>There are few things more versatile and easily added to a photographic kit than an umbrella. Not only are they flexible, and easy to use, but they’re …</description>
+      <media:content url="https://www.slrlounge.com/wp-content/uploads/2017/04/elinchrom-deep-umbrella-new.jpg" medium="image" type="image/jpeg" width="2500" height="1746" />
+      <category domain="https://flipboard.com/topic/portrait">Portrait Photography</category>
+    </item>
+    <item>
+      <title>Google Is Using AI to Combat Internet Trolls</title>
+      <link>https://www.fool.com/investing/2017/04/10/google-is-using-ai-to-combat-internet-trolls.aspx</link>
+      <guid isPermaLink="false">flipboard-7cd02b6992/fool.com-1491833100</guid>
+      <pubDate>Mon, 10 Apr 2017 14:05:00 GMT</pubDate>
+      <author>Danny Vena</author>
+      <description>Social media and other sites are frequently under pressure to curb abusive members. AI just might provide the key.&#x26;lt;p&#x26;gt;One of the biggest challenges …</description>
+      <media:content url="https://g.foolcdn.com/image/?url=https%3A%2F%2Fg.foolcdn.com%2Feditorial%2Fimages%2F439125%2Fhacker.jpg&#x26;h=630&#x26;w=1200&#x26;op=resize" medium="image" width="1200" height="630" />
+      <category domain="https://flipboard.com/topic/artificialintelligence">Artificial Intelligence</category>
+    </item>
+    <item>
+      <title>Democratizing AI Is Not A Silver Bullet | Articles | Big Data</title>
+      <link>https://channels.theinnovationenterprise.com/articles/democratizing-ai-is-not-a-silver-bullet</link>
+      <guid isPermaLink="false">flipboard-L_SrE5ySSuuCY4oi1aJxhg:a:33010534-1491854299</guid>
+      <pubDate>Mon, 10 Apr 2017 19:58:19 GMT</pubDate>
+      <description>As with any new technology, there are many implications we have yet to really consider around AI. For example, what would the West’s response be if, …</description>
+      <media:content url="https://dso7hsslwo1ge.cloudfront.net/images/sources/000/011/895/fullbox/silver_bullet.jpg?1491843113" medium="image" type="image/jpeg" width="1278" height="479" />
+      <category domain="https://flipboard.com/topic/artificialintelligence">Artificial Intelligence</category>
+    </item>
+    <item>
+      <title>Marketing in the UK: Artificial Intelligence Adds to the 'Finesse' that Humans Bring to Advertising</title>
+      <link>https://www.emarketer.com/Article/Marketing-UK-Artificial-Intelligence-Adds-Finesse-that-Humans-Bring-Advertising/1015607</link>
+      <guid isPermaLink="false">flipboard-174d671376/emarketer.com-1491868800</guid>
+      <pubDate>Tue, 11 Apr 2017 00:00:00 GMT</pubDate>
+      <author>Matt White</author>
+      <description>When it comes to placing and measuring digital ad impressions, machine learning can play a major role. eMarketer’s Bill Fisher spoke with Matt White, …</description>
+      <category domain="https://flipboard.com/topic/artificialintelligence">Artificial Intelligence</category>
+    </item>
+    <item>
+      <title>You Can Design Your Business To Prosper, Rather Than Suffer, From The Robot Revolution</title>
+      <link>https://www.forbes.com/sites/toddhixon/2017/04/11/you-can-design-your-business-to-prosper-rather-than-suffer-from-the-robot-revolution/</link>
+      <guid isPermaLink="false">flipboard-Gu7KyExdTj66FfhuJs0ORA:a:3199486-1491904800</guid>
+      <pubDate>Tue, 11 Apr 2017 10:00:00 GMT</pubDate>
+      <author>Todd Hixon, Contributor</author>
+      <description>Despite what we hear from certain prominent politicians, most serious commentators tell us that robots, much more than imports, are the main root cause of disappearing jobs. [I use the term robot broadly to include software based on artificial intelligence (AI) and machine learning.] If your job …</description>
+      <media:content url="https://specials-images.forbesimg.com/imageserve/40097425/960x0.jpg?fit=scale" medium="image" type="image/jpeg" width="960" height="639" />
+      <category domain="https://flipboard.com/topic/artificialintelligence">Artificial Intelligence</category>
+    </item>
+    <item>
+      <title>Rythm Unveils Morpheo, The First AI Platform That Helps Diagnose Sleep Disorders</title>
+      <link>http://finance.yahoo.com/news/rythm-unveils-morpheo-first-ai-171100856.html</link>
+      <guid isPermaLink="false">flipboard-e107630dad/yahoo.com-1491854887</guid>
+      <pubDate>Mon, 10 Apr 2017 20:08:07 GMT</pubDate>
+      <author>finance.yahoo.com</author>
+      <description>SAN FRANCISCO, April 10, 2017 /PRNewswire/ -- Rythm, a neurotechnology company, today announced Morpheo, an open-source and secure initiative to help …</description>
+      <category domain="https://flipboard.com/topic/programming">Programming</category>
+    </item>
+    <item>
+      <title>A neural network helped researchers crack smartphone PINs using built-in motion sensors</title>
+      <link>http://www.popsci.com/sensors-in-your-smartphone-could-be-its-weakest-link</link>
+      <guid isPermaLink="false">flipboard-UaCGkZCOScKIuL8W4bN20g:a:3199514-1491868844</guid>
+      <pubDate>Tue, 11 Apr 2017 00:00:44 GMT</pubDate>
+      <author>By Rob Verger</author>
+      <description>A simple exploit could guess a four-digit security code with surprising accuracy&#x26;lt;p&#x26;gt;Modern smartphones have a wealth of sensors inside, from accelerometers to gyroscopes. While sensors like these make the phones more powerful—allowing you to use your phone’s orientation as an input mechanism in a video …</description>
+      <media:content url="https://cdn.flipboard.com/popsci.com/15e9be6a955de139fcb5d27efe72e18f95abae10/original.jpg" medium="image" type="image/jpeg" width="1000" height="667" />
+      <category domain="https://flipboard.com/topic/technology">Technology</category>
+    </item>
+    <item>
+      <title>Hackaday Prize Entry: Detecting Adulterated Food Using AI</title>
+      <link>http://hackaday.com/2017/04/10/hackaday-prize-entry-detecting-adulterated-food-using-ai/</link>
+      <guid isPermaLink="false">flipboard-gKRK3EYrToGlvaJ8MofrYA:a:1274498131-1491884454</guid>
+      <pubDate>Tue, 11 Apr 2017 04:20:54 GMT</pubDate>
+      <author>Steven Dufresne</author>
+      <description>Adulterated food is food that has a substance added to it to save on manufacturing costs. It can have a negative effect, it can reduce the food’s …</description>
+      <category domain="https://flipboard.com/topic/raspberrypi">Raspberry Pi</category>
+    </item>
+    <item>
+      <title>Harte Hanks brings next generation data and analytics to marketers with Opera Solutions' Signal Hub platform</title>
+      <link>http://finance.yahoo.com/news/harte-hanks-brings-next-generation-181135573.html</link>
+      <guid isPermaLink="false">flipboard-87a89d01b9/yahoo.com-1491855047</guid>
+      <pubDate>Mon, 10 Apr 2017 20:10:47 GMT</pubDate>
+      <author>finance.yahoo.com</author>
+      <description>SAN ANTONIO, TX--(Marketwired - Apr 10, 2017) - Harte Hanks (&#x26;lt;p&#x26;gt;NYSE:HHS), a leader in customer relationships, experiences, and interaction-led …</description>
+      <category domain="https://flipboard.com/topic/bigdata">Big Data</category>
+    </item>
+    <item>
+      <title>The bot invasion is on, powered by $24B in funding</title>
+      <link>http://readwrite.com/2017/04/09/the-bots-invasion-is-on-powered-by-24b-in-funding-dl4/</link>
+      <guid isPermaLink="false">flipboard-5yicLlMcTOWR4wWM69C8wA:a:1842074-1491818964</guid>
+      <pubDate>Mon, 10 Apr 2017 10:09:24 GMT</pubDate>
+      <author>Donal Power</author>
+      <description>While the manufacturing sector is increasingly using physical robots to improve industrial processes, the market for virtual bots or “chatbots” is also gaining serious traction in the space where humans and computers interact.&#x26;lt;p&#x26;gt;Bots are essentially software technologies that automate tasks and enable …</description>
+      <media:content url="http://15809-presscdn-0-93.pagely.netdna-cdn.com/wp-content/uploads/iStock-510674920-e1491806686120.jpg" medium="image" type="image/jpeg" width="600" height="392" />
+      <category domain="https://flipboard.com/topic/automation">Automation</category>
+    </item>
+    <item>
+      <title>Google is testing a new way of training its AI algorithms directly on your phone</title>
+      <link>http://www.theverge.com/2017/4/10/15241492/google-ai-user-data-federated-learning</link>
+      <guid isPermaLink="false">flipboard-YnN_cNCPRsWtT08CayaS-A:a:42527994-1491858764</guid>
+      <pubDate>Mon, 10 Apr 2017 21:12:44 GMT</pubDate>
+      <author>James Vincent</author>
+      <description>Less data shared with Google means more privacy for users&#x26;lt;p&#x26;gt;When big tech firms use machine learning to improve their software, the process is usually a very centralized one. Companies like Google and Apple gather information about how you use their apps; collect it in one place; and then train new …</description>
+      <media:content url="https://cdn.flipboard.com/vox-cdn.com/2937e1056583f071a90bd571ed49d9e5515a8969/original.jpg" medium="image" type="image/jpeg" width="2620" height="1747" />
+      <category domain="https://flipboard.com/topic/google">Google</category>
+    </item>
+    <item>
+      <title>Five Reasons Why Web Development Is A Better Career Path Than Machine Learning</title>
+      <link>https://www.forbes.com/sites/quora/2017/04/10/five-reasons-why-web-development-is-a-better-career-path-than-machine-learning/</link>
+      <guid isPermaLink="false">flipboard-FPGGw90-T5aC23FGekvIVA:a:3334545-1491880784</guid>
+      <pubDate>Tue, 11 Apr 2017 03:19:44 GMT</pubDate>
+      <author>Quora</author>
+      <description>Shutterstock&#x26;lt;p&#x26;gt;&#x26;lt;i&#x26;gt;Is machine learning and deep learning a better career than web development now? originally appeared on Quora:&#x26;lt;/i&#x26;gt; &#x26;lt;i&#x26;gt;the place to gain and share knowledge, empowering people to learn from others and better understand the world&#x26;lt;/i&#x26;gt;.&#x26;lt;p&#x26;gt;&#x26;lt;b&#x26;gt;Answer by Roman Trusov, Artificial Intelligence, Machine Learning,&#x26;lt;/b&#x26;gt; …</description>
+      <media:content url="https://specials-images.forbesimg.com/imageserve/618202388/960x0.jpg?fit=scale" medium="image" type="image/jpeg" width="960" height="640" />
+      <category domain="https://flipboard.com/topic/programming">Programming</category>
+    </item>
+    <item>
+      <title>Of course a venture capitalist was no match for CMU’s updated poker-playing AI</title>
+      <link>https://techcrunch.com/2017/04/10/of-course-a-venture-capitalist-was-no-match-for-cmus-updated-poker-playing-ai/</link>
+      <guid isPermaLink="false">flipboard-hJimzw16Rlaz-295hdSV-A:a:26920121-1491889358</guid>
+      <pubDate>Tue, 11 Apr 2017 05:42:38 GMT</pubDate>
+      <author>John Mannes</author>
+      <description>Libratus, Carnegie Mellon’s poker-playing AI, is damn good. It easily routed four of the world’s best poker players back in January over 120,000 hands of No-Limit Texas Hold-um. So it comes as no surprise that a team of venture capitalists, entrepreneurs and engineers playing against Lengpudashi, …</description>
+      <media:content url="https://cdn.flipboard.com/wordpress.com/05d1c646b752b0ac990b1d06caa020afcf10c6ec/original.jpg" medium="image" type="image/jpeg" width="4476" height="3805" />
+      <category domain="https://flipboard.com/topic/programming">Programming</category>
+    </item>
+    <item>
+      <title>Big Picture Machine Learning: Classifying Text with Neural Networks and TensorFlow</title>
+      <link>https://medium.freecodecamp.com/big-picture-machine-learning-classifying-text-with-neural-networks-and-tensorflow-d94036ac2274</link>
+      <guid isPermaLink="false">flipboard-qseDf-pKRXKewB9Fxe-UJg:a:5713321-1491874515</guid>
+      <pubDate>Tue, 11 Apr 2017 01:35:15 GMT</pubDate>
+      <author>Déborah Mesquita</author>
+      <description>Developers often say that if you want to get started with machine learning, you should first learn how the algorithms work. But my experience shows …</description>
+      <media:content url="https://cdn-images-1.medium.com/max/1024/1*W2vzGrXR1ua5KN-X0m9oMw.jpeg" medium="image" type="image/jpeg" width="1024" height="763" />
+      <category domain="https://flipboard.com/topic/programming">Programming</category>
+    </item>
+    <item>
+      <title>X Drummer by Positive Grid</title>
+      <link>http://ipadmusic.com/blog/2017/04/10/x-drummer-by-positive-grid/</link>
+      <guid isPermaLink="false">flipboard-dXLCWZk2RsK_CyJjpRkrlg:a:4454063-1491853480</guid>
+      <pubDate>Mon, 10 Apr 2017 19:44:40 GMT</pubDate>
+      <description>Description:&#x26;lt;p&#x26;gt;LIKE PLAYING WITH A SESSION DRUMMER&#x26;lt;br&#x26;gt;X Drummer will be your best songwriting partner. With a few finger taps, it quickly learns your song. …</description>
+      <media:content url="http://ipadmusic.com/wp-content/uploads/2017/04/FI_1055971595_asaArtwork_featured.jpg" medium="image" type="image/jpeg" width="256" height="256" />
+      <category domain="https://flipboard.com/topic/logicpro">Logic Pro</category>
+    </item>
+    <item>
+      <title>CIO Jury: Two-thirds of tech leaders are not implementing AI</title>
+      <link>http://www.techrepublic.com/article/cio-jury-only-one-third-of-tech-leaders-are-implementing-ai/</link>
+      <guid isPermaLink="false">flipboard-QEEYDDxLQ6yafp-X8JQ05g:a:114936334-1491855730</guid>
+      <pubDate>Mon, 10 Apr 2017 20:22:10 GMT</pubDate>
+      <author>Alison DeNisco</author>
+      <description>Though the AI and machine learning market is growing rapidly, 8 out of 12 tech leaders said they do not yet have plans to implement the …</description>
+      <media:content url="https://tr3.cbsistatic.com/hub/i/r/2017/04/07/4406987d-0608-43f0-a300-947218bb48b6/thumbnail/770x578/c74111287b7dc945f297289d0c9a05d2/istock-644338590.jpg" medium="image" type="image/jpeg" width="770" height="578" />
+      <category domain="https://flipboard.com/topic/bigdata">Big Data</category>
+    </item>
+    </channel>
+</rss>

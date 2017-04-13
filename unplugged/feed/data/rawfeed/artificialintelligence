@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/">
+  <channel>
+    <title>Artificial Intelligence</title>
+    <link>https://flipboard.com/topic/artificialintelligence</link>
+    <atom:link href="https://flipboard.com/topic/artificialintelligence?rss" rel="self" type="application/rss+xml" />
+    <description></description>
+    <pubDate>Tue, 11 Apr 2017 11:26:31 GMT</pubDate>
+    <generator>Flipboard</generator>
+    <item>
+      <title>The Dark Secret at the Heart of AI</title>
+      <link>https://www.technologyreview.com/s/604087/the-dark-secret-at-the-heart-of-ai/</link>
+      <guid isPermaLink="false">flipboard-G0ooUVMGTiGfGeiz24JjyQ:a:759728225-1491883200</guid>
+      <pubDate>Tue, 11 Apr 2017 04:00:00 GMT</pubDate>
+      <author>by Will Knight</author>
+      <description>Last year, a strange self-driving car was released onto the quiet roads of Monmouth County, New Jersey. The experimental vehicle, developed by …</description>
+      <media:content url="https://d267cvn3rvuq91.cloudfront.net/i/images/mj17-aiblackbox2.jpg?sw=1080&#x26;cx=0&#x26;cy=0&#x26;cw=1544&#x26;ch=1999" medium="image" type="image/jpeg" width="1080" height="1398" />
+      <category domain="https://flipboard.com/topic/machinelearning">Machine Learning</category>
+    </item>
+    <item>
+      <title>Is the AlphaGo AI the best in the world? We're about to find out.</title>
+      <link>http://mashable.com/2017/04/10/alphago-deepmind-world-number-one/</link>
+      <guid isPermaLink="false">flipboard-qTsIo9aBTzuq7z_9IWEtyw:a:26549983-1491851943</guid>
+      <pubDate>Mon, 10 Apr 2017 19:19:03 GMT</pubDate>
+      <author>By Colin Daileda</author>
+      <description>You may have been under the impression that Google's AlphaGo had already publicly beaten the best human Go player in the world. You would be like me, and you would also be wrong.&#x26;lt;p&#x26;gt;AlphaGo, an artificial intelligence product of Google-owned AI firm DeepMind, has been making quick work of some of the …</description>
+      <media:content url="http://i.amz.mshcdn.com/2oe23bEtaHPbudmg9_T5wfQT54I=/950x534/filters:quality(90)/https%3A%2F%2Fblueprint-api-production.s3.amazonaws.com%2Fuploads%2Fcard%2Fimage%2F442141%2F48b21320-b638-4780-80da-4af946fbf598.jpg" medium="image" type="image/jpeg" width="950" height="534" />
+      <category domain="https://flipboard.com/topic/computerscience">Computer Science</category>
+    </item>
+    <item>
+      <title>How to fool artificial intelligence</title>
+      <link>http://www.bbc.com/future/story/20170410-how-to-fool-artificial-intelligence?ocid=global_future_rss</link>
+      <guid isPermaLink="false">flipboard-b6WCBSZhQC2glnsWZ2PtRA:a:19046810-1491905493</guid>
+      <pubDate>Tue, 11 Apr 2017 10:11:33 GMT</pubDate>
+      <author>Aviva Hope Rutkin</author>
+      <description>Machines still have a long way to go before they learn like humans do – and that’s a potential danger to privacy, safety, and more.&#x26;lt;p&#x26;gt;The year is 2022. You’re riding along in a self-driving car on a routine trip through the city. The car comes to a stop sign it’s passed a hundred times before – but …</description>
+      <media:content url="http://ichef.bbci.co.uk/wwfeatures/wm/live/1280_640/images/live/p0/4z/kz/p04zkzzm.jpg" medium="image" type="image/jpeg" width="1280" height="640" />
+      <category domain="https://flipboard.com/topic/machinelearning">Machine Learning</category>
+    </item>
+    <item>
+      <title>Kore.ai lets enterprises build intelligent chatbots with sentiment analysis</title>
+      <link>http://www.zdnet.com/article/kore-ai-lets-enterprises-build-intelligent-chatbots-with-sentiment-analysis/</link>
+      <guid isPermaLink="false">flipboard-DIhy7xKuQJCAwaQhCN6Kvg:a:1722492089-1491842760</guid>
+      <pubDate>Mon, 10 Apr 2017 16:46:00 GMT</pubDate>
+      <author>Eileen Brown</author>
+      <description>Enterprises are looking to AI solutions to help them scale their customer interactions, tasks, and workflows.&#x26;lt;p&#x26;gt;Enterprises are latching on to the fact …</description>
+      <media:content url="http://zdnet2.cbsistatic.com/hub/i/r/2017/04/10/e269d4f0-0118-4bc2-ba55-cdb4803a8fbc/resize/770xauto/02268cb951b5200618aab7b29a102322/kore-ai-dashboard-eileen-brown-zdnet.png" medium="image" type="image/png" width="770" height="548" />
+      <category domain="https://flipboard.com/topic/chatbot">Chatbots</category>
+    </item>
+    <item>
+      <title>Google’s new AI doesn’t need to talk to the cloud</title>
+      <link>http://bgr.com/2017/04/10/googles-new-ai-doesnt-need-to-talk-to-the-cloud/</link>
+      <guid isPermaLink="false">flipboard-Cft62-59RL-pTXTd6HAzQQ:a:445942431-1491879729</guid>
+      <pubDate>Tue, 11 Apr 2017 03:02:09 GMT</pubDate>
+      <author>By Zach Epstein</author>
+      <description>Google probably competes with the NSA for first place in knowing a lot about basically everyone. That’s understandable given the large number of …</description>
+      <media:content url="http://cdn.bgr.com/2017/03/google-android-o-developer-preview-features.jpg?quality=98&#x26;strip=all" medium="image" type="image/jpeg" width="1070" height="675" />
+      <category domain="https://flipboard.com/topic/google">Google</category>
+    </item>
+    <item>
+      <title>Examining the data on chatbot retention</title>
+      <link>https://venturebeat.com/2017/04/10/examining-the-data-on-chatbot-retention/</link>
+      <guid isPermaLink="false">flipboard-dUMPwRChTEGFwa3IO2h8aw:a:3319943-1491903220</guid>
+      <pubDate>Tue, 11 Apr 2017 09:33:40 GMT</pubDate>
+      <author>Arte Merritt, Dashbot.io</author>
+      <description>What’s a good retention metric for bots?&#x26;lt;p&#x26;gt;At my company Dashbot, we’ve processed nearly 2 billion messages in the past 11 months. It took 10 months to process the first billion, and we’re on pace to process the second billion in about six weeks.&#x26;lt;p&#x26;gt;We took a look at the retention data across bots on our …</description>
+      <media:content url="https://cdn-images-1.medium.com/max/1600/0*bzqt0XkcDf7BXTIw." medium="image" width="623" height="367" />
+      <category domain="https://flipboard.com/topic/chatbot">Chatbots</category>
+    </item>
+    <item>
+      <title>Bots That’ll Save You Time at Home and Work</title>
+      <link>https://gearpatrol.com/2017/04/10/best-messaging-app-2017-webby-awards/</link>
+      <guid isPermaLink="false">flipboard-0Nn2sB7QQqKGqwJj01XA9g:a:507688832-1491851087</guid>
+      <pubDate>Mon, 10 Apr 2017 19:04:47 GMT</pubDate>
+      <author>By Tucker Bowe</author>
+      <description>You likely use multiple messaging apps and services, including iMessage, Snapchat, Facebook Messenger, Slack and Skype. However, most of us aren’t …</description>
+      <media:content url="https://cdn.gearpatrol.com/wp-content/uploads/2017/04/messaging-app-gear-patrol-full-lead-970x650.jpg" medium="image" type="image/jpeg" width="970" height="650" />
+      <category domain="https://flipboard.com/topic/chatbot">Chatbots</category>
+    </item>
+    <item>
+      <title>What Will Happen When Your Company’s Algorithms Go Wrong?</title>
+      <link>https://hbr.org/2017/04/what-will-happen-when-your-companys-algorithms-go-wrong</link>
+      <guid isPermaLink="false">flipboard--rdrAZo3QR2lv7yZWeB1eQ:a:105559329-1491866303</guid>
+      <pubDate>Mon, 10 Apr 2017 23:18:23 GMT</pubDate>
+      <author>Roman V. Yampolskiy</author>
+      <description>When you’re ready to incorporate artificial intelligence technologies in your business, the analysis you should perform is this: What can possibly go wrong? What is our product or service expected to do? What happens if it fails to do so? Do we have a damage mitigation plan? Consider the …</description>
+      <media:content url="https://cdn.flipboard.com/hbr.org/8202e089faabf407cb9d7d4bd9818e9a3139617e/original.jpg" medium="image" type="image/jpeg" width="1200" height="675" />
+      <category domain="https://flipboard.com/topic/computerscience">Computer Science</category>
+    </item>
+    <item>
+      <title>Can A.I. Turn Trump's Tweets Into a Stock Market Fortune?</title>
+      <link>https://www.inverse.com/article/30149-npr-planet-money-bot-botus-donald-trump</link>
+      <guid isPermaLink="false">flipboard-7cUg3b8KQL--E3JJgy41pg:a:1864310875-1491859980</guid>
+      <pubDate>Mon, 10 Apr 2017 21:33:00 GMT</pubDate>
+      <author>Tanya Basu</author>
+      <description>November 8, 2016 was a memorably tumultuous night for both Donald Trump and Hillary Clinton, but it was also one in which the stock market showcased …</description>
+      <media:content url="https://fsmedia.imgix.net/84/1b/d5/1b/fb9d/4e50/9b46/1d81c1883ffc/washington-dc---february-3-afp-out-us-president-donald-trump-pauses-while-signning-executive-o.jpeg?rect=0%2C0%2C3295%2C1648&#x26;fm=png&#x26;w=1200&#x26;q=70" medium="image" type="image/jpeg" width="1200" height="600" />
+      <category domain="https://flipboard.com/topic/donaldtrump">Donald Trump</category>
+    </item>
+    <item>
+      <title>Google's New AI Approach Will Put iPhone to Shame</title>
+      <link>http://www.tomsguide.com/us/google-federated-learning-autocorrect-improvements,news-24853.html</link>
+      <guid isPermaLink="false">flipboard-41ULxFauRgyFfmlxuD1k7w:a:27565432-1491847056</guid>
+      <pubDate>Mon, 10 Apr 2017 17:57:36 GMT</pubDate>
+      <author>Don Reisinger</author>
+      <description>Google has set its sights on using artificial intelligence to improve your smartphone experience. And it's starting with a closer look at your …</description>
+      <media:content url="https://img.purch.com/o/aHR0cDovL21lZGlhLmJlc3RvZm1pY3JvLmNvbS84LzYvNjIxMDc4L29yaWdpbmFsL1B4aWVsLVhMLUdvb2dsZS1Bc3Npc3RhbnQuanBn" medium="image" width="1500" height="900" />
+      <category domain="https://flipboard.com/topic/google">Google</category>
+    </item>
+    <item>
+      <title>Carnegie Mellon University AI beats top Chinese poker players</title>
+      <link>http://www.kurzweilai.net/carnegie-mellon-university-ai-beats-top-chinese-poker-players</link>
+      <guid isPermaLink="false">flipboard-5HFYandeT9yiGP3YfaOBfg:a:20277955-1491892799</guid>
+      <pubDate>Tue, 11 Apr 2017 06:39:59 GMT</pubDate>
+      <author>http://helldesign.net</author>
+      <description>Carnegie Mellon University professor Tuomas Sandholm talks to Kai-Fu Lee, head of Sinovation Ventures, a Chinese venture capital firm, as Lee plays …</description>
+      <media:content url="http://www.kurzweilai.net/images/AI-vs-Chinese-poker-players.png" medium="image" type="image/png" width="595" height="394" />
+      <category domain="https://flipboard.com/topic/computerscience">Computer Science</category>
+    </item>
+    <item>
+      <title>How Artificial Intelligence is Changing the Landscape of Customer Support</title>
+      <link>http://www.nakedtruth.in/2017/04/10/how-artificial-intelligence-is-changing-the-landscape-of-customer-support/</link>
+      <guid isPermaLink="false">flipboard-PK1gxxCgTSOBeHmMir499A:a:3654118-1491850676</guid>
+      <pubDate>Mon, 10 Apr 2017 18:57:56 GMT</pubDate>
+      <author>Vivek Kapadia</author>
+      <description>You have a problem with your phone bill. You call a customer service number. You are greeted by a voice which by then you are sure that you are …</description>
+      <media:content url="http://i1.wp.com/www.nakedtruth.in/wp-content/uploads/2017/04/AI-Customer-Support.jpeg?fit=798%2C531" medium="image" type="image/jpeg" width="797" height="531" />
+      <category domain="https://flipboard.com/topic/customerservice">Customer Service</category>
+    </item>
+    <item>
+      <title>Bridging the gap to empathy: realising technology's cognitive capabilities for brands</title>
+      <link>https://www.airsassociation.org/services-new/airs-knowledge-network-n/airs-articles/item/18780-bridging-the-gap-to-empathy-realising-technology-s-cognitive-capabilities-for-brands</link>
+      <guid isPermaLink="false">flipboard-2RVtYtCXQ-aNhXhswQq0Sw:a:60946386-1491907741</guid>
+      <pubDate>Tue, 11 Apr 2017 10:49:01 GMT</pubDate>
+      <author>Anthony Frank</author>
+      <description>The fundamental distinction between technology and humans is empathy, but things are changing fast, says Ravleen Beeston.&#x26;lt;p&#x26;gt;People are now literally …</description>
+      <media:content url="https://www.airsassociation.org/media/k2/items/cache/fbdbf37627e10bc9e26fff87ab99e57c_XL.jpg" medium="image" type="image/jpeg" width="1100" height="735" />
+      <category domain="https://flipboard.com/topic/innovation">Innovation</category>
+    </item>
+    <item>
+      <title>Watch Artificial Intelligence Lose Its Mind While Watching Bob Ross</title>
+      <link>http://www.iflscience.com/technology/watch-artificial-intelligence-lose-its-mind-while-watching-bob-ross/</link>
+      <guid isPermaLink="false">flipboard-Twj6rfAVQs-5_SJnFJbPMQ:a:152464348-1491873992</guid>
+      <pubDate>Tue, 11 Apr 2017 01:26:32 GMT</pubDate>
+      <author>By Tom Hale</author>
+      <description>Ever wondered what it would be like for artificial intelligence to trip-out while watching Bob Ross paint a pretty picture?&#x26;lt;p&#x26;gt;This video was created by …</description>
+      <media:content url="http://cdn.iflscience.com/images/ce6ae5df-fdc2-5a24-bea0-87f40e92e430/default-1491840002-cover-image.JPG" medium="image" width="720" height="405" />
+      <category domain="https://flipboard.com/topic/computerscience">Computer Science</category>
+    </item>
+    <item>
+      <title>Think Tank: Retailers, It’s Time to Try On AI for Size</title>
+      <link>http://wwd.com/business-news/technology/salesforce-ai-think-tank-10859990/</link>
+      <guid isPermaLink="false">flipboard-1Qaq2xMzRkKrjdQF0VlBTw:a:47162284-1491903903</guid>
+      <pubDate>Tue, 11 Apr 2017 09:45:03 GMT</pubDate>
+      <author>Shelley Bransten</author>
+      <description>Shoppers may not know it, but they use artificial intelligence (AI) in their everyday lives. From turning to apps like Waze for optimal driving …</description>
+      <media:content url="https://pmcwwd.files.wordpress.com/2017/02/shutterstock_2974076961.jpg?w=640&#x26;h=415&#x26;crop=1" medium="image" type="image/jpeg" width="640" height="415" />
+      <category domain="https://flipboard.com/topic/ecommerce">eCommerce</category>
+    </item>
+    <item>
+      <title>Honesty the secret weapon against AI</title>
+      <link>https://bluenotes.anz.com/posts/2017/04/video-can-sharing-help-us-beat-the-robots/?platform=hootsuite</link>
+      <guid isPermaLink="false">flipboard-iyq84MxYT8e4NrYjAkUXlw:a:718002026-1491900753</guid>
+      <pubDate>Tue, 11 Apr 2017 08:52:33 GMT</pubDate>
+      <author>Rita Zonius Head of Internal Digital Communications at ANZ</author>
+      <description>Want to beat the robots? Speak up. Increasingly, open workplace &#x26;lt;b&#x26;gt;communication&#x26;lt;/b&#x26;gt; will be a vital tool for &#x26;lt;b&#x26;gt;knowledge workers&#x26;lt;/b&#x26;gt; hoping to fight off the rise …</description>
+      <media:content url="https://bluenotes.anz.com:443/media/405180/semple-thumb.jpg" medium="image" type="image/jpeg" width="640" height="321" />
+      <category domain="https://flipboard.com/topic/computerscience">Computer Science</category>
+    </item>
+    <item>
+      <title>When it comes to investing, human stupidity beats AI</title>
+      <link>https://www.ft.com/content/244d8d60-1df9-11e7-b7d3-163f5a7f229c</link>
+      <guid isPermaLink="false">flipboard-920b602647/ft.com-1491879660</guid>
+      <pubDate>Tue, 11 Apr 2017 03:01:00 GMT</pubDate>
+      <author>www.ft.com</author>
+      <description>If someone possessed a magic formula to make vast sums of money in the stock market they might be expected to keep it to themselves. One of the most …</description>
+      <category domain="https://flipboard.com/topic/computerscience">Computer Science</category>
+    </item>
+    <item>
+      <title>Artificial intelligence: Lessons from the field</title>
+      <link>http://www.zdnet.com/article/artificial-intelligence-lessons-from-the-field/</link>
+      <guid isPermaLink="false">flipboard--cTfLyP_SYe7mzg-sg94OA:a:105559329-1491866413</guid>
+      <pubDate>Mon, 10 Apr 2017 23:20:13 GMT</pubDate>
+      <author>Bob Violino</author>
+      <description>How one field service management provider is benefiting from the technology.&#x26;lt;p&#x26;gt;Artificial intelligence (AI) is having a huge impact on businesses in a …</description>
+      <media:content url="http://zdnet3.cbsistatic.com/hub/i/r/2014/09/18/b498f3ca-3f1d-11e4-b6a0-d4ae52e95e57/resize/770xauto/4530cae80beeb83e56d7627741fae98a/artificial-intelligence-job-killer-or-your-next-boss.png" medium="image" type="image/png" width="770" height="577" />
+      <category domain="https://flipboard.com/topic/computerscience">Computer Science</category>
+    </item>
+    <item>
+      <title>3 Near-Future Solutions of AI E-Commerce</title>
+      <link>https://www.digitaldoughnut.com/articles/2017/april/3-near-future-solutions-of-ai-e-commerce</link>
+      <guid isPermaLink="false">flipboard-271916c094/digitaldoughnut.com-1491836069</guid>
+      <pubDate>Mon, 10 Apr 2017 14:54:29 GMT</pubDate>
+      <author>Poland</author>
+      <description>Despite so many new mainstream intelligence solutions, Big Data can still be a blessing or a curse, depending on how you use it. The AI revolution …</description>
+      <media:content url="https://www.digitaldoughnut.com/getattachment/2906fabd-9da4-4b00-b6fc-2da840bd5201/3-Near-Future-Solutions-of-AI-E-Commerce" medium="image" width="734" height="550" />
+      <category domain="https://flipboard.com/topic/ecommerce">eCommerce</category>
+    </item>
+    <item>
+      <title>Gen X trust artificial intelligence than Millennials | Access AI</title>
+      <link>http://www.access-ai.com/news/2421/gen-x-trust-artificial-intelligence-millennials/</link>
+      <guid isPermaLink="false">flipboard-AYYV52CuQvu2ZxRLc4WbCA:a:101928296-1491840836</guid>
+      <pubDate>Mon, 10 Apr 2017 16:13:56 GMT</pubDate>
+      <author>By Darcie Thompson-Fields</author>
+      <description>news&#x26;lt;p&#x26;gt;Posted: 10 April 2017 | By Darcie Thompson-Fields&#x26;lt;p&#x26;gt;Americans aged 30-44 are most eager to rely on artificial intelligence but they’d rather it was …</description>
+      <media:content url="http://www.access-ai.com/wp-content/uploads/2017/04/8384110298_da510e0347_z.jpg" medium="image" type="image/jpeg" width="640" height="480" />
+      <category domain="https://flipboard.com/topic/computerscience">Computer Science</category>
+    </item>
+    <item>
+      <title>Accountants are embracing artificial intelligence</title>
+      <link>https://betanews.com/2017/04/10/accountants-want-ai/</link>
+      <guid isPermaLink="false">flipboard-VHNufqoaRBqxJkivTVsdpA:a:40379595-1491883541</guid>
+      <pubDate>Tue, 11 Apr 2017 04:05:41 GMT</pubDate>
+      <author>By Sead Fadilpašić</author>
+      <description>Despite the popular belief that artificial intelligence is coming to take your jobs away, accountants would love some robotic help to get them …</description>
+      <media:content url="https://betanews.com/wp-content/uploads/2017/01/AI-Artificial-Intelligence-e1483704577565.jpg" medium="image" type="image/jpeg" width="640" height="454" />
+      <category domain="https://flipboard.com/topic/computerscience">Computer Science</category>
+    </item>
+    <item>
+      <title>Meet the 5 startups handpicked for NYU Tandon's first-ever AI incubator</title>
+      <link>https://technical.ly/brooklyn/2017/04/10/5-startups-nyu-tandon-first-ever-ai-incubator/</link>
+      <guid isPermaLink="false">flipboard-ohu8aTyXTtqF2jQExLpF6w:a:10887455-1491855326</guid>
+      <pubDate>Mon, 10 Apr 2017 20:15:26 GMT</pubDate>
+      <author>April Joyner is a journalist who covers business, tech and finance. As a freelance writer, she has contributed to OZY, NewYorker.com and FastCompany.com. Joyner's writing has also appeared on Business Insider and USAToday.com.</author>
+      <description>Last week, &#x26;lt;b&#x26;gt;NYU Future Labs&#x26;lt;/b&#x26;gt; held its &#x26;lt;b&#x26;gt;AI Summit&#x26;lt;/b&#x26;gt;, an afternoon session devoted to the latest happenings in artificial intelligence — and what that …</description>
+      <media:content url="https://technical.ly/brooklyn/wp-content/uploads/sites/4/2017/04/cambrian-intelligence.gif" medium="image" type="image/gif" width="480" height="270" />
+      <category domain="https://flipboard.com/topic/computerscience">Computer Science</category>
+    </item>
+    <item>
+      <title>Which Chatbot Is Right For You?</title>
+      <link>http://www.cmswire.com/digital-marketing/which-chatbot-is-right-for-you/</link>
+      <guid isPermaLink="false">flipboard-nv2VrS-2QdaNfxIS_t2RiQ:a:2507288-1491907584</guid>
+      <pubDate>Tue, 11 Apr 2017 10:46:24 GMT</pubDate>
+      <author>Lois Wentworth</author>
+      <description>Chatbots have been the talk of the content marketing world recently, with many brands out there developing and testing their own.&#x26;lt;p&#x26;gt;The opportunities …</description>
+      <media:content url="http://www.cmswire.com/~/media/11269c93de45482fa2a49094b727a2e7.jpg" medium="image" type="image/jpeg" width="640" height="480" />
+      <category domain="https://flipboard.com/topic/chatbot">Chatbots</category>
+    </item>
+    <item>
+      <title>Two new reports: Many consumers afraid of, and confused by, artificial intelligence</title>
+      <link>http://marketingland.com/two-new-reports-many-consumers-afraid-confused-artificial-intelligence-211473</link>
+      <guid isPermaLink="false">flipboard-lF7VylvoTN6MXOC3KFj8Nw:a:26116266-1491852823</guid>
+      <pubDate>Mon, 10 Apr 2017 19:33:43 GMT</pubDate>
+      <description>Separate studies by Pegasystems and InsideSales depict ‘fear and confusion,’ but offer some strategies for AI-using businesses.</description>
+      <media:content url="http://marketingland.com/wp-content/ml-loads/2017/04/robot-machine-artificial-intelligence-ai-ss-1920.jpg" medium="image" type="image/jpeg" width="1920" height="1080" />
+      <category domain="https://flipboard.com/topic/computerscience">Computer Science</category>
+    </item>
+    <item>
+      <title>Cognitive Marketing, AI &#x26; the Future of Advertising</title>
+      <link>http://bwhotelier.businessworld.in/article/Cognitive-Marketing-AI-the-Future-of-Advertising/10-04-2017-116032/</link>
+      <guid isPermaLink="false">flipboard-9535397651/businessworld.in-1491833952</guid>
+      <pubDate>Mon, 10 Apr 2017 14:19:12 GMT</pubDate>
+      <author>Kartikey Bhargava</author>
+      <description>THINGS HAVE changed for marketing over the last 20 years. The idea of the big ad campaign and its hold on the consciousness of the consumer has given …</description>
+      <media:content url="http://d1s8mqgwixvb29.cloudfront.net/article/article_extra_large_image/1491814148_49JD97_croppedKARTIKCOLUMN.png" medium="image" type="image/png" width="870" height="470" />
+      <category domain="https://flipboard.com/topic/computerscience">Computer Science</category>
+    </item>
+    <item>
+      <title>AlphaGo Round 2: Google’s AI To Compete Against Top Go Players</title>
+      <link>http://www.tomshardware.com/news/alphago-google-ai-go-compete,34100.html</link>
+      <guid isPermaLink="false">flipboard-ba36fddcc7/tomshardware.com-1491840000</guid>
+      <pubDate>Mon, 10 Apr 2017 16:00:00 GMT</pubDate>
+      <author>www.tomshardware.com</author>
+      <description>Google's AlphaGo AI will participate in another competition at the end of May, in which it will play against Ke Jie, world's #1 Go player, as well as …</description>
+      <category domain="https://flipboard.com/topic/computerscience">Computer Science</category>
+    </item>
+    <item>
+      <title>What is A.I. and how it will affect our $200 billion Digital Ad Market?</title>
+      <link>http://www.huffingtonpost.com/entry/what-is-ai-and-how-it-will-affect-our-200-billion_us_58eba189e4b0ea028d568b4c</link>
+      <guid isPermaLink="false">flipboard-4063c9c42f/huffingtonpost.com-1491823331</guid>
+      <pubDate>Mon, 10 Apr 2017 11:22:11 GMT</pubDate>
+      <author>Gurbaksh Chahal, Contributor Chairman &#x26; CEO, Gravity4 Inc.</author>
+      <description>Nowadays, the latest buzzword of attraction is “Artificial Intelligence” and its immediate impact on our advertising sector. As the CEO of Gravity4, I thought it to be only appropriate to help dissect this new evolutionary phase of our industry as we apply it. It is no doubt that ‘Deep Learning’ is …</description>
+      <media:content url="https://cdn.flipboard.com/huffingtonpost.com/9506960bc8d9bb85350f48ca22fc7f9f5ae2bb09/original.jpg" medium="image" type="image/jpeg" width="820" height="489" />
+      <category domain="https://flipboard.com/topic/machinelearning">Machine Learning</category>
+    </item>
+    <item>
+      <title>Google Is Using AI to Combat Internet Trolls</title>
+      <link>https://www.fool.com/investing/2017/04/10/google-is-using-ai-to-combat-internet-trolls.aspx</link>
+      <guid isPermaLink="false">flipboard-7cd02b6992/fool.com-1491833100</guid>
+      <pubDate>Mon, 10 Apr 2017 14:05:00 GMT</pubDate>
+      <author>Danny Vena</author>
+      <description>Social media and other sites are frequently under pressure to curb abusive members. AI just might provide the key.&#x26;lt;p&#x26;gt;One of the biggest challenges …</description>
+      <media:content url="https://g.foolcdn.com/image/?url=https%3A%2F%2Fg.foolcdn.com%2Feditorial%2Fimages%2F439125%2Fhacker.jpg&#x26;h=630&#x26;w=1200&#x26;op=resize" medium="image" width="1200" height="630" />
+      <category domain="https://flipboard.com/topic/computerscience">Computer Science</category>
+    </item>
+    <item>
+      <title>The bots bubble has burst, but they’ll be back</title>
+      <link>https://venturebeat.com/2017/04/10/the-bots-bubble-has-burst-but-theyll-be-back/</link>
+      <guid isPermaLink="false">flipboard-f8a8186ebd/venturebeat.com-1491855083</guid>
+      <pubDate>Mon, 10 Apr 2017 20:11:23 GMT</pubDate>
+      <author>Rurik Bradbury, LivePerson</author>
+      <description>Bradford Cross, a founding partner at machine learning and big data venture capital fund DCVC, wrote an interesting post on his blog about the impending end to today’s bots hype period, including one section called “Bots Go Bust.” He is right in the sense that hopes for bots will soon crash to …</description>
+      <category domain="https://flipboard.com/topic/chatbot">Chatbots</category>
+    </item>
+    <item>
+      <title>NYU's Gary Marcus is an artificial intelligence contrarian</title>
+      <link>https://technical.ly/brooklyn/2017/04/10/nyu-gary-marcus-artificial-intelligence-contrarian/</link>
+      <guid isPermaLink="false">flipboard-WtFT4XQOSbyVthTeU2R9gQ:a:49966759-1491887568</guid>
+      <pubDate>Tue, 11 Apr 2017 05:12:48 GMT</pubDate>
+      <author>April Joyner is a journalist who covers business, tech and finance. As a freelance writer, she has contributed to OZY, NewYorker.com and FastCompany.com. Joyner's writing has also appeared on Business Insider and USAToday.com.</author>
+      <description>As we’ve reported, &#x26;lt;b&#x26;gt;NYU Tandon&#x26;lt;/b&#x26;gt; is making a bid for New York City to become the capital city of artificial intelligence. One graduate of its &#x26;lt;b&#x26;gt;Future Labs&#x26;lt;/b&#x26;gt; …</description>
+      <media:content url="https://technical.ly/brooklyn/wp-content/uploads/sites/4/2017/04/robot_takeover.jpg" medium="image" type="image/jpeg" width="1024" height="623" />
+      <category domain="https://flipboard.com/topic/computerscience">Computer Science</category>
+    </item>
+    </channel>
+</rss>

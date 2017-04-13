@@ -1,0 +1,146 @@
+a:hover{
+	text-decoration: none !important;
+}
+
+
+/* ############################### */
+
+
+.frame-3{
+	padding-top: 10px;
+	height: 610px;
+	margin: 0px;
+	
+}
+.inframe-3{
+	margin: 10px;
+	height: 550px;
+	margin-left: 30px;
+	margin-right: 30px; 	
+}
+
+.feed-title-3 {
+	font-family: sans-serif;
+	color: black;
+	font-size: 20px;
+	text-align: justify-all;
+	height: 100px;
+	overflow: hidden;
+	
+}
+
+.thumb-3 {
+    display: inline-block;
+    overflow:hidden;
+    width: 310px;
+    height: 310px;
+    background-position: center center;
+    background-size: cover;
+    
+}
+
+
+/* ############################### */
+
+
+
+.frame-4{
+	padding-top: 10px;
+	height: 560px;
+	margin: 0px;
+}
+
+.inframe-4{
+	margin: 10px;
+	height: 500px;
+	margin-left: 30px;
+	margin-right: 30px; 
+	
+}
+
+.thumb-4 {
+    display: inline-block;
+    overflow: hidden;
+    width: 212px;
+    height: 212px;
+    background-position: center center;
+    background-size: cover;
+    
+}
+.feed-title-4 {
+	font-family: sans-serif;
+	color: black;
+	font-size: 20px;
+	text-align: justify-all;
+	height: 90px;
+	overflow: hidden;
+	
+}
+
+
+
+/* ############################### */
+
+
+
+.frame-2{
+	padding-top: 10px;
+	height: 310px;
+	margin: 0px;	
+}
+
+.inframe-2{
+	margin: 10px;
+	height: 250px;
+	margin-left: 30px;
+	margin-right: 30px; 
+	
+}
+
+.thumb-2 {
+    display: inline-block;
+    overflow: hidden;
+    width: 212px;
+    height: 212px;
+    background-position: center center;
+    background-size: cover;
+    
+}
+.feed-title-2 {
+	font-family: sans-serif;
+	color: black;
+	font-size: 20px;
+	text-align: justify-all;
+	height: 90px;
+	overflow: hidden;
+	
+}
+
+
+/* ############################### */
+
+.mid{
+	margin: 10px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	background-color: hsla(0,100%,100%,0.9)
+
+}
+
+
+.feed-summary {
+	color: black;
+	font-size: 15px;
+	text-align: justify-all;
+}
+
+.feed-source {
+	font-size: 15px;
+	color: dimgrey;
+}
+
+/* ############################### */
+
+.header{
+	height: 100px;
+}

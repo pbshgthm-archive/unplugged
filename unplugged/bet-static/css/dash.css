@@ -1,0 +1,516 @@
+	.navbar{
+		height: 30px!;
+		background-color:white;
+		padding: 20px;
+	}
+	.navbar-brand{
+		margin-left: 30px;
+		font-size: 42px;
+	}
+	.nav{
+
+		padding-right: 80px;
+		font-size: 25px;
+		
+	}
+	.banner{
+		
+		height: 500px; 
+		background-attachment: fixed;
+    	background-position: center;
+    	background-repeat: no-repeat;
+    	background-size: cover; 
+    	position: relative;
+    	z-index: 0;
+    	width: 100% !important;
+    	
+	}
+
+	.banner-profile{
+		
+		height: 570px; 
+		background-attachment: fixed;
+    	background-position: center;
+    	background-repeat: no-repeat;
+    	background-size: cover; 
+    	position: relative;
+    	z-index: 0;
+    	width: 100% !important;
+    	
+	}
+
+	.banner-greet{
+		
+		height: 700px;
+		background-attachment: fixed;
+    	background-position: center;
+    	background-repeat: no-repeat;
+    	background-size: cover; 
+    	position: relative;
+    	z-index: 0;
+    	width: 100% !important;
+    	
+	}
+
+	.greet-text{
+		text-align: center;
+		padding-top: 250px;
+		font-size: 85px;
+		color: white;
+		text-shadow: 10px 10px 50px black;
+		
+		}
+	.banner-text{
+		text-align: center;
+		padding-top: 175px;
+		font-size: 85px;
+		color: black;
+		text-shadow: 5px 5px 30px white;"
+		
+		}
+
+	.footer-text{
+		text-align: center;
+		padding-top: 150px;
+		font-size: 60px;
+		color: white;
+		
+		}
+
+	.panel{
+		background-color: white;
+		padding-top: 30px;
+		padding-bottom: 30px;
+		margin-bottom: 0px !important
+	}
+	.discover-panel{
+		background-color: white;
+		padding-top: 30px;
+		padding-bottom: 30px;
+		margin-bottom: 50px !important
+
+	}
+	.panel-item{
+
+		align-content: center;
+		overflow:hidden;
+    	width: 150px;
+    	height: 150px;
+    	background-position: center center;
+    	background-size: cover;
+    	border-radius: 50%;
+    	margin: 0 auto;
+    	padding: 0px !important;
+	}
+	.nav-profile{
+		margin-left: 50px;
+		font-size: 35px;
+	}
+
+	.nav-pro-img{
+
+		align-content: center;
+		overflow:hidden;
+    	width: 70px;
+    	height: 70px;
+    	background-position: center center;
+    	background-size: cover;
+    	border-radius: 50%;
+    	margin: 0 auto;
+    	margin-top: 0px;
+
+	}
+
+	.nav-profile-img{
+
+		padding: 0px !important;
+		height :65px;
+		width: 55px;
+		bottom: 0px;
+		right: 10px;
+		margin-left: 10px;
+
+	}
+	
+	.feed-three{
+		padding: 20px;
+
+	}
+
+	.feed-three-image{
+		width:100%;
+		height: 350px;
+		display: inline-block;
+    	overflow:hidden;
+    	background-position: center center;
+    	background-size: cover;
+    
+	}
+	.feed-three-title{
+		padding: 20px;
+		width:100%;
+		text-align: justify-all;
+		height: 100px;
+		overflow: hidden;
+		font-size: 25px;
+	}
+	.feed-three-meta{
+		padding-left: 20px;
+		width:100%;
+		text-align: justify-all;
+		overflow: hidden;
+		font-size: 20px;
+	
+	}
+	.feed-three-summary{
+		padding-left: 20px;
+		width:100%;
+		height: 300px;
+		text-align: justify-all;
+		height: 150px;
+		overflow: hidden;
+		font-size: 22px;
+	}
+	.feed-three-content{
+		padding-left: 10px;
+		padding-right: 20px;
+		padding-top: 30px;
+		margin-bottom: 20px;
+	}
+	.feed-two{
+		padding: 20px;
+	}
+	.feed-two-image{
+		width:100%;
+		height: 300px;
+		display: inline-block;
+    	overflow:hidden;
+    	background-position: center center;
+    	background-size: cover;
+    
+	}
+	.feed-two-title{
+		padding: 20px;
+		width:100%;
+		text-align: justify-all;
+		height: 100px;
+		overflow: hidden;
+		font-size: 25px;
+	}
+	.feed-two-meta{
+		padding-left: 20px;
+		width:100%;
+		text-align: justify-all;
+		overflow: hidden;
+		font-size: 20px;
+	
+	}
+	.feed-two-summary{
+		padding-left: 20px;
+		width:100%;
+		height: 300px;
+		text-align: justify-all;
+		height: 150px;
+		overflow: hidden;
+		font-size: 22px;
+	}
+	.feed-two-content{
+		padding-top: 30px;
+		padding-left: 10px;
+		padding-right: 20px;
+		margin-bottom: 30px;
+	}
+	.feed-one{
+		padding: 20px;
+	}
+	.feed-one-image{
+		width:100%;
+		height: 450px;
+		display: inline-block;
+    	overflow:hidden;
+    	background-position: center center;
+    	background-size: cover;
+    
+	}
+	.feed-one-title{
+		padding: 20px;
+		width:100%;
+		text-align: justify-all;
+		height: 130px;
+		overflow: hidden;
+		font-size: 35px;
+	}
+	.feed-one-meta{
+		padding-left: 20px;
+		width:100%;
+		text-align: justify-all;
+		overflow: hidden;
+		font-size: 28px;
+		margin-top: 30px;
+		margin-bottom: 30px;
+	
+	}
+	.feed-one-summary{
+		padding-left: 20px;
+		width:100%;
+		height: 300px;
+		text-align: justify-all;
+		overflow: hidden;
+		font-size: 27px;
+	}
+	.feed-one-content{
+		padding-top: 30px;
+		padding-left: 10px;
+		padding-right: 20px;
+	}
+	.feed-two-vert{
+		padding: 20px;
+	}
+	.feed-two-vert-image{
+		width:100%;
+		height: 450px;
+		display: inline-block;
+    	overflow:hidden;
+    	background-position: center center;
+    	background-size: cover;
+    
+	}
+	.feed-two-vert-title{
+		padding: 20px;
+		width:100%;
+		text-align: justify-all;
+		height: 130px;
+		overflow: hidden;
+		font-size: 35px;
+	}
+	.feed-two-vert-meta{
+		padding-left: 20px;
+		width:100%;
+		text-align: justify-all;
+		overflow: hidden;
+		font-size: 28px;
+		margin-top: 30px;
+		margin-bottom: 30px;
+	
+	}
+	.feed-two-vert-summary{
+		padding-left: 20px;
+		width:100%;
+		height: 300px;
+		text-align: justify-all;
+		overflow: hidden;
+		font-size: 27px;
+	}
+	.feed-two-vert-content{
+		padding-top: 30px;
+		padding-left: 10px;
+		padding-right: 20px;
+	}
+	.feed{
+
+		padding: 60px;
+		height: 1650px;
+		margin-bottom: 90px;
+	}
+
+	.canvas{
+
+		padding: 60px;
+		height: 100%;
+		margin-bottom: 90px;
+	}
+	.follow-topic{
+
+		padding: 60px;
+		height: 800px;
+		margin-bottom: 90px;
+	}
+	.circles{
+
+		padding-left: 60px;
+		padding-right: 60px;
+		height: 1850px;
+	}
+
+	.follow-circles{
+		padding-top: 50px;
+		padding-left: 60px;
+		padding-right: 60px;
+		height: 1200px;
+	}
+
+	.circle-content{
+
+		align-content: center;
+		overflow:hidden;
+    	width: 250px;
+    	height: 250px;
+    	background-position: center center;
+    	background-size: cover;
+    	border-radius: 50%;
+    	margin: 0 auto;
+    	margin-top: 30px;
+    	display: inline-block;
+    	opacity: 1;
+	}
+
+	.circle-content:hover{
+		opacity: 0.9;
+    	box-shadow: 0px 0px 5px;
+
+	}
+	.topic-list{
+		padding-right: 10px;
+		padding-left: 10px;
+	}
+	.topic{
+		align-content: center;
+		overflow:hidden;
+    	height: 150px;
+    	background-position: center center;
+    	background-size: cover;
+    	margin: 0 auto;
+    	margin-top: 10px !important;
+
+	}
+
+	input[type=text] {
+    	width: 100%;
+    	box-sizing: border-box;
+    	border: 2px solid #ccc;
+    	border-radius: 50px;
+    	font-size: 40px;
+    	background-color: white;
+	    background-image: url('../assets/search1.png');
+    	background-position: 30px 22px; 
+    	background-size: 35px 35px;
+    	background-repeat: no-repeat;
+    	padding: 12px 20px 12px 80px;
+    -webkit-transition: width 0.4s ease-in-out;
+    	transition: width 0.4s ease-in-out;
+    -webkit-transition: margin-left 0.4s ease-in-out;
+    	transition: margin-left 0.4s ease-in-out;
+	}
+
+	input[type=text]:focus {
+    	width: 100%;
+    	box-shadow: 0px 0px 10px #00ffff;
+    	margin-left: 0px;
+    	outline: none;
+	}
+	.search{
+		padding-left: 400px;
+		padding-right: 400px;
+		padding-top: 100px;
+		padding-bottom: 70px;
+	}
+	.topic-content {
+    display: inline-block;
+    overflow:hidden;
+    width: 100%;
+    height: 210px;
+    background-position: center center;
+    background-size: cover;
+    opacity: 1;   
+    padding-left: 10px;
+    padding-right: 10px;
+ 
+    }
+
+    .charecter-1{
+    margin-top: 150px;
+    color: white;
+    font-size: 30px;
+    width: 100%;
+    background-color: hsla(0,100%,00%,0.7);
+	}
+	.charecter{
+    font-size: 30px;
+
+    }
+
+
+    .topic-content:hover {
+    
+    opacity: 0.95;
+    box-shadow: 3px 3px 3px;
+    text-decoration-color: black;
+    
+
+	}
+	.discover-topic{
+		padding-left: 65px;
+		padding-right:65px;
+	}
+	.topic-item{
+		padding-left: 3px;
+		padding-right: 3px;
+	}
+
+	button{
+		padding: none;
+		border: none;
+		background: none;
+		outline: none;
+	}
+	.profile-img{
+		align-content: center;
+		overflow:hidden;
+    	width: 450px;
+    	height: 450px;
+    	background-position: center center;
+    	position: absolute;
+    	top: -280px;
+    	left: 695px;
+    	background-size: cover;
+    	margin: 0 auto;
+    	z-index: 1;
+    	border-radius: 50%;
+	}
+
+	
+	.profile{
+		padding: 30px;
+		color: black;
+		text-align: center;
+		background-color: #ffd9b3;
+	}
+	.profile-name{
+		font-size: 80px;
+		color: black;
+		text-align: center;
+	}
+
+	.profile-handle{
+		font-size: 50px;
+		color: black;
+		text-align: center;
+		
+	}
+	.profile-quote{
+		margin-top: 30px;
+		font-size: 40px;
+		color: black;
+		text-align: center;
+		
+	}
+	.profile-about{
+		margin-top: 60px;
+		font-size: 30px;
+		color: black;
+		text-align: justify;
+		padding-left: 350px;
+		padding-right: 350px;
+		margin-bottom: 60px;
+		
+	}
+	
+	.profile-misc{
+		
+		font-size: 30px;
+		color: black;
+		text-align: left;
+		padding-left: 350px;
+		padding-right: 350px;
+		
+	}
