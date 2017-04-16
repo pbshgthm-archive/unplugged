@@ -139,3 +139,5 @@ def editComent(comment_id):
     db.session.commit()
     return redirect("/"+str(current_comment.article_id)+"/"+str(current_comment.user_id)+"/viewArticle")
     
+
+
