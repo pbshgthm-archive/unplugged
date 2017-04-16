@@ -88,13 +88,14 @@ def generate_secret_key():
 @mod_article.route('/canvas/secret' , methods = ['GET','POST'])
 
 def canvas_secret():
-    article_id = request.args["article_id"]
-    current_article=Article.query.filter_by(article_id=article_id).first()
-
+    
 #--------------------------------GET----------------------------------------------------    
     if request.method=="GET":
-        response = {}
         
+        response = {}
+        article_id = request.args["article_id"]
+        current_article=Article.query.filter_by(article_id=article_id).first()
+
         
         if user_logged_in(current_article.user_id):
             global secret_key
@@ -135,30 +136,28 @@ def canvas_secret():
             db.session.commit()
             return "success"
 
-            
-            
-
-
-            
-            
-
 # @mod_article.route('/canvas',methods = ['POST'])
 # def canvas_renderer():
 #     user_id = request.form["user_id"]
 #     article_id = request.form["article_id"]
 
 #testing purposes
-@mod_article.route('/canvas',methods = ['GET'])
+@mod_article.route('/canvas/<article_id>',methods = ['GET'])
 def canvas_renderer():
     user_id = request.args["user_id"]
     article_id = request.args["article_id"]
     print("USER ID", user_id, "  ARTICLE_ID ",article_id)
     #if article does not exist
-    if (article_id == 0):
+    if (article_id == None):
         print("NO ARTICLE!!!!!!!!!!!!!")
         article_id = initialise_article(user_id)
+    else:
+        print(article_id)
 
     return render_template("canvas.html",article_id = article_id)
+
+
+@mod_article.route('/canvas', methods = "GET")
 
 #-----------------------------------------------------------------------------------------
 
