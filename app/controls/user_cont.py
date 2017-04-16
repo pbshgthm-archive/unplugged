@@ -8,10 +8,10 @@ from app import db
 mod_user = Blueprint('users', __name__)
 
 
-@mod_user.route('/<handle>')
-def viewprofile(handle):
-	user= User.query.filter_by(handle=handle).first()
-	return render_template("profile.html",user=user)
+# @mod_user.route('/<handle>')
+# def viewprofile(handle):
+# 	user= User.query.filter_by(handle=handle).first()
+#	return render_template("profile.html",user=user)
 
 @mod_user.route('/allusers')
 def allusers():

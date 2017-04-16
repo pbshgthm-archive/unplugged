@@ -19,8 +19,9 @@ db = SQLAlchemy(app)
 
 from app.controls.user_cont import mod_user
 from app.controls.frame_cont import mod_frame
-
+from app.controls.search import mod_perform_search
 app.register_blueprint(mod_user)
 app.register_blueprint(mod_frame)
+app.register_blueprint(mod_perform_search)
 
 db.create_all()
