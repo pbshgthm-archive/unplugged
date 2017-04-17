@@ -13,6 +13,28 @@
 	<script type="text/javascript" src="{{path}}static/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="{{path}}static/js/jquery.bxslider.min.js"></script>
 	<script>
+	 var searchs = function(a) {
+	     console.log(a);
+	     $.ajax({
+		 url:"/search",
+		 method:'POST',
+		 data:JSON.stringify({string:a}),
+		 dataType:'json',
+		 contentType:'application/json',
+		 success: function(data) {
+		     console.log("sd"+data[2].length);
+		     for(var i = 0; i<15 && i<data[2].length;++i)
+			 {
+			     $(".charecter-1").eq(i).text(data[2][i].name);
+			     $(".topic-content").eq(i).css({"background-image":"url(/static/assets/topic/" + data[2][i].name + ".jpg)"});
+			     $(".topic-content").eq(i).val(data[2][i].id);
+			     console.log(data[2][i].distance+data[2][i].name);
+						   
+			 }
+		 }
+	     });	     
+	 }
+	 searchs("art")
 	 table = ['zero','one','two','three']
 	 var y;
 	 var highlights = function(a) {
@@ -69,7 +91,7 @@
 			   t = a.topics;
 			   highlights({value:t[0].toString()});
 			   var html = ''
-			   for(var i = 1; i<=a.topics.length && i<=5; ++i)
+			   for(var i = 1; i<=a.topics.length; ++i)
 			       {
 				   console.log(a.topics[i-1]);
 				   //					   $("."+"ccc"+i).eq(y).css({"background-image":"url(static/assets/circles/" + a.circle_image[i-1] +")"});
@@ -84,6 +106,10 @@
 				   html +="</div>        "
 			       }
 			   $(".highlight-list").html(html);
+			   console.log($("highlight-list").html());
+			   //run1();
+			   run2();
+			   run3();
 			   html = ''
 			   for(var j=1;j<=a.circle_image.length && j<=5; ++j)
 			       {
@@ -99,8 +125,10 @@
 				   html += "</div>";
 				   html += "</a>";
 				   console.log(html);
+				   
 			       }
-			   $(".circle-slider").eq(0).html(html);			    
+			   $(".circle-slider").eq(0).html(html);
+			   
 		       });
 	 }
 
@@ -122,9 +150,9 @@
 		<ul class="nav navbar-nav pull-right">
 		    <li><a href="#feeds">Feeds</a></li>
 		    <li><a href="#circles">Circles</a></li>
-		    <li><a href="#discover">Discover</a></li>      
+		    <li><a href="#discover-topic">Discover</a></li>      
 		    <li><a href="#canvas">Canvas</a></li>
-		    <li><a href="">Read</a></li>
+		    <li><a href="/feed">Read</a></li>
 		    <li class="nav-profile" id ="user_name"><a href="#">Nick</a></li>
 		    <li><div class="nav-profile-img"><a href="#">
 			<div class="nav-pro-img" id="nav-pro"></div>
@@ -458,7 +486,7 @@
 
 		<div class="search">
 		    <form>
-			<input class="discover" type="text" name="search" placeholder=" Search..">
+			<input class="discover" type="text" name="search" placeholder=" Search.." onkeyup="searchs(this.value)">
 		    </form>
 		</div>
 
@@ -482,21 +510,21 @@
 			<div class="col-md-1"></div>
 			
 			<div class="col-md-2 topic-item">
-			    <div class="topic-content" style="background-image: url('{{path}}static/assets/topic/police.jpg');"><h3 class="charecter-1" align=center>Police Dpt.</h3></div>
+			    <div class="topic-content" onclick="func2(this);" style="background-image: url('{{path}}static/assets/topic/police.jpg');"><div class="up" ><li class="fa fa-check fa-2x" onclick="func1(this);"></li></div><h3 class="charecter-1" align=center>Police Dpt.</h3></div>
 			</div>
 			<div class="col-md-2 topic-item">
-			    <div class="topic-content" style="background-image: url('{{path}}static/assets/topic/fox.jpg');"><h3 class="charecter-1" align=center>Foxes</h3></div>
+			    <div class="topic-content" style="background-image: url('{{path}}static/assets/topic/fox.jpg');"><div class="up"><li class="fa fa-plus fa-2x"></li></div><h3 class="charecter-1" align=center>Foxes</h3></div>
 			</div>        
 			<div class="col-md-2 topic-item">
-			    <div class="topic-content" style="background-image: url('{{path}}static/assets/topic/magic.jpg');"><h3 class="charecter-1" align=center>Magic</h3></div>
+			    <div class="topic-content" style="background-image: url('{{path}}static/assets/topic/magic.jpg');"><div class="up "><li class="fa fa-plus fa-2x"></li></div><h3 class="charecter-1" align=center>Magic</h3></div>
 			</div>        
 			<div class="col-md-2 topic-item">
-			    <div class="topic-content" style="background-image: url('{{path}}static/assets/topic/rabbit.jpg');"><h3 class="charecter-1" align=center>Rabbits</h3></div>
+			    <div class="topic-content" style="background-image: url('{{path}}static/assets/topic/rabbit.jpg');"><div class="up "><li class="fa fa-check fa-2x"></li></div><h3 class="charecter-1" align=center>Rabbits</h3></div>
 			</div>        
 			<div class="col-md-2 topic-item">
-			    <div class="topic-content" style="background-image: url('{{path}}static/assets/topic/night.jpg');"><h3 class="charecter-1" align=center>Nightlife</h3></div>
-			</div>
-
+			    <div class="topic-content" style="background-image: url('{{path}}static/assets/topic/night.jpg');"><div class="up "><li class="fa fa-check fa-2x"></li></div><h3 class="charecter-1" align=center>Rabbits</h3></div>
+			</div>        
+			
 			<div class="col-md-1"></div>
 		    </div>
 
@@ -505,43 +533,44 @@
 			<div class="col-md-1"></div>
 			
 			<div class="col-md-2 topic-item">
-			    <div class="topic-content" style="background-image: url('{{path}}static/assets/topic/drama.jpg');"><h3 class="charecter-1" align=center>Acting</h3></div>
-			</div>        
-			<div class="col-md-2 topic-item">
-			    <div class="topic-content" style="background-image: url('{{path}}static/assets/topic/city.jpg');"><h3 class="charecter-1" align=center>Metro City</h3></div>
-			</div>        
-			<div class="col-md-2 topic-item">
-			    <div class="topic-content" style="background-image: url('{{path}}static/assets/topic/animal-protection.jpg');"><h3 class="charecter-1" align=center>Animal Protection</h3></div>
-			</div>        
-			<div class="col-md-2 topic-item">
-			    <div class="topic-content" style="background-image: url('{{path}}static/assets/topic/law.jpg');"><h3 class="charecter-1" align=center>Justice</h3></div>
-			</div>        
-			<div class="col-md-2 topic-item">
-			    <div class="topic-content" style="background-image: url('{{path}}static/assets/topic/icecream.jpg');"><h3 class="charecter-1" align=center>Ice Cream</h3></div>
+			    <div class="topic-content" style="background-image: url('{{path}}static/assets/topic/police.jpg');"><div class="up"><li class="fa fa-check fa-2x"></li></div><h3 class="charecter-1" align=center>Police Dpt.</h3></div>
 			</div>
-
+			<div class="col-md-2 topic-item">
+			    <div class="topic-content" style="background-image: url('{{path}}static/assets/topic/fox.jpg');"><div class="up"><li class="fa fa-plus fa-2x"></li></div><h3 class="charecter-1" align=center>Foxes</h3></div>
+			</div>        
+			<div class="col-md-2 topic-item">
+			    <div class="topic-content" style="background-image: url('{{path}}static/assets/topic/magic.jpg');"><div class="up "><li class="fa fa-plus fa-2x"></li></div><h3 class="charecter-1" align=center>Magic</h3></div>
+			</div>        
+			<div class="col-md-2 topic-item">
+			    <div class="topic-content" style="background-image: url('{{path}}static/assets/topic/rabbit.jpg');"><div class="up "><li class="fa fa-check fa-2x"></li></div><h3 class="charecter-1" align=center>Rabbits</h3></div>
+			</div>        
+			<div class="col-md-2 topic-item">
+			    <div class="topic-content" style="background-image: url('{{path}}static/assets/topic/night.jpg');"><div class="up "><li class="fa fa-check fa-2x"></li></div><h3 class="charecter-1" align=center>Rabbits</h3></div>
+			</div>        
+			
 			<div class="col-md-1"></div>
 		    </div>
+
 
 		    <div class="col-md-12 ">
 			<div class="col-md-1"></div>
 			
 			<div class="col-md-2 topic-item">
-			    <div class="topic-content" style="background-image: url('{{path}}static/assets/topic/wwf.jpg');"><h3 class="charecter-1" align=center>WWF</h3></div>
-			</div>        
-			<div class="col-md-2 topic-item">
-			    <div class="topic-content" style="background-image: url('{{path}}static/assets/topic/cityhall.jpg');"><h3 class="charecter-1" align=center>City Hall</h3></div>
-			</div>        
-			<div class="col-md-2 topic-item">
-			    <div class="topic-content" style="background-image: url('{{path}}static/assets/topic/pun.jpg');"><h3 class="charecter-1" align=center>Pun</h3></div>
-			</div>        
-			<div class="col-md-2 topic-item">
-			    <div class="topic-content" style="background-image: url('{{path}}static/assets/topic/friendship.jpg');"><h3 class="charecter-1" align=center>Friendship</h3></div>
-			</div>        
-			<div class="col-md-2 topic-item">
-			    <div class="topic-content" style="background-image: url('{{path}}static/assets/topic/money.jpg');"><h3 class="charecter-1" align=center>Money</h3></div>
+			    <div class="topic-content" style="background-image: url('{{path}}static/assets/topic/police.jpg');"><div class="up"><li class="fa fa-check fa-2x"></li></div><h3 class="charecter-1" align=center>Police Dpt.</h3></div>
 			</div>
-
+			<div class="col-md-2 topic-item">
+			    <div class="topic-content" style="background-image: url('{{path}}static/assets/topic/fox.jpg');"><div class="up"><li class="fa fa-plus fa-2x"></li></div><h3 class="charecter-1" align=center>Foxes</h3></div>
+			</div>        
+			<div class="col-md-2 topic-item">
+			    <div class="topic-content" style="background-image: url('{{path}}static/assets/topic/magic.jpg');"><div class="up "><li class="fa fa-plus fa-2x"></li></div><h3 class="charecter-1" align=center>Magic</h3></div>
+			</div>        
+			<div class="col-md-2 topic-item">
+			    <div class="topic-content" style="background-image: url('{{path}}static/assets/topic/rabbit.jpg');"><div class="up "><li class="fa fa-check fa-2x"></li></div><h3 class="charecter-1" align=center>Rabbits</h3></div>
+			</div>        
+			<div class="col-md-2 topic-item">
+			    <div class="topic-content" style="background-image: url('{{path}}static/assets/topic/night.jpg');"><div class="up "><li class="fa fa-check fa-2x"></li></div><h3 class="charecter-1" align=center>Rabbits</h3></div>
+			</div>        
+			
 			<div class="col-md-1"></div>
 		    </div>
 		</div>
@@ -838,7 +867,57 @@
 	     },
 	 });
      }
+     $(document).ajaxComplete( function() {     
+	 $(document).ready(function(){
+	     $('.highlight-list').bxSlider({
+		 slideWidth: 300,
+		 minSlides: 6,
+		 maxSlides: 6,
+		 slideMargin: 5,
+		 moveSlides: 2
+	     });
+	     console.log("f");
+	 });
+     });
+     function run2() {
+	 
+	 
+	 $(document).ready(function(){
+	     $('.circle-slider').bxSlider({
+		 slideWidth: 300,
+		 minSlides: 6,
+		 maxSlides: 6,
+		 slideMargin: 5,
+		 moveSlides: 2
+	     });
+	 });
+     }
+     function run3() {
+	 $(document).ready(function(){
+	     $('.feed-slider').bxSlider({
+		 slideWidth: 1800,
+		 minSlides: 1,
+		 maxSlides: 1,
+		 slideMargin: 5,
+		 moveSlides: 1,
+		 auto: true
+	     });
+	 });
+     }
+     
+     function func1(){
+	 if (!e) var e = window.event;
+	 e.cancelBubble = true;
+	 if (e.stopPropagation) e.stopPropagation();
+	 console.log("1");
+     }
 
+     function func2(a){
+	 console.log(a);
+//	 window.location.href(a);
+     }
+     discover('discover-circles')
+     
     </script>
 
 
