@@ -27,6 +27,7 @@ class Archive(db.Model):
         self.date = date
         self.time = time
         self.image = image
+        self.comments = ""
         
     def __repr__(self):
         return "{id : %r, title: %r ,link: %r,\
