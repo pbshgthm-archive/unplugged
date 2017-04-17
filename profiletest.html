@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html>
+    <head>
+	<title>Unplugged</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="{{path}}static/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="{{path}}static/css/unplugged.css">
+	<link rel="stylesheet" type="text/css" href="{{path}}static/css/font-awesome.css">   
+
+	<link rel="stylesheet" type="text/css" href="{{path}}static/css/jquery.bxslider.min.css">   
+	<script type="text/javascript" src="{{path}}static/js/jquery-3.2.0.min.js"></script>
+	<script type="text/javascript" src="{{path}}static/js/unplugged.js"></script>
+	<script type="text/javascript" src="{{path}}static/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="{{path}}static/js/jquery.bxslider.min.js"></script>
+	<script>
+	 table = ['zero','one','two','three']
+	 var highlights = function(a) {
+	     var p = {id:a.value}
+	     console.log(a.value + "ds");
+	     $.ajax({
+		 url:"http://127.0.0.1:8000/feedi",
+		 type:'POST',
+		 data:JSON.stringify(p),
+		 contentType:'application/json',
+		 dataType:'json',
+		 success: function(data) {
+		     console.log(data.length+'p');
+		     html = ''
+		     for(var i=1;i<=data.length && i<=5;++i)
+			 {
+			     $("."+"t"+i).text(data[i-1].title);
+			     $("."+"m"+i).text(data[i-1].link);
+			     $("."+"s"+i).text(data[i-1].summary);
+			     var p =  data[i-1].image
+			     $("."+"i"+i).css('background-image',"url("+p+")");
+			     $(".feed-one-content").eq(i-1).attr('href',p);
+			 }
+		 }});
+	 }
+	 var t;
+	 function update_values() {
+	     $.getJSON("/secret",
+		       function(a) {
+			   console.log();
+			   $("title").html(a.name);
+			   $(".profile-name").text(a.name);
+			   $(".profile-quote").text(a.tagline);
+			   $(".profile-handle").text(a.handle);
+			   $("#place").html('&nbsp;&nbsp;'+a.place);
+			   $("#email").html('&nbsp;&nbsp;'+a.email);
+			   $("#user_name").text(a.name);
+			   p  = "url('static/profile/" + a.picture + "')"
+			   $("#pro_pic").css('background-image',p);
+			   $("#nav-pro").css('background-image',p);
+			   p = "url('static/cover/" + a.cover + "')"
+			   console.log(a.cover);
+			   $("#top").css('background-image',p);
+			   console.log(a.topics);
+			   t = a.topics;
+			   highlights({value:t[0].toString()});
+			   var html = ''
+			   for(var i = 1; i<=a.topics.length && i<=5; ++i)
+			       {
+				   console.log(a.topics[i-1]);
+				   //					   $("."+"ccc"+i).eq(y).css({"background-image":"url(static/assets/circles/" + a.circle_image[i-1] +")"});
+				   html +='<div class="slide topic-item">';
+				   html +='<button class="topic" value="'
+				   html += a.topics[i-1];
+				   html +='" onclick="highlights(this);" style="background-image: url(\'{{path}}static/assets/topic/';
+				   html += a.t_name[i-1]+".jpg";
+				   html += "');\"><h3 class=\"charecter-1-topic aaa1\" align=center>"
+				   html += a.t_name[i-1];
+				   html += "</h3></button>"
+				   html +="</div>        "
+			       }
+			   $(".highlight-list").html(html);
+			   html = ''
+			   for(var j=1;j<=a.circle_image.length && j<=5; ++j)
+			       {
+				   html += "<a href="
+				   html += '"/circle/'+a.circle_id[j-1] +'">';
+				   html += ' <div class="slide">';
+				   html += '<div class="circle-list">';
+				   html+='<div class="panel-item ccc3" style="background-image: url(\'static/assets/circles/';
+				   html += a.circle_image[j-1];
+				   html += "');\"";
+				   html += "></div>";						   
+				   html += "</div>";
+				   html += "</div>";
+				   html += "</a>";
+				   console.log(html);
+			       }
+			   $(".circle-slider").eq(0).html(html);			    
+		       });
+	 }
+
+	 update_values();
+
+	</script>
+
+    </head>
+    <body>
+
+
+
+
+	<nav class="navbar navbar-fixed-top">
+	    <div class="container-fluid">
+		<div class="navbar-header">
+		    <a class="navbar-brand" href="#">Unplugged</a>
+		</div>
+		<ul class="nav navbar-nav pull-right">
+		    <li><a href="#feeds">Feeds</a></li>
+		    <li><a href="#circles">Circles</a></li>
+		    <li><a href="#discover">Discover</a></li>      
+		    <li><a href="#canvas">Canvas</a></li>
+		    <li><a href="">Read</a></li>
+		    <li class="nav-profile" id ="user_name"><a href="#">Nick</a></li>
+		    <li><div class="nav-profile-img"><a href="#">
+			<div class="nav-pro-img" id="nav-pro"></div>
+		    </a></div></li>
+		    <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">
+			<div class="fa fa-bars" style="color: grey; font-size: 30px;"></div>
+			<ul class="dropdown-menu">
+
+			    <li><a href="#">Account</a></li>
+			    <li><a href="/create_circle">Create circle</a></li>
+			    <li><a href="/logout">Logout</a></li>
+			    
+			</ul>
+		    </li>
+
+		</ul>
+	    </div>
+	</nav>
+
+
+
+
+
+	<div id="top" class="banner-profile container-fluid"> </div>
+
+	<div class="col-md-3"> <div class="profile-img" id="pro_pic"></div></div>
+	<div class="profile">
+	    <div style="height: 150px;"></div>
+	    <div class="profile-name "> Nick Wilde</div>
+	    <div class="profile-handle"> @nickwilde </div>
+	    <div class="profile-quote">  It's called a hustle, sweetheart. </div>
+	    <div class="profile-break">_______________________</div>
+	    <div class="profile-misc"> 
+		<div id="place" class="fa fa-university" >&nbsp;&nbsp;Zootopia Police Department</div><br/>
+		<div id="email" class="fa fa-envelope " >&nbsp;&nbsp;nickwilde@imawesome.zp</div>
+	    </div>
+	    
+
+	</div>
+
+
+
+	<div id="feeds" class="banner container-fluid" style="background-image: url('{{path}}static/assets/feed2.jpg');"> 
+	    <div class="banner-text">Feeds</div>
+	</div>
+
+
+
+	<div class="container-fluid">
+
+	    <div class="highlight-list topic-list" id="gh">	
+
+	    </div>
+
+	</div>
+
+
+	<div class="container-fluid feed">
+	    
+
+	    <div class="feed-slider">
+
+		<div class="slide">
+		    <section>
+			<div class="feed-one">
+			    
+			    <div class="feed-one-content">
+				<dic class="col-md-8">
+				    <div class="feed-one-image i1" style="background-image: url('{{path}}static/assets/canvas/words.jpg');"></div>
+				</dic>
+
+
+
+
+
+				<div class="col-md-4">
+				    <p class="feed-one-title t1">What makes a programming language “cool?”</p>
+				    <p class="feed-one-meta m1">Programming . 9 march 2017</p>
+				    <p class="feed-one-summary s1">This should be a moment of triumph for University of Toronto computer science professor Geoffrey Hinton.The British-born 69-year-old is known as the godfather of the strain of artificial intelligence called neural networks </p>
+				</div>
+
+			    </div>
+
+			    
+			</div>
+		    </section>
+		</div>
+
+		<div class="slide">
+		    <section>
+			<div class="feed-one">
+			    
+			    <div class="feed-one-content">
+				<dic class="col-md-8">
+				    <div class="feed-one-image i2" style="background-image: url('{{path}}static/assets/canvas/fox.jpg');"></div>
+				</dic>
+
+
+
+
+
+				<div class="col-md-4">
+				    <p class="feed-one-title t2">What makes a programming language “cool?”</p>
+				    <p class="feed-one-meta m2">Programming . 9 march 2017</p>
+				    <p class="feed-one-summary s2">This should be a moment of triumph for University of Toronto computer science professor Geoffrey Hinton.The British-born 69-year-old is known as the godfather of the strain of artificial intelligence called neural networks </p>
+				</div>
+
+			    </div>
+
+			    
+			</div>
+		    </section>
+		</div>
+
+		<div class="slide">
+		    <section>
+			<div class="feed-one">
+			    
+			    <div class="feed-one-content">
+				<dic class="col-md-8">
+				    <div class="feed-one-image i3" style="background-image: url('{{path}}static/assets/canvas/police.jpg');"></div>
+				</dic>
+
+
+
+
+
+				<div class="col-md-4">
+				    <p class="feed-one-title t3">What makes a programming language “cool?”</p>
+				    <p class="feed-one-meta m3">Programming . 9 march 2017</p>
+				    <p class="feed-one-summary s3">This should be a moment of triumph for University of Toronto computer science professor Geoffrey Hinton.The British-born 69-year-old is known as the godfather of the strain of artificial intelligence called neural networks </p>
+				</div>
+
+			    </div>
+
+			    
+			</div>
+		    </section>
+		</div>
+
+
+		<div class="slide">
+		    <section>
+			<div class="feed-one">
+			    
+			    <div class="feed-one-content">
+				<dic class="col-md-8">
+				    <div class="feed-one-image i4" style="background-image: url('{{path}}static/assets/canvas/police.jpg');"></div>
+				</dic>
+
+
+
+
+
+				<div class="col-md-4">
+				    <p class="feed-one-title t4">What makes a programming language “cool?”</p>
+				    <p class="feed-one-meta m4">Programming . 9 march 2017</p>
+				    <p class="feed-one-summary s4">This should be a moment of triumph for University of Toronto computer science professor Geoffrey Hinton.The British-born 69-year-old is known as the godfather of the strain of artificial intelligence called neural networks </p>
+				</div>
+
+			    </div>
+
+			    
+			</div>
+		    </section>
+		</div>
+
+
+		<div class="slide">
+		    <section>
+			<div class="feed-one">
+			    
+			    <div class="feed-one-content">
+				<dic class="col-md-8">
+				    <div class="feed-one-image i5" style="background-image: url('{{path}}static/assets/canvas/police.jpg');"></div>
+				</dic>
+
+
+
+
+
+				<div class="col-md-4">
+				    <p class="feed-one-title t5">What makes a programming language “cool?”</p>
+				    <p class="feed-one-meta m5">Programming . 9 march 2017</p>
+				    <p class="feed-one-summary s5">This should be a moment of triumph for University of Toronto computer science professor Geoffrey Hinton.The British-born 69-year-old is known as the godfather of the strain of artificial intelligence called neural networks </p>
+				</div>
+
+			    </div>
+
+			    
+			</div>
+		    </section>
+		</div>
+
+
+
+		
+
+	    </div>
+
+	    <div id="circles" class="banner container-fluid" style="background-image: url('{{path}}static/assets/circles2.jpg');"> 
+		<div class="banner-text">Circles</div>
+	    </div>
+
+
+
+	    <div class="container-fluid">
+
+		<div class="circle-slider">
+		</div>
+
+	    </div>
+
+
+
+
+	    <div class="container-fluid circles">
+		
+
+		<section>
+		    <div class="feed-three">
+			
+			<div class="col-md-4 feed-three-content">
+			    <div class="feed-three-image ii1" style="background-image: url('{{path}}static/assets/canvas/words.jpg');"></div>
+
+			    <p class="feed-three-title tt1">What makes a programming language “cool?”</p>
+			    <p class="feed-three-meta mm1">Programming . 9 march 2017</p>
+			    <p class="feed-three-summary ss1">This should be a moment of triumph for University of Toronto computer science professor Geoffrey Hinton.The British-born 69-year-old is known as the godfather of the strain of artificial intelligence called neural networks </p>
+			    
+			</div>
+
+			<div class="col-md-4 feed-three-content" style="border-right: solid 1px; border-left: solid 1px ">
+			    <div class="feed-three-image ii2" style="background-image: url('{{path}}static/assets/canvas/fox.jpg');"></div>
+
+			    <p class="feed-three-title tt2">What makes a programming language “cool?”</p>
+			    <p class="feed-three-meta mm2">Programming . 9 march 2017</p>
+			    <p class="feed-three-summary ss2">This should be a moment of triumph for University of Toronto computer science professor Geoffrey Hinton.The British-born 69-year-old is known as the godfather of the strain of artificial intelligence called neural networks </p>
+			    
+			</div>
+
+			<div class="col-md-4 feed-three-content">
+			    <div class="feed-three-image ii3" style="background-image: url('{{path}}static/assets/canvas/police.jpg');"></div>
+
+			    <p class="feed-three-title tt3">What makes a programming language “cool?”</p>
+			    <p class="feed-three-meta mm3">Programming . 9 march 2017</p>
+			    <p class="feed-three-summary ss3">This should be a moment of triumph for University of Toronto computer science professor Geoffrey Hinton.The British-born 69-year-old is known as the godfather of the strain of artificial intelligence called neural networks </p>
+			    
+			</div>
+		    </div>
+		</section>
+
+
+
+		<section>
+		    <div class="feed-two">
+			
+			<div class="col-md-6 feed-two-content" style="border-right: solid 1px;">
+			    <dic class="col-md-6">
+				<div class="feed-two-image ii4" style="background-image: url('{{path}}static/assets/canvas/rabbits.jpg');"></div>
+			    </dic>
+
+			    <div class="col-md-6">
+				<p class="feed-two-title tt4">What makes a programming language “cool?”</p>
+				<p class="feed-two-meta mm4">Programming . 9 march 2017</p>
+				<p class="feed-two-summary ss4">This should be a moment of triumph for University of Toronto computer science professor Geoffrey Hinton.The British-born 69-year-old is known as the godfather of the strain of artificial intelligence called neural networks </p>
+			    </div>
+
+			</div>
+
+			<div class="col-md-6 feed-two-content">
+			    <dic class="col-md-6">
+				<div class="feed-two-image ii5" style="background-image: url('{{path}}static/assets/canvas/words.jpg');"></div>
+			    </dic>
+
+			    <div class="col-md-6">
+				<p class="feed-two-title tt5">What makes a programming language “cool?”</p>
+				<p class="feed-two-meta mm5">Programming . 9 march 2017</p>
+				<p class="feed-two-summary ss5">This should be a moment of triumph for University of Toronto computer science professor Geoffrey Hinton.The British-born 69-year-old is known as the godfather of the strain of artificial intelligence called neural networks </p>
+			    </div>
+
+			</div>
+		    </div>
+		</section>
+
+
+		<section>
+		    <div class="feed-three">
+			
+			<div class="col-md-4 feed-three-content">
+			    <div class="feed-three-image ii6" style="background-image: url('{{path}}static/assets/canvas/carrots.jpg');"></div>
+
+			    <p class="feed-three-title tt6">What makes a programming language “cool?”</p>
+			    <p class="feed-three-meta mm6">Programming . 9 march 2017</p>
+			    <p class="feed-three-summary ss6">This should be a moment of triumph for University of Toronto computer science professor Geoffrey Hinton.The British-born 69-year-old is known as the godfather of the strain of artificial intelligence called neural networks </p>
+			    
+			</div>
+
+			<div class="col-md-4 feed-three-content" style="border-right: solid 1px; border-left: solid 1px ">
+			    <div class="feed-three-image ii7" style="background-image: url('{{path}}static/assets/canvas/fox.jpg');"></div>
+
+			    <p class="feed-three-title tt7">What makes a programming language “cool?”</p>
+			    <p class="feed-three-meta mm7">Programming . 9 march 2017</p>
+			    <p class="feed-three-summary ss7">This should be a moment of triumph for University of Toronto computer science professor Geoffrey Hinton.The British-born 69-year-old is known as the godfather of the strain of artificial intelligence called neural networks </p>
+			    
+			</div>
+
+			<div class="col-md-4 feed-three-content">
+			    <div class="feed-three-image ii8" style="background-image: url('{{path}}static/assets/canvas/police.jpg');"></div>
+
+			    <p class="feed-three-title tt8">What makes a programming language “cool?”</p>
+			    <p class="feed-three-meta mm8">Programming . 9 march 2017</p>
+			    <p class="feed-three-summary ss8">This should be a moment of triumph for University of Toronto computer science professor Geoffrey Hinton.The British-born 69-year-old is known as the godfather of the strain of artificial intelligence called neural networks </p>
+			    
+			</div>
+		    </div>
+		</section>
+
+		
+		
+
+
+	    </div>
+
+
+	    <div id="discover" class="banner container-fluid" style="background-image: url('{{path}}static/assets/discover4.jpg');"> 
+		<div class="banner-text">Discover</div>
+	    </div>
+
+	    <div class="container-fluid"  style="height: 1650px;">
+		
+
+		<div class="search">
+		    <form>
+			<input class="discover" type="text" name="search" placeholder=" Search..">
+		    </form>
+		</div>
+
+
+		<div class="row discover-panel">
+		    <div class="col-md-4"> <button class="col-lg-4 col-md-offset-4" onclick="discover('discover-topic')">
+			<div class="panel-item" style="background-image: url('{{path}}static/assets/topic.png');"></div></button></div>
+		    <div class="col-md-4"> <button class="col-lg-4 col-md-offset-4" onclick="discover('discover-circles')">
+			<div class="panel-item" style="background-image: url('{{path}}static/assets/circle.png');"></div></button></div>
+		    <div class="col-md-4"> <button class="col-lg-4 col-md-offset-4" onclick="discover('discover-people')">
+			<div class="panel-item" style="background-image: url('{{path}}static/assets/user.png');"></div></button></div>
+		    
+		</div>
+
+
+
+
+		<div class="discover-topic">
+
+		    <div class="col-md-12 ">
+			<div class="col-md-1"></div>
+			
+			<div class="col-md-2 topic-item">
+			    <div class="topic-content" style="background-image: url('{{path}}static/assets/topic/police.jpg');"><h3 class="charecter-1" align=center>Police Dpt.</h3></div>
+			</div>
+			<div class="col-md-2 topic-item">
+			    <div class="topic-content" style="background-image: url('{{path}}static/assets/topic/fox.jpg');"><h3 class="charecter-1" align=center>Foxes</h3></div>
+			</div>        
+			<div class="col-md-2 topic-item">
+			    <div class="topic-content" style="background-image: url('{{path}}static/assets/topic/magic.jpg');"><h3 class="charecter-1" align=center>Magic</h3></div>
+			</div>        
+			<div class="col-md-2 topic-item">
+			    <div class="topic-content" style="background-image: url('{{path}}static/assets/topic/rabbit.jpg');"><h3 class="charecter-1" align=center>Rabbits</h3></div>
+			</div>        
+			<div class="col-md-2 topic-item">
+			    <div class="topic-content" style="background-image: url('{{path}}static/assets/topic/night.jpg');"><h3 class="charecter-1" align=center>Nightlife</h3></div>
+			</div>
+
+			<div class="col-md-1"></div>
+		    </div>
+
+
+		    <div class="col-md-12 ">
+			<div class="col-md-1"></div>
+			
+			<div class="col-md-2 topic-item">
+			    <div class="topic-content" style="background-image: url('{{path}}static/assets/topic/drama.jpg');"><h3 class="charecter-1" align=center>Acting</h3></div>
+			</div>        
+			<div class="col-md-2 topic-item">
+			    <div class="topic-content" style="background-image: url('{{path}}static/assets/topic/city.jpg');"><h3 class="charecter-1" align=center>Metro City</h3></div>
+			</div>        
+			<div class="col-md-2 topic-item">
+			    <div class="topic-content" style="background-image: url('{{path}}static/assets/topic/animal-protection.jpg');"><h3 class="charecter-1" align=center>Animal Protection</h3></div>
+			</div>        
+			<div class="col-md-2 topic-item">
+			    <div class="topic-content" style="background-image: url('{{path}}static/assets/topic/law.jpg');"><h3 class="charecter-1" align=center>Justice</h3></div>
+			</div>        
+			<div class="col-md-2 topic-item">
+			    <div class="topic-content" style="background-image: url('{{path}}static/assets/topic/icecream.jpg');"><h3 class="charecter-1" align=center>Ice Cream</h3></div>
+			</div>
+
+			<div class="col-md-1"></div>
+		    </div>
+
+		    <div class="col-md-12 ">
+			<div class="col-md-1"></div>
+			
+			<div class="col-md-2 topic-item">
+			    <div class="topic-content" style="background-image: url('{{path}}static/assets/topic/wwf.jpg');"><h3 class="charecter-1" align=center>WWF</h3></div>
+			</div>        
+			<div class="col-md-2 topic-item">
+			    <div class="topic-content" style="background-image: url('{{path}}static/assets/topic/cityhall.jpg');"><h3 class="charecter-1" align=center>City Hall</h3></div>
+			</div>        
+			<div class="col-md-2 topic-item">
+			    <div class="topic-content" style="background-image: url('{{path}}static/assets/topic/pun.jpg');"><h3 class="charecter-1" align=center>Pun</h3></div>
+			</div>        
+			<div class="col-md-2 topic-item">
+			    <div class="topic-content" style="background-image: url('{{path}}static/assets/topic/friendship.jpg');"><h3 class="charecter-1" align=center>Friendship</h3></div>
+			</div>        
+			<div class="col-md-2 topic-item">
+			    <div class="topic-content" style="background-image: url('{{path}}static/assets/topic/money.jpg');"><h3 class="charecter-1" align=center>Money</h3></div>
+			</div>
+
+			<div class="col-md-1"></div>
+		    </div>
+		</div>
+
+
+
+		<div class="discover-people">
+		    <div class="col-md-12">
+			<div class="col-md-1"></div>
+			<div class="col-md-10">
+			    <div class="col-lg-3" style="align-content: center;">
+				<div class="circle-content" style="background-image: url('greet.jpg');"></div>
+				<h3 class="charecter" align="center">Pearl Crew</h3>
+				
+			    </div>
+			    <div class="col-lg-3" style="align-content: center;">
+				<div class="circle-content" style="background-image: url('greet.jpg');"></div>
+				<h3 class="charecter" align="center">Lords</h3>
+				
+			    </div>
+			    <div class="col-lg-3" style="align-content: center;">
+				<div class="circle-content" style="background-image: url('greet.jpg');"></div>
+				<h3 class="charecter" align="center">Elizebth family</h3>
+				
+			    </div>
+			    <div class="col-lg-3" style="align-content: center;">
+				<div class="circle-content" style="background-image: url('greet.jpg');"></div>
+				<h3 class="charecter" align="center">Lenders</h3>
+				
+			    </div>
+			    <div class="col-lg-3" style="align-content: center;">
+				<div class="circle-content" style="background-image: url('greet.jpg');"></div>
+				<h3 class="charecter" align="center">Pirate club</h3>
+				
+			    </div>
+			    <div class="col-lg-3" style="align-content: center;">
+				<div class="circle-content" style="background-image: url('greet.jpg');"></div>
+				<h3 class="charecter" align="center">Isle dwellers</h3>
+				
+			    </div>
+			    <div class="col-lg-3" style="align-content: center;">
+				<div class="circle-content" style="background-image: url('greet.jpg');"></div>
+				<h3 class="charecter" align="center">Old crew</h3>
+				
+			    </div>
+			    <div class="col-lg-3" style="align-content: center;">
+				<div class="circle-content" style="background-image: url('greet.jpg');"></div>
+				<h3 class="charecter" align="center">Dead men</h3>
+				
+			    </div>
+			    <div class="col-lg-3" style="align-content: center;">
+				<div class="circle-content" style="background-image: url('greet.jpg');"></div>
+				<h3 class="charecter" align="center">E.I. Company</h3>
+				
+			    </div>
+			    <div class="col-lg-3" style="align-content: center;">
+				<div class="circle-content" style="background-image: url('greet.jpg');"></div>
+				<h3 class="charecter" align="center">E.I. Company</h3>
+				
+			    </div>
+			    <div class="col-lg-3" style="align-content: center;">
+				<div class="circle-content" style="background-image: url('greet.jpg');"></div>
+				<h3 class="charecter" align="center">E.I. Company</h3>
+				
+			    </div>
+			    <div class="col-lg-3" style="align-content: center;">
+				<div class="circle-content" style="background-image: url('greet.jpg');"></div>
+				<h3 class="charecter" align="center">E.I. Company</h3>
+				
+			    </div>
+			</div>
+		    </div>
+
+		</div>
+
+
+
+		<div class="discover-circles">
+		    <div class="col-md-12">
+			<div class="col-md-1"></div>
+			<div class="col-md-10">
+			    <div class="col-lg-3" style="align-content: center;">
+				<div class="circle-content" style="background-image: url('data.jpg');"></div>
+				<h3 class="charecter" align="center">Pearl Crew</h3>
+				
+			    </div>
+			    <div class="col-lg-3" style="align-content: center;">
+				<div class="circle-content" style="background-image: url('data.jpg');"></div>
+				<h3 class="charecter" align="center">Lords</h3>
+				
+			    </div>
+			    <div class="col-lg-3" style="align-content: center;">
+				<div class="circle-content" style="background-image: url('data.jpg');"></div>
+				<h3 class="charecter" align="center">Elizebth family</h3>
+				
+			    </div>
+			    <div class="col-lg-3" style="align-content: center;">
+				<div class="circle-content" style="background-image: url('data.jpg');"></div>
+				<h3 class="charecter" align="center">Lenders</h3>
+				
+			    </div>
+			    <div class="col-lg-3" style="align-content: center;">
+				<div class="circle-content" style="background-image: url('data.jpg');"></div>
+				<h3 class="charecter" align="center">Pirate club</h3>
+				
+			    </div>
+			    <div class="col-lg-3" style="align-content: center;">
+				<div class="circle-content" style="background-image: url('data.jpg');"></div>
+				<h3 class="charecter" align="center">Isle dwellers</h3>
+				
+			    </div>
+			    <div class="col-lg-3" style="align-content: center;">
+				<div class="circle-content" style="background-image: url('data.jpg');"></div>
+				<h3 class="charecter" align="center">Old crew</h3>
+				
+			    </div>
+			    <div class="col-lg-3" style="align-content: center;">
+				<div class="circle-content" style="background-image: url('data.jpg');"></div>
+				<h3 class="charecter" align="center">Dead men</h3>
+				
+			    </div>
+			    <div class="col-lg-3" style="align-content: center;">
+				<div class="circle-content" style="background-image: url('data.jpg');"></div>
+				<h3 class="charecter" align="center">E.I. Company</h3>
+				
+			    </div>
+			    <div class="col-lg-3" style="align-content: center;">
+				<div class="circle-content" style="background-image: url('data.jpg');"></div>
+				<h3 class="charecter" align="center">E.I. Company</h3>
+				
+			    </div>
+			    <div class="col-lg-3" style="align-content: center;">
+				<div class="circle-content" style="background-image: url('data.jpg');"></div>
+				<h3 class="charecter" align="center">E.I. Company</h3>
+				
+			    </div>
+			    <div class="col-lg-3" style="align-content: center;">
+				<div class="circle-content" style="background-image: url('data.jpg');"></div>
+				<h3 class="charecter" align="center">E.I. Company</h3>
+				
+			    </div>
+			</div>
+		    </div>
+
+
+		</div>
+
+	    </div>
+
+
+
+
+	    <div id="canvas" class="banner container-fluid" style="background-image: url('{{path}}static/assets/canvas-banner.jpg');"> 
+		<div class="banner-text" style="color: black; text-outline: 2px 2px white; text-shadow: 5px 5px 30px white;">Canvas</div>
+	    </div>
+
+	    <div class="container-fluid canvas">
+		
+		<section>
+		    <div class="feed-one">
+			
+			<div class="feed-one-content">
+			    <dic class="col-md-8">
+				<div class="feed-one-image" style="background-image: url('{{path}}static/assets/canvas/police.jpg');"></div>
+			    </dic>
+
+			    <div class="col-md-4">
+				<p class="feed-one-title">What makes a programming language “cool?”</p>
+				<p class="feed-one-meta">Programming . 9 march 2017</p>
+				<p class="feed-one-summary">This should be a moment of triumph for University of Toronto computer science professor Geoffrey Hinton.The British-born 69-year-old is known as the godfather of the strain of artificial intelligence called neural networks </p>
+			    </div>
+
+			</div>
+
+			
+		    </div>
+		</section>
+
+
+
+		<section>
+		    <div class="feed-three">
+			
+			<div class="col-md-4 feed-three-content">
+			    <div class="feed-three-image" style="background-image: url('{{path}}static/assets/canvas/fox.jpg');"></div>
+
+			    <p class="feed-three-title">What makes a programming language “cool?”</p>
+			    <p class="feed-three-meta">Programming . 9 march 2017</p>
+			    <p class="feed-three-summary">This should be a moment of triumph for University of Toronto computer science professor Geoffrey Hinton.The British-born 69-year-old is known as the godfather of the strain of artificial intelligence called neural networks </p>
+			    
+			</div>
+
+			<div class="col-md-4 feed-three-content" style="border-right: solid 1px; border-left: solid 1px ">
+			    <div class="feed-three-image" style="background-image: url('{{path}}static/assets/canvas/words.jpg');"></div>
+
+			    <p class="feed-three-title">What makes a programming language “cool?”</p>
+			    <p class="feed-three-meta">Programming . 9 march 2017</p>
+			    <p class="feed-three-summary">This should be a moment of triumph for University of Toronto computer science professor Geoffrey Hinton.The British-born 69-year-old is known as the godfather of the strain of artificial intelligence called neural networks </p>
+			    
+			</div>
+
+			<div class="col-md-4 feed-three-content">
+			    <div class="feed-three-image" style="background-image: url('{{path}}static/assets/canvas/rabbits.jpg');"></div>
+
+			    <p class="feed-three-title">What makes a programming language “cool?”</p>
+			    <p class="feed-three-meta">Programming . 9 march 2017</p>
+			    <p class="feed-three-summary">This should be a moment of triumph for University of Toronto computer science professor Geoffrey Hinton.The British-born 69-year-old is known as the godfather of the strain of artificial intelligence called neural networks </p>
+			    
+			</div>
+		    </div>
+		</section>
+
+		<section>
+		    <div class="feed-two-vert">
+			
+			<div class="col-md-6 feed-two-vert-content">
+			    <div class="feed-two-vert-image" style="background-image: url('{{path}}static/assets/canvas/judy.jpg');"></div>
+
+			    <p class="feed-two-vert-title">What makes a programming language “cool?”</p>
+			    <p class="feed-two-vert-meta">Programming . 9 march 2017</p>
+			    <p class="feed-two-vert-summary">This should be a moment of triumph for University of Toronto computer science professor Geoffrey Hinton.The British-born 69-year-old is known as the godfather of the strain of artificial intelligence called neural networks </p>
+			    
+			</div>
+
+			<div class="col-md-6 feed-two-vert-content">
+			    <div class="feed-two-vert-image" style="background-image: url('{{path}}static/assets/canvas/carrots.jpg');"></div>
+
+			    <p class="feed-two-vert-title">What makes a programming language “cool?”</p>
+			    <p class="feed-two-vert-meta">Programming . 9 march 2017</p>
+			    <p class="feed-two-vert-summary">This should be a moment of triumph for University of Toronto computer science professor Geoffrey Hinton.The British-born 69-year-old is known as the godfather of the strain of artificial intelligence called neural networks </p>
+			    
+			</div>
+
+			
+		    </div>
+		</section>
+
+
+		
+
+
+	    </div>
+
+
+
+
+    </body>
+
+
+    <script>
+     
+     discover('discover-topic');
+    </script>
+
+    <script>
+     var p = {id:"1"}
+     $.ajax({
+	 url:"http://127.0.0.1:8000/feedi",
+	 type:'POST',
+	 data:JSON.stringify(p),
+	 dataType:'json',
+	 contentType:'application/json',
+	 success: function(data) {
+	     console.log(data);
+	     for(var i=1;i<=6 && i<=data.length;++i)
+		 {
+		     $("."+"t"+i).text(data[i-1].title);
+		     $("."+"m"+i).text(data[i-1].link);
+		     $("."+"s"+i).text(data[i-1].summary);
+		     $("."+"i"+i).css({"background-image":"url("+data[i-1].image+");"});
+		     console.log(data[i-1].image);
+		 }
+	 },
+	 error: function(data) {
+	     console.log(data);
+	 },
+     });
+     var p = {id:"1"}
+     var circles = function(p) {
+	 $.ajax({
+	     url:"http://127.0.0.1:8000/circlei",
+	     type:'POST',
+	     data:JSON.stringify(p),
+	     dataType:'json',
+	     contentType:'application/json',
+	     success: function(data) {
+		 for( var i=1; i<=8 && i<=data.length; ++i)
+		     {
+			 $("."+"ii"+i).css({"background-image":"url("+data[i-1].image + ");"});
+			 $("."+"tt"+i).text(data[i-1].title);
+			 $("."+"mm"+i).text(data[i-1].link);
+			 $("."+"ss"+i).text(data[i-1].summary);
+		     }			   
+	     },
+	 });
+     }
+
+    </script>
+
+
+</html>
