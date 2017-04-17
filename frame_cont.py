@@ -252,7 +252,6 @@ def allowed_file_name(filename):
 @mod_frame.route('/feedi',methods=['POST'])
 def feed():
     a = request.json
- #   return str(a)
     f = Feed.query.filter(Feed.topic == t[str(a['id'])]).all();
     a = []
     for i in f:
@@ -261,6 +260,7 @@ def feed():
         d['image'] = i.image
         d['summary'] = i.summary
         d['link'] = i.link
+        d['time'] = i.topic + "  .  " + i.date
         a.append(d)
     return jsonify(a)
 
