@@ -27,14 +27,19 @@
 			 {
 			     $(".charecter-1").eq(i).text(data[2][i].name);
 			     $(".topic-content").eq(i).css({"background-image":"url(/static/assets/topic/" + data[2][i].name + ".jpg)"});
-			     $(".topic-content").eq(i).val(data[2][i].id);
+			     $(".topic-content").eq(i).attr("href","/feed/"+data[2][i].id);
 			     console.log(data[2][i].distance+data[2][i].name);
-						   
+			     
+			 }
+		     for(var i=0; i<12 && i<data[0].length; ++i)
+			 {
+			     $(".charecter").eq(i).text(data[0][i].name);
+			     $(".circle-content").eq(i).css({"background-image":"url(/static/profile/"+data[0][i].image + ")"});
 			 }
 		 }
 	     });	     
 	 }
-	 searchs("art")
+	 searchs("")
 	 table = ['zero','one','two','three']
 	 var y;
 	 var highlights = function(a) {
@@ -73,7 +78,8 @@
 	 function update_values() {
 	     $.getJSON("/secret",
 		       function(a) {
-			   console.log();
+			   console.log("ss");
+			   
 			   $("title").html(a.name);
 			   $(".profile-name").text(a.name);
 			   $(".profile-quote").text(a.tagline);
@@ -89,7 +95,8 @@
 			   $("#top").css('background-image',p);
 			   console.log(a.topics);
 			   t = a.topics;
-			   highlights({value:t[0].toString()});
+			   if (t.length > 0)
+			       highlights({value:t[0].toString()});
 			   var html = ''
 			   for(var i = 1; i<=a.topics.length; ++i)
 			       {
@@ -124,16 +131,16 @@
 				   html += "</div>";
 				   html += "</div>";
 				   html += "</a>";
-				   console.log(html);
+				   console.log("p" + html);
 				   
 			       }
 			   $(".circle-slider").eq(0).html(html);
-			   
+			   console.log(a.canvas_title[0]+"a:A");
+			   console.log($(".feed-one-title").eq(7).text());
+			 
 		       });
 	 }
-
 	 update_values();
-
 	</script>
 
     </head>
@@ -149,7 +156,7 @@
 		</div>
 		<ul class="nav navbar-nav pull-right">
 		    <li><a href="#feeds">Feeds</a></li>
-		    <li><a href="#circles">Circles</a></li>
+		    <li><a href="#circles">Following</a></li>
 		    <li><a href="#discover-topic">Discover</a></li>      
 		    <li><a href="#canvas">Canvas</a></li>
 		    <li><a href="/feed">Read</a></li>
@@ -162,7 +169,7 @@
 			<ul class="dropdown-menu">
 
 			    <li><a href="#">Account</a></li>
-			    <li><a href="/create_circle">Create circle</a></li>
+			    <li><a href="/canvas">write article</a></li>
 			    <li><a href="/logout">Logout</a></li>
 			    
 			</ul>
@@ -354,7 +361,7 @@
 	    </div>
 
 	    <div id="circles" class="banner container-fluid" style="background-image: url('{{path}}static/assets/circles2.jpg');"> 
-		<div class="banner-text">Circles</div>
+		<div class="banner-text">Following</div>
 	    </div>
 
 
@@ -510,19 +517,19 @@
 			<div class="col-md-1"></div>
 			
 			<div class="col-md-2 topic-item">
-			    <div class="topic-content" onclick="func2(this);" style="background-image: url('{{path}}static/assets/topic/police.jpg');"><div class="up" ><li class="fa fa-check fa-2x" onclick="func1(this);"></li></div><h3 class="charecter-1" align=center>Police Dpt.</h3></div>
+			    <div class="topic-content" onclick="func2('0');" style="background-image: url('{{path}}static/assets/topic/police.jpg');"><div class="up" ><li class="fa fa-check fa-2x" onclick="func1('0');"></li></div><h3 class="charecter-1" align=center>Police Dpt.</h3></div>
 			</div>
 			<div class="col-md-2 topic-item">
-			    <div class="topic-content" onclick="func2(this);" style="background-image: url('{{path}}static/assets/topic/fox.jpg');"><div class="up"><li class="fa fa-plus fa-2x" onclick="func1(this);"></li></div><h3 class="charecter-1" align=center>Foxes</h3></div>
+			    <div class="topic-content" onclick="func2('1');" style="background-image: url('{{path}}static/assets/topic/fox.jpg');"><div class="up"><li class="fa fa-plus fa-2x" onclick="func1('1');"></li></div><h3 class="charecter-1" align=center>Foxes</h3></div>
 			</div>        
 			<div class="col-md-2 topic-item">
-			    <div class="topic-content" onclick="func2(this);" style="background-image: url('{{path}}static/assets/topic/magic.jpg');"><div class="up "><li class="fa fa-plus fa-2x" onclick="func1(this);"></li></div><h3 class="charecter-1" align=center>Magic</h3></div>
+			    <div class="topic-content" onclick="func2('2');" style="background-image: url('{{path}}static/assets/topic/magic.jpg');"><div class="up "><li class="fa fa-plus fa-2x" onclick="func1('2');"></li></div><h3 class="charecter-1" align=center>Magic</h3></div>
 			</div>        
 			<div class="col-md-2 topic-item">
-			    <div class="topic-content" onclick="func2(this);" style="background-image: url('{{path}}static/assets/topic/rabbit.jpg');"><div class="up "><li class="fa fa-check fa-2x" onclick="func1(this);"></li></div><h3 class="charecter-1" align=center>Rabbits</h3></div>
+			    <div class="topic-content" onclick="func2('3');" style="background-image: url('{{path}}static/assets/topic/rabbit.jpg');"><div class="up "><li class="fa fa-check fa-2x" onclick="func1('3');"></li></div><h3 class="charecter-1" align=center>Rabbits</h3></div>
 			</div>        
 			<div class="col-md-2 topic-item">
-			    <div class="topic-content" onclick="func2(this);" style="background-image: url('{{path}}static/assets/topic/night.jpg');"><div class="up "><li class="fa fa-check fa-2x" onclick="func1(this);"></li></div><h3 class="charecter-1" align=center>Rabbits</h3></div>
+			    <div class="topic-content" onclick="func2('4');" style="background-image: url('{{path}}static/assets/topic/night.jpg');"><div class="up "><li class="fa fa-check fa-2x" onclick="func1('4');"></li></div><h3 class="charecter-1" align=center>Rabbits</h3></div>
 			</div>        
 			
 			<div class="col-md-1"></div>
@@ -533,19 +540,19 @@
 			<div class="col-md-1"></div>
 			
 			<div class="col-md-2 topic-item">
-			    <div class="topic-content" onclick="func2(this);" style="background-image: url('{{path}}static/assets/topic/police.jpg');"><div class="up"><li class="fa fa-check fa-2x" onclick="func1(this);"></li></div><h3 class="charecter-1" align=center>Police Dpt.</h3></div>
+			    <div class="topic-content" onclick="func2('5');" style="background-image: url('{{path}}static/assets/topic/police.jpg');"><div class="up"><li class="fa fa-check fa-2x" onclick="func1('5');"></li></div><h3 class="charecter-1" align=center>Police Dpt.</h3></div>
 			</div>
 			<div class="col-md-2 topic-item">
-			    <div class="topic-content" onclick="func2(this);" style="background-image: url('{{path}}static/assets/topic/fox.jpg');"><div class="up"><li class="fa fa-plus fa-2x" onclick="func1(this);"></li></div><h3 class="charecter-1" align=center>Foxes</h3></div>
+			    <div class="topic-content" onclick="func2('6');" style="background-image: url('{{path}}static/assets/topic/fox.jpg');"><div class="up"><li class="fa fa-plus fa-2x" onclick="func1('6');"></li></div><h3 class="charecter-1" align=center>Foxes</h3></div>
 			</div>        
 			<div class="col-md-2 topic-item">
-			    <div class="topic-content" onclick="func2(this);" style="background-image: url('{{path}}static/assets/topic/magic.jpg');"><div class="up "><li class="fa fa-plus fa-2x" onclick="func1(this);"></li></div><h3 class="charecter-1" align=center>Magic</h3></div>
+			    <div class="topic-content" onclick="func2('7');" style="background-image: url('{{path}}static/assets/topic/magic.jpg');"><div class="up "><li class="fa fa-plus fa-2x" onclick="func1('7');"></li></div><h3 class="charecter-1" align=center>Magic</h3></div>
 			</div>        
 			<div class="col-md-2 topic-item">
-			    <div class="topic-content" onclick="func2(this);" style="background-image: url('{{path}}static/assets/topic/rabbit.jpg');"><div class="up "><li class="fa fa-check fa-2x" onclick="func1(this);"></li></div><h3 class="charecter-1" align=center>Rabbits</h3></div>
+			    <div class="topic-content" onclick="func2('8');" style="background-image: url('{{path}}static/assets/topic/rabbit.jpg');"><div class="up "><li class="fa fa-check fa-2x" onclick="func1('8');"></li></div><h3 class="charecter-1" align=center>Rabbits</h3></div>
 			</div>        
 			<div class="col-md-2 topic-item">
-			    <div class="topic-content" onclick="func2(this);" style="background-image: url('{{path}}static/assets/topic/night.jpg');"><div class="up "><li class="fa fa-check fa-2x" onclick="func1(this);"></li></div><h3 class="charecter-1" align=center>Rabbits</h3></div>
+			    <div class="topic-content" onclick="func2('9');" style="background-image: url('{{path}}static/assets/topic/night.jpg');"><div class="up "><li class="fa fa-check fa-2x" onclick="func1('9');"></li></div><h3 class="charecter-1" align=center>Rabbits</h3></div>
 			</div>        
 			
 			<div class="col-md-1"></div>
@@ -556,19 +563,19 @@
 			<div class="col-md-1"></div>
 			
 			<div class="col-md-2 topic-item">
-			    <div class="topic-content" onclick="func2(this);" style="background-image: url('{{path}}static/assets/topic/police.jpg');"><div class="up"><li class="fa fa-check fa-2x" onclick="func1(this);"></li></div><h3 class="charecter-1" align=center>Police Dpt.</h3></div>
+			    <div class="topic-content" onclick="func2('10');" style="background-image: url('{{path}}static/assets/topic/police.jpg');"><div class="up"><li class="fa fa-check fa-2x" onclick="func1('10');"></li></div><h3 class="charecter-1" align=center>Police Dpt.</h3></div>
 			</div>
 			<div class="col-md-2 topic-item">
-			    <div class="topic-content" onclick="func2(this);" style="background-image: url('{{path}}static/assets/topic/fox.jpg');"><div class="up"><li class="fa fa-plus fa-2x" onclick="func1(this);"></li></div><h3 class="charecter-1" align=center>Foxes</h3></div>
+			    <div class="topic-content" onclick="func2('11');" style="background-image: url('{{path}}static/assets/topic/fox.jpg');"><div class="up"><li class="fa fa-plus fa-2x" onclick="func1('11');"></li></div><h3 class="charecter-1" align=center>Foxes</h3></div>
 			</div>        
 			<div class="col-md-2 topic-item">
-			    <div class="topic-content" onclick="func2(this);" style="background-image: url('{{path}}static/assets/topic/magic.jpg');"><div class="up "><li class="fa fa-plus fa-2x" onclick="func1(this);"></li></div><h3 class="charecter-1" align=center>Magic</h3></div>
+			    <div class="topic-content" onclick="func2('12');" style="background-image: url('{{path}}static/assets/topic/magic.jpg');"><div class="up "><li class="fa fa-plus fa-2x" onclick="func1('12');"></li></div><h3 class="charecter-1" align=center>Magic</h3></div>
 			</div>        
 			<div class="col-md-2 topic-item">
-			    <div class="topic-content" onclick="func2(this);" style="background-image: url('{{path}}static/assets/topic/rabbit.jpg');"><div class="up "><li class="fa fa-check fa-2x" onclick="func1(this);"></li></div><h3 class="charecter-1" align=center>Rabbits</h3></div>
+			    <div class="topic-content" onclick="func2('13');" style="background-image: url('{{path}}static/assets/topic/rabbit.jpg');"><div class="up "><li class="fa fa-check fa-2x" onclick="func1('13');"></li></div><h3 class="charecter-1" align=center>Rabbits</h3></div>
 			</div>        
 			<div class="col-md-2 topic-item">
-			    <div class="topic-content" onclick="func2(this);" style="background-image: url('{{path}}static/assets/topic/night.jpg');"><div class="up "><li class="fa fa-check fa-2x" onclick="func1(this);"></li></div><h3 class="charecter-1" align=center>Rabbits</h3></div>
+			    <div class="topic-content" onclick="func2('14');" style="background-image: url('{{path}}static/assets/topic/night.jpg');"><div class="up "><li class="fa fa-check fa-2x" onclick="func1('14');"></li></div><h3 class="charecter-1" align=center>Rabbits</h3></div>
 			</div>        
 			
 			<div class="col-md-1"></div>
@@ -738,7 +745,8 @@
 			    </dic>
 
 			    <div class="col-md-4">
-				<p class="feed-one-title">What makes a programming language “cool?”</p>
+				<p class="feed-one-title">What make
+				    s a programming language “cool?”</p>
 				<p class="feed-one-meta">Programming . 9 march 2017</p>
 				<p class="feed-one-summary">This should be a moment of triumph for University of Toronto computer science professor Geoffrey Hinton.The British-born 69-year-old is known as the godfather of the strain of artificial intelligence called neural networks </p>
 			    </div>
@@ -905,19 +913,120 @@
 	 });
      }
      
-     function func1(){
+     function func1(a){
 	 if (!e) var e = window.event;
 	 e.cancelBubble = true;
 	 if (e.stopPropagation) e.stopPropagation();
-	 console.log("1");
+	 $.ajax({
+	     url:"/addTopic",
+	     method:"POST",
+	     data:JSON.stringify({id:$(".topic-content").eq(a).attr("href").split("/")[2]}),
+	     dataType:'json',
+	     contentType:'application/json',
+	     success: function(data) {
+		 if(data.data === "success")
+		     {
+			 console.log(data)
+			 //			 window.location.reload();
+		     }
+		 //		     update_values();
+		 
+		 else
+		     window.alert(data);
+	     }
+	 });
+	 
+	 
+	 
      }
 
      function func2(a){
 	 console.log(a);
-//	 window.location.href(a);
+	 console.log($(".topic-content").eq(a).attr("href"));
+	 window.location.href = $(".topic-content").eq(a).attr("href");
      }
-     discover('discover-circles')
+     console.log(y);
+     var m;
      
+     discover('discover-topic')
+     $(document).ready(function() {
+	 $.getJSON("/secret",function(a) {
+	     var h = a.canvas_title.length;
+	     g = 0;
+	     m = a.c_link
+	     if(h != 0)
+		 {
+		     $(".feed-one-title").eq(7).html("<a href='" + a.c_link[g] + "'><p>" + a.canvas_title[g] + "</p></a>");
+		     $(".feed-one-meta").eq(7).text(a.canvas_meta[0]);
+		     $(".feed-one-summary").eq(7).html(a.canvas_sum[0]);
+		     $(".feed-one-image").eq(7).css({"background-image":"url(" + a.canvas_image[0] + ")"});
+		     $(".feed-one-content").eq(7).prop("href",a.c_link[0]);
+		     $(".feed-one-title").prop("href",a.c_link[0]);
+		     $(".feed-one-image").eq(7).on('click',function() {
+			 window.location.href = a.c_link[0];}
+		     );
+		     $(".feed-one-summary").eq(7).after("</a>");
+					      ++g;
+		 }
+	     if(h-2 > 0)
+		 {
+		     for(var i=6;i<9;++i)
+			 {
+			     $(".feed-three-title").eq(i).html("<a href='"+ a.c_link[g] + "'><p>"+ a.canvas_title[g]+"</p></a>");
+			     $(".feed-three-meta").eq(i).text(a.canvas_meta[g]);
+			     $(".feed-three-summary").eq(i).html(a.canvas_sum[g]);
+			     $(".feed-three-image").eq(i).css({"background-image":"url(" + a.canvas_image[g] + ")"});
+			     if(g == 1)
+				 $(".feed-three-image").eq(i).on('click',function() {
+				     window.location.href = a.c_link[1];
+				 });
+			     if(g ==2 )
+				 $(".feed-three-image").eq(i).on('click',function() {
+				     window.location.href = a.c_link[2];
+				 });
+			     if(g == 3)
+				 $(".feed-three-image").eq(i).on('click',function() {
+				     window.location.href = a.c_link[3];
+				 });
+			     $(".feed-three-title").eq(i).prop("href",a.c_link[g]);
+			     ++g;
+			 }
+		 }
+	     if(h-1 > 0)
+		 {
+		     for(var i=0;i<2;++i)
+			 {
+			     $(".feed-two-vert-title").eq(i).html("<a href='" + a.c_link[g] + "'><p>" + a.canvas_title[g] + "</p></a>");
+			     $(".feed-two-vert-meta").eq(i).text(a.canvas_meta[g]);
+			     $(".feed-two-vert-summary").eq(i).html(a.canvas_sum[g]);
+			     $(".feed-two-vert-image").eq(i).css({"background-image":"url(" + a.canvas_image[g] + ")"});
+			     $(".feed-two-vert-image").eq(i).on('click',function() {
+				 window.location.href = a.c_link[g];
+			     });
+			     if(g==1)
+			     $(".feed-two-vert-image").eq(i).on('click',function() {
+				 window.location.href = a.c_link[1];
+			     });
+			     if(g==2)
+			     $(".feed-two-vert-image").eq(i).on('click',function() {
+				 window.location.href = a.c_link[2];
+			     });
+			     if(g==4)
+			     $(".feed-two-vert-image").eq(i).on('click',function() {
+				 window.location.href = a.c_link[4];
+			     });
+			     if(g==5)
+			     $(".feed-two-vert-image").eq(i).on('click',function() {
+				 window.location.href = a.c_link[5];
+			     });
+			     ++g;
+			 }
+		 }
+	     
+	     
+	     
+	 });
+     });
     </script>
 
 
