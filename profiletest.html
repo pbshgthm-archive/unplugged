@@ -32,17 +32,14 @@
       <li><a href="#discover">Discover</a></li>      
       <li><a href="#canvas">Canvas</a></li>
       <li><a href="">Read</a></li>
+      <li><a onclick="viewpanel();"  class="fa fa-search"></a>
       <li class="nav-profile"><a href="#top">Nick</a></li>
       <li><div class="nav-profile-img"><a href="#top">
           <div class="nav-pro-img" style="background-image: url('{{path}}static/profile/nick_profile.jpg');"></div>
       </a></div></li>
-      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">
-        <div class="fa fa-bars" style="color: grey; font-size: 30px;"></div>
-        <ul class="dropdown-menu">
-
-          <li><a href="#">Account</a></li>
-          <li><a href="#">Logout</a></li>
-        </ul>
+      <li class="dropdown"><a onmouseover="viewpanel()" onclick="viewpanel();" class="dropdown-toggle" data-toggle="dropdown" href="#">
+        <button class="fa fa-bars"  style="color: grey; font-size: 30px;"></button>
+        </a>
       </li>
 
     </ul>
@@ -50,7 +47,91 @@
 </nav>
 
 
+<div id="sidepanel" class="side-panel" onmouseleave="hidepanel();">
 
+  <div class="col-md-1">
+  <li class="fa fa-close" id="close" style="cursor: pointer;"  onclick="hidepanel()"></li>
+  </div>
+
+  <button class="action">Account</button>
+  <button class="action">Signout</button>
+
+  <div class="search-side">
+  <form>
+        <input class="discover-side" type="text" name="search" placeholder=" Search..">
+  </form>
+
+  <div style="font-size: 25px; text-align: center; margin-top: 20px;">Notifications</div>
+    <div id="notif">
+      <div class="notifs">
+          <div class="col-lg-1">
+          <div class="notif-img" style="background-image: url('{{path}}static/profile/nick_profile.jpg');"></div>
+          </div>
+      </div>
+      <div class="notifs">
+          <div class="col-lg-1">
+          <div class="notif-img" style="background-image: url('{{path}}static/profile/nick_profile.jpg');"></div>
+          </div>
+      </div>
+      <div class="notifs">
+          <div class="col-lg-1">
+          <div class="notif-img" style="background-image: url('{{path}}static/profile/nick_profile.jpg');"></div>
+          </div>
+      </div>
+      <div class="notifs">
+          <div class="col-lg-1">
+          <div class="notif-img" style="background-image: url('{{path}}static/profile/nick_profile.jpg');"></div>
+          </div>
+      </div>
+      <div class="notifs">
+          <div class="col-lg-1">
+          <div class="notif-img" style="background-image: url('{{path}}static/profile/nick_profile.jpg');"></div>
+          </div>
+      </div>
+      <div class="notifs">
+          <div class="col-lg-1">
+          <div class="notif-img" style="background-image: url('{{path}}static/profile/nick_profile.jpg');"></div>
+          </div>
+      </div>
+      <div class="notifs">
+          <div class="col-lg-1">
+          <div class="notif-img" style="background-image: url('{{path}}static/profile/nick_profile.jpg');"></div>
+          </div>
+      </div>
+      <div class="notifs">
+          <div class="col-lg-1">
+          <div class="notif-img" style="background-image: url('{{path}}static/profile/nick_profile.jpg');"></div>
+          </div>
+      </div>
+      <div class="notifs">
+          <div class="col-lg-1">
+          <div class="notif-img" style="background-image: url('{{path}}static/profile/nick_profile.jpg');"></div>
+          </div>
+      </div>
+      <div class="notifs">
+          <div class="col-lg-1">
+          <div class="notif-img" style="background-image: url('{{path}}static/profile/nick_profile.jpg');"></div>
+          </div>
+      </div>
+      <div class="notifs">
+          <div class="col-lg-1">
+          <div class="notif-img" style="background-image: url('{{path}}static/profile/nick_profile.jpg');"></div>
+          </div>
+      </div>
+
+      
+
+      
+      <div style="height: 500px; width: 100%"></div>
+    </div>
+  </div>
+
+</div>
+
+
+
+
+<img class="write" src="{{path}}/static/assets/write1.png" />
 
 
 <div id="top" class="banner-profile container-fluid" style="background-image: url('{{path}}static/profile/nick_cover5.jpg');"> </div>
@@ -379,165 +460,249 @@
 
 
 <div id="discover" class="banner container-fluid" style="background-image: url('{{path}}static/assets/discover4.jpg');"> 
-  <div class="banner-text">Discover</div>
+  <div class="banner-text">Topics</div>
 </div>
 
-<div class="container-fluid"  style="height: 1650px;">
+<div class="container-fluid"  style="height: 900px;">
   
+ 
+  <div class="topicbox">
+  <div class="discovery-topic">
 
-  <div class="search">
-  <form>
-        <input class="discover" type="text" name="search" placeholder=" Search..">
-    </form>
+    <div class="discover-topic slide">
+
+      <div class="col-md-12">
+      <div class="col-md-1"></div>
+      
+      <div class="col-md-2 topic-item">
+        <div class="topic-content" onclick="func2();" style="background-image: url('{{path}}static/assets/topic/police.jpg');"><div class="up" ><li class="fa fa-check fa-2x" onclick="func1();"></li></div><h3 class="charecter-1" align=center>Police Dpt.</h3></div>
+      </div>
+        <div class="col-md-2 topic-item">
+          <div class="topic-content" style="background-image: url('{{path}}static/assets/topic/fox.jpg');"><div class="up"><li class="fa fa-plus fa-2x"></li></div><h3 class="charecter-1" align=center>Foxes</h3></div>
+        </div>        
+        <div class="col-md-2 topic-item">
+          <div class="topic-content" style="background-image: url('{{path}}static/assets/topic/magic.jpg');"><div class="up "><li class="fa fa-plus fa-2x"></li></div><h3 class="charecter-1" align=center>Magic</h3></div>
+        </div>        
+        <div class="col-md-2 topic-item">
+          <div class="topic-content" style="background-image: url('{{path}}static/assets/topic/rabbit.jpg');"><div class="up "><li class="fa fa-check fa-2x"></li></div><h3 class="charecter-1" align=center>Rabbits</h3></div>
+        </div>        
+        <div class="col-md-2 topic-item">
+          <div class="topic-content" style="background-image: url('{{path}}static/assets/topic/night.jpg');"><div class="up "><li class="fa fa-check fa-2x"></li></div><h3 class="charecter-1" align=center>Rabbits</h3></div>
+        </div>        
+        
+        <div class="col-md-1"></div>
+        </div>
+
+
+
+
+    <div class="col-md-12 ">
+      <div class="col-md-1"></div>
+      
+      <div class="col-md-2 topic-item">
+        <div class="topic-content" style="background-image: url('{{path}}static/assets/topic/police.jpg');"><div class="up"><li class="fa fa-check fa-2x"></li></div><h3 class="charecter-1" align=center>Police Dpt.</h3></div>
+      </div>
+        <div class="col-md-2 topic-item">
+          <div class="topic-content" style="background-image: url('{{path}}static/assets/topic/fox.jpg');"><div class="up"><li class="fa fa-plus fa-2x"></li></div><h3 class="charecter-1" align=center>Foxes</h3></div>
+        </div>        
+        <div class="col-md-2 topic-item">
+          <div class="topic-content" style="background-image: url('{{path}}static/assets/topic/magic.jpg');"><div class="up "><li class="fa fa-plus fa-2x"></li></div><h3 class="charecter-1" align=center>Magic</h3></div>
+        </div>        
+        <div class="col-md-2 topic-item">
+          <div class="topic-content" style="background-image: url('{{path}}static/assets/topic/rabbit.jpg');"><div class="up "><li class="fa fa-check fa-2x"></li></div><h3 class="charecter-1" align=center>Rabbits</h3></div>
+        </div>        
+        <div class="col-md-2 topic-item">
+          <div class="topic-content" style="background-image: url('{{path}}static/assets/topic/night.jpg');"><div class="up "><li class="fa fa-check fa-2x"></li></div><h3 class="charecter-1" align=center>Rabbits</h3></div>
+        </div>        
+        
+        <div class="col-md-1"></div>
+        </div>
+
+
+
+
+        <div class="col-md-12 ">
+      <div class="col-md-1"></div>
+      
+      <div class="col-md-2 topic-item">
+        <div class="topic-content" style="background-image: url('{{path}}static/assets/topic/police.jpg');"><div class="up"><li class="fa fa-check fa-2x"></li></div><h3 class="charecter-1" align=center>Police Dpt.</h3></div>
+      </div>
+        <div class="col-md-2 topic-item">
+          <div class="topic-content" style="background-image: url('{{path}}static/assets/topic/fox.jpg');"><div class="up"><li class="fa fa-plus fa-2x"></li></div><h3 class="charecter-1" align=center>Foxes</h3></div>
+        </div>        
+        <div class="col-md-2 topic-item">
+          <div class="topic-content" style="background-image: url('{{path}}static/assets/topic/magic.jpg');"><div class="up "><li class="fa fa-plus fa-2x"></li></div><h3 class="charecter-1" align=center>Magic</h3></div>
+        </div>        
+        <div class="col-md-2 topic-item">
+          <div class="topic-content" style="background-image: url('{{path}}static/assets/topic/rabbit.jpg');"><div class="up "><li class="fa fa-check fa-2x"></li></div><h3 class="charecter-1" align=center>Rabbits</h3></div>
+        </div>        
+        <div class="col-md-2 topic-item">
+          <div class="topic-content" style="background-image: url('{{path}}static/assets/topic/night.jpg');"><div class="up "><li class="fa fa-check fa-2x"></li></div><h3 class="charecter-1" align=center>Rabbits</h3></div>
+        </div>        
+        
+        <div class="col-md-1"></div>
+        </div>
+
+
     </div>
 
+        <div class="discover-topic slide">
 
-    <div class="row discover-panel">
-    <div class="col-md-4"> <button class="col-lg-4 col-md-offset-4" onclick="discover('discover-topic')">
-      <div class="panel-item" style="background-image: url('{{path}}static/assets/topic.png');"></div></button></div>
-    <div class="col-md-4"> <button class="col-lg-4 col-md-offset-4" onclick="discover('discover-circles')">
-      <div class="panel-item" style="background-image: url('{{path}}static/assets/circle.png');"></div></button></div>
-    <div class="col-md-4"> <button class="col-lg-4 col-md-offset-4" onclick="discover('discover-people')">
-      <div class="panel-item" style="background-image: url('{{path}}static/assets/user.png');"></div></button></div>
+      <div class="col-md-12">
+      <div class="col-md-1"></div>
+      
+      <div class="col-md-2 topic-item">
+        <div class="topic-content" onclick="func2();" style="background-image: url('{{path}}static/assets/topic/police.jpg');"><div class="up" ><li class="fa fa-check fa-2x" onclick="func1();"></li></div><h3 class="charecter-1" align=center>Police Dpt.</h3></div>
+      </div>
+        <div class="col-md-2 topic-item">
+          <div class="topic-content" style="background-image: url('{{path}}static/assets/topic/fox.jpg');"><div class="up"><li class="fa fa-plus fa-2x"></li></div><h3 class="charecter-1" align=center>Foxes</h3></div>
+        </div>        
+        <div class="col-md-2 topic-item">
+          <div class="topic-content" style="background-image: url('{{path}}static/assets/topic/magic.jpg');"><div class="up "><li class="fa fa-plus fa-2x"></li></div><h3 class="charecter-1" align=center>Magic</h3></div>
+        </div>        
+        <div class="col-md-2 topic-item">
+          <div class="topic-content" style="background-image: url('{{path}}static/assets/topic/rabbit.jpg');"><div class="up "><li class="fa fa-check fa-2x"></li></div><h3 class="charecter-1" align=center>Rabbits</h3></div>
+        </div>        
+        <div class="col-md-2 topic-item">
+          <div class="topic-content" style="background-image: url('{{path}}static/assets/topic/night.jpg');"><div class="up "><li class="fa fa-check fa-2x"></li></div><h3 class="charecter-1" align=center>Rabbits</h3></div>
+        </div>        
+        
+        <div class="col-md-1"></div>
+        </div>
+
+
+
+
+    <div class="col-md-12 ">
+      <div class="col-md-1"></div>
+      
+      <div class="col-md-2 topic-item">
+        <div class="topic-content" style="background-image: url('{{path}}static/assets/topic/police.jpg');"><div class="up"><li class="fa fa-check fa-2x"></li></div><h3 class="charecter-1" align=center>Police Dpt.</h3></div>
+      </div>
+        <div class="col-md-2 topic-item">
+          <div class="topic-content" style="background-image: url('{{path}}static/assets/topic/fox.jpg');"><div class="up"><li class="fa fa-plus fa-2x"></li></div><h3 class="charecter-1" align=center>Foxes</h3></div>
+        </div>        
+        <div class="col-md-2 topic-item">
+          <div class="topic-content" style="background-image: url('{{path}}static/assets/topic/magic.jpg');"><div class="up "><li class="fa fa-plus fa-2x"></li></div><h3 class="charecter-1" align=center>Magic</h3></div>
+        </div>        
+        <div class="col-md-2 topic-item">
+          <div class="topic-content" style="background-image: url('{{path}}static/assets/topic/rabbit.jpg');"><div class="up "><li class="fa fa-check fa-2x"></li></div><h3 class="charecter-1" align=center>Rabbits</h3></div>
+        </div>        
+        <div class="col-md-2 topic-item">
+          <div class="topic-content" style="background-image: url('{{path}}static/assets/topic/night.jpg');"><div class="up "><li class="fa fa-check fa-2x"></li></div><h3 class="charecter-1" align=center>Rabbits</h3></div>
+        </div>        
+        
+        <div class="col-md-1"></div>
+        </div>
+
+
+
+
+        <div class="col-md-12 ">
+      <div class="col-md-1"></div>
+      
+      <div class="col-md-2 topic-item">
+        <div class="topic-content" style="background-image: url('{{path}}static/assets/topic/police.jpg');"><div class="up"><li class="fa fa-check fa-2x"></li></div><h3 class="charecter-1" align=center>Police Dpt.</h3></div>
+      </div>
+        <div class="col-md-2 topic-item">
+          <div class="topic-content" style="background-image: url('{{path}}static/assets/topic/fox.jpg');"><div class="up"><li class="fa fa-plus fa-2x"></li></div><h3 class="charecter-1" align=center>Foxes</h3></div>
+        </div>        
+        <div class="col-md-2 topic-item">
+          <div class="topic-content" style="background-image: url('{{path}}static/assets/topic/magic.jpg');"><div class="up "><li class="fa fa-plus fa-2x"></li></div><h3 class="charecter-1" align=center>Magic</h3></div>
+        </div>        
+        <div class="col-md-2 topic-item">
+          <div class="topic-content" style="background-image: url('{{path}}static/assets/topic/rabbit.jpg');"><div class="up "><li class="fa fa-check fa-2x"></li></div><h3 class="charecter-1" align=center>Rabbits</h3></div>
+        </div>        
+        <div class="col-md-2 topic-item">
+          <div class="topic-content" style="background-image: url('{{path}}static/assets/topic/night.jpg');"><div class="up "><li class="fa fa-check fa-2x"></li></div><h3 class="charecter-1" align=center>Rabbits</h3></div>
+        </div>        
+        
+        <div class="col-md-1"></div>
+        </div>
     
-  </div>
-
-
-
-
-    <div class="discover-topic">
-
-      <div class="col-md-12 ">
-      <div class="col-md-1"></div>
-      
-      <div class="col-md-2 topic-item">
-        <div class="topic-content" style="background-image: url('{{path}}static/assets/topic/police.jpg');"><h3 class="charecter-1" align=center>Police Dpt.</h3></div>
-      </div>
-        <div class="col-md-2 topic-item">
-          <div class="topic-content" style="background-image: url('{{path}}static/assets/topic/fox.jpg');"><h3 class="charecter-1" align=center>Foxes</h3></div>
-        </div>        
-        <div class="col-md-2 topic-item">
-          <div class="topic-content" style="background-image: url('{{path}}static/assets/topic/magic.jpg');"><h3 class="charecter-1" align=center>Magic</h3></div>
-        </div>        
-        <div class="col-md-2 topic-item">
-          <div class="topic-content" style="background-image: url('{{path}}static/assets/topic/rabbit.jpg');"><h3 class="charecter-1" align=center>Rabbits</h3></div>
-        </div>        
-        <div class="col-md-2 topic-item">
-          <div class="topic-content" style="background-image: url('{{path}}static/assets/topic/night.jpg');"><h3 class="charecter-1" align=center>Nightlife</h3></div>
-        </div>
-
-        <div class="col-md-1"></div>
-        </div>
-
-
-        <div class="col-md-12 ">
-      <div class="col-md-1"></div>
-      
-      <div class="col-md-2 topic-item">
-        <div class="topic-content" style="background-image: url('{{path}}static/assets/topic/drama.jpg');"><h3 class="charecter-1" align=center>Acting</h3></div>
-      </div>        
-        <div class="col-md-2 topic-item">
-          <div class="topic-content" style="background-image: url('{{path}}static/assets/topic/city.jpg');"><h3 class="charecter-1" align=center>Metro City</h3></div>
-        </div>        
-        <div class="col-md-2 topic-item">
-          <div class="topic-content" style="background-image: url('{{path}}static/assets/topic/animal-protection.jpg');"><h3 class="charecter-1" align=center>Animal Protection</h3></div>
-        </div>        
-        <div class="col-md-2 topic-item">
-          <div class="topic-content" style="background-image: url('{{path}}static/assets/topic/law.jpg');"><h3 class="charecter-1" align=center>Justice</h3></div>
-        </div>        
-        <div class="col-md-2 topic-item">
-          <div class="topic-content" style="background-image: url('{{path}}static/assets/topic/icecream.jpg');"><h3 class="charecter-1" align=center>Ice Cream</h3></div>
-        </div>
-
-        <div class="col-md-1"></div>
-        </div>
-
-        <div class="col-md-12 ">
-      <div class="col-md-1"></div>
-      
-      <div class="col-md-2 topic-item">
-        <div class="topic-content" style="background-image: url('{{path}}static/assets/topic/wwf.jpg');"><h3 class="charecter-1" align=center>WWF</h3></div>
-      </div>        
-        <div class="col-md-2 topic-item">
-          <div class="topic-content" style="background-image: url('{{path}}static/assets/topic/cityhall.jpg');"><h3 class="charecter-1" align=center>City Hall</h3></div>
-        </div>        
-        <div class="col-md-2 topic-item">
-          <div class="topic-content" style="background-image: url('{{path}}static/assets/topic/pun.jpg');"><h3 class="charecter-1" align=center>Pun</h3></div>
-        </div>        
-        <div class="col-md-2 topic-item">
-          <div class="topic-content" style="background-image: url('{{path}}static/assets/topic/friendship.jpg');"><h3 class="charecter-1" align=center>Friendship</h3></div>
-        </div>        
-        <div class="col-md-2 topic-item">
-          <div class="topic-content" style="background-image: url('{{path}}static/assets/topic/money.jpg');"><h3 class="charecter-1" align=center>Money</h3></div>
-        </div>
-
-        <div class="col-md-1"></div>
-        </div>
     </div>
 
 
 
-    <div class="discover-people">
+    </div>
+    </div>
+
+</div>
+
+
+
+<div id="discover" class="banner container-fluid" style="background-image: url('{{path}}static/assets/discover4.jpg');"> 
+  <div class="banner-text">People</div>
+</div>
+
+<div class="container-fluid"  style="height: 1000px;">
+
+    <div class="peoplebox">
+
+
+<div class="discovery-people">
+
+<div class="discover-people slide">
         <div class="col-md-12">
         <div class="col-md-1"></div>
         <div class="col-md-10">
         <div class="col-lg-3" style="align-content: center;">
-                  <div class="circle-content" style="background-image: url('greet.jpg');"></div>
+                  <div class="circle-content" style="background-image: url('{{path}}static/assets/topic/night.jpg');"></div>
                   <h3 class="charecter" align="center">Pearl Crew</h3>
                   
               </div>
               <div class="col-lg-3" style="align-content: center;">
-                  <div class="circle-content" style="background-image: url('greet.jpg');"></div>
+                  <div class="circle-content" style="background-image: url('{{path}}static/assets/topic/night.jpg');"></div>
                   <h3 class="charecter" align="center">Lords</h3>
                   
               </div>
               <div class="col-lg-3" style="align-content: center;">
-                  <div class="circle-content" style="background-image: url('greet.jpg');"></div>
+                  <div class="circle-content" style="background-image: url('{{path}}static/assets/topic/night.jpg');"></div>
                   <h3 class="charecter" align="center">Elizebth family</h3>
                   
               </div>
               <div class="col-lg-3" style="align-content: center;">
-                  <div class="circle-content" style="background-image: url('greet.jpg');"></div>
+                  <div class="circle-content" style="background-image: url('{{path}}static/assets/topic/night.jpg');"></div>
                   <h3 class="charecter" align="center">Lenders</h3>
                   
               </div>
               <div class="col-lg-3" style="align-content: center;">
-                  <div class="circle-content" style="background-image: url('greet.jpg');"></div>
+                  <div class="circle-content" style="background-image: url('{{path}}static/assets/topic/night.jpg');"></div>
                   <h3 class="charecter" align="center">Pirate club</h3>
                   
               </div>
               <div class="col-lg-3" style="align-content: center;">
-                  <div class="circle-content" style="background-image: url('greet.jpg');"></div>
+                  <div class="circle-content" style="background-image: url('{{path}}static/assets/topic/night.jpg');"></div>
                   <h3 class="charecter" align="center">Isle dwellers</h3>
                   
               </div>
               <div class="col-lg-3" style="align-content: center;">
-                  <div class="circle-content" style="background-image: url('greet.jpg');"></div>
+                  <div class="circle-content" style="background-image: url('{{path}}static/assets/topic/night.jpg');"></div>
                   <h3 class="charecter" align="center">Old crew</h3>
                   
               </div>
               <div class="col-lg-3" style="align-content: center;">
-                  <div class="circle-content" style="background-image: url('greet.jpg');"></div>
+                  <div class="circle-content" style="background-image: url('{{path}}static/assets/topic/night.jpg');"></div>
                   <h3 class="charecter" align="center">Dead men</h3>
                   
               </div>
               <div class="col-lg-3" style="align-content: center;">
-                  <div class="circle-content" style="background-image: url('greet.jpg');"></div>
+                  <div class="circle-content" style="background-image: url('{{path}}static/assets/topic/night.jpg');"></div>
                   <h3 class="charecter" align="center">E.I. Company</h3>
                   
               </div>
               <div class="col-lg-3" style="align-content: center;">
-                  <div class="circle-content" style="background-image: url('greet.jpg');"></div>
+                  <div class="circle-content" style="background-image: url('{{path}}static/assets/topic/night.jpg');"></div>
                   <h3 class="charecter" align="center">E.I. Company</h3>
                   
               </div>
               <div class="col-lg-3" style="align-content: center;">
-                  <div class="circle-content" style="background-image: url('greet.jpg');"></div>
+                  <div class="circle-content" style="background-image: url('{{path}}static/assets/topic/night.jpg');"></div>
                   <h3 class="charecter" align="center">E.I. Company</h3>
                   
               </div>
               <div class="col-lg-3" style="align-content: center;">
-                  <div class="circle-content" style="background-image: url('greet.jpg');"></div>
+                  <div class="circle-content" style="background-image: url('{{path}}static/assets/topic/night.jpg');"></div>
                   <h3 class="charecter" align="center">E.I. Company</h3>
                   
               </div>
@@ -547,78 +712,154 @@
       </div>
 
 
-
-      <div class="discover-circles">
+      <div class="discover-people slide">
         <div class="col-md-12">
         <div class="col-md-1"></div>
         <div class="col-md-10">
         <div class="col-lg-3" style="align-content: center;">
-                  <div class="circle-content" style="background-image: url('data.jpg');"></div>
+                  <div class="circle-content" style="background-image: url('{{path}}static/assets/topic/night.jpg');"></div>
                   <h3 class="charecter" align="center">Pearl Crew</h3>
                   
               </div>
               <div class="col-lg-3" style="align-content: center;">
-                  <div class="circle-content" style="background-image: url('data.jpg');"></div>
+                  <div class="circle-content" style="background-image: url('{{path}}static/assets/topic/night.jpg');"></div>
                   <h3 class="charecter" align="center">Lords</h3>
                   
               </div>
               <div class="col-lg-3" style="align-content: center;">
-                  <div class="circle-content" style="background-image: url('data.jpg');"></div>
+                  <div class="circle-content" style="background-image: url('{{path}}static/assets/topic/night.jpg');"></div>
                   <h3 class="charecter" align="center">Elizebth family</h3>
                   
               </div>
               <div class="col-lg-3" style="align-content: center;">
-                  <div class="circle-content" style="background-image: url('data.jpg');"></div>
+                  <div class="circle-content" style="background-image: url('{{path}}static/assets/topic/night.jpg');"></div>
                   <h3 class="charecter" align="center">Lenders</h3>
                   
               </div>
               <div class="col-lg-3" style="align-content: center;">
-                  <div class="circle-content" style="background-image: url('data.jpg');"></div>
+                  <div class="circle-content" style="background-image: url('{{path}}static/assets/topic/night.jpg');"></div>
                   <h3 class="charecter" align="center">Pirate club</h3>
                   
               </div>
               <div class="col-lg-3" style="align-content: center;">
-                  <div class="circle-content" style="background-image: url('data.jpg');"></div>
+                  <div class="circle-content" style="background-image: url('{{path}}static/assets/topic/night.jpg');"></div>
                   <h3 class="charecter" align="center">Isle dwellers</h3>
                   
               </div>
               <div class="col-lg-3" style="align-content: center;">
-                  <div class="circle-content" style="background-image: url('data.jpg');"></div>
+                  <div class="circle-content" style="background-image: url('{{path}}static/assets/topic/night.jpg');"></div>
                   <h3 class="charecter" align="center">Old crew</h3>
                   
               </div>
               <div class="col-lg-3" style="align-content: center;">
-                  <div class="circle-content" style="background-image: url('data.jpg');"></div>
+                  <div class="circle-content" style="background-image: url('{{path}}static/assets/topic/night.jpg');"></div>
                   <h3 class="charecter" align="center">Dead men</h3>
                   
               </div>
               <div class="col-lg-3" style="align-content: center;">
-                  <div class="circle-content" style="background-image: url('data.jpg');"></div>
+                  <div class="circle-content" style="background-image: url('{{path}}static/assets/topic/night.jpg');"></div>
                   <h3 class="charecter" align="center">E.I. Company</h3>
                   
               </div>
               <div class="col-lg-3" style="align-content: center;">
-                  <div class="circle-content" style="background-image: url('data.jpg');"></div>
+                  <div class="circle-content" style="background-image: url('{{path}}static/assets/topic/night.jpg');"></div>
                   <h3 class="charecter" align="center">E.I. Company</h3>
                   
               </div>
               <div class="col-lg-3" style="align-content: center;">
-                  <div class="circle-content" style="background-image: url('data.jpg');"></div>
+                  <div class="circle-content" style="background-image: url('{{path}}static/assets/topic/night.jpg');"></div>
                   <h3 class="charecter" align="center">E.I. Company</h3>
                   
               </div>
               <div class="col-lg-3" style="align-content: center;">
-                  <div class="circle-content" style="background-image: url('data.jpg');"></div>
+                  <div class="circle-content" style="background-image: url('{{path}}static/assets/topic/night.jpg');"></div>
                   <h3 class="charecter" align="center">E.I. Company</h3>
                   
               </div>
             </div>
           </div>
 
+      </div>
+
+
+      <div class="discover-people slide">
+        <div class="col-md-12">
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
+        <div class="col-lg-3" style="align-content: center;">
+                  <div class="circle-content" style="background-image: url('{{path}}static/assets/topic/night.jpg');"></div>
+                  <h3 class="charecter" align="center">Pearl Crew</h3>
+                  
+              </div>
+              <div class="col-lg-3" style="align-content: center;">
+                  <div class="circle-content" style="background-image: url('{{path}}static/assets/topic/night.jpg');"></div>
+                  <h3 class="charecter" align="center">Lords</h3>
+                  
+              </div>
+              <div class="col-lg-3" style="align-content: center;">
+                  <div class="circle-content" style="background-image: url('{{path}}static/assets/topic/night.jpg');"></div>
+                  <h3 class="charecter" align="center">Elizebth family</h3>
+                  
+              </div>
+              <div class="col-lg-3" style="align-content: center;">
+                  <div class="circle-content" style="background-image: url('{{path}}static/assets/topic/night.jpg');"></div>
+                  <h3 class="charecter" align="center">Lenders</h3>
+                  
+              </div>
+              <div class="col-lg-3" style="align-content: center;">
+                  <div class="circle-content" style="background-image: url('{{path}}static/assets/topic/night.jpg');"></div>
+                  <h3 class="charecter" align="center">Pirate club</h3>
+                  
+              </div>
+              <div class="col-lg-3" style="align-content: center;">
+                  <div class="circle-content" style="background-image: url('{{path}}static/assets/topic/night.jpg');"></div>
+                  <h3 class="charecter" align="center">Isle dwellers</h3>
+                  
+              </div>
+              <div class="col-lg-3" style="align-content: center;">
+                  <div class="circle-content" style="background-image: url('{{path}}static/assets/topic/night.jpg');"></div>
+                  <h3 class="charecter" align="center">Old crew</h3>
+                  
+              </div>
+              <div class="col-lg-3" style="align-content: center;">
+                  <div class="circle-content" style="background-image: url('{{path}}static/assets/topic/night.jpg');"></div>
+                  <h3 class="charecter" align="center">Dead men</h3>
+                  
+              </div>
+              <div class="col-lg-3" style="align-content: center;">
+                  <div class="circle-content" style="background-image: url('{{path}}static/assets/topic/night.jpg');"></div>
+                  <h3 class="charecter" align="center">E.I. Company</h3>
+                  
+              </div>
+              <div class="col-lg-3" style="align-content: center;">
+                  <div class="circle-content" style="background-image: url('{{path}}static/assets/topic/night.jpg');"></div>
+                  <h3 class="charecter" align="center">E.I. Company</h3>
+                  
+              </div>
+              <div class="col-lg-3" style="align-content: center;">
+                  <div class="circle-content" style="background-image: url('{{path}}static/assets/topic/night.jpg');"></div>
+                  <h3 class="charecter" align="center">E.I. Company</h3>
+                  
+              </div>
+              <div class="col-lg-3" style="align-content: center;">
+                  <div class="circle-content" style="background-image: url('{{path}}static/assets/topic/night.jpg');"></div>
+                  <h3 class="charecter" align="center">E.I. Company</h3>
+                  
+              </div>
+            </div>
+          </div>
 
       </div>
 
-  </div>
+
+      </div></div>
+
+    </div>
+
+
+
+
+
 
 
 
@@ -722,12 +963,11 @@
 
 <script type="text/javascript">
   
-  discover('discover-topic');
   function update_values() {
             
             $.getJSON("/secret",
                 function(a) {
-                    console.log(a.data);
+                  
                     
                     $(".profile-name").text(a.data);
                     $(".profile-quote").text(a.data);
@@ -740,6 +980,35 @@
   update_values();
 
 
+  function func1(){
+    if (!e) var e = window.event;
+    e.cancelBubble = true;
+    if (e.stopPropagation) e.stopPropagation();
+    console.log("1");
+  }
+
+  function func2(){
+    console.log("2");
+    window.location.replace('link to the feeds page');
+  }
+
+  function viewpanel(){
+ 
+    document.getElementById('sidepanel').style.marginLeft="0px";
+    
+  }
+  function hidepanel(){
+
+    document.getElementById('sidepanel').style.marginLeft="550px";
+  }
+
+
+  $("body").on("mousemove",function(event) {
+    if (event.pageX > 1800) {
+        viewpanel();
+        
+    }
+});
 
 
 
