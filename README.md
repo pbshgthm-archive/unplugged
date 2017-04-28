@@ -44,8 +44,10 @@ the software.
 
 
 ## Acknowledgments
+We thank the following people for their invaluable help and support.
 
-* We thank Venkatesh Chopella, our professor.
-* We thank all our course teaching assistants.
-* We thank Divanshu Jain, our project mentor.
+* Venkatesh Chopella, our professor.
+* Divanshu Jain, our project mentor.
+* All our course teaching assistants.
+
 
