@@ -3,7 +3,16 @@
 An interest based social network. The project is in its alpha phase right now. 
 
 ### About
-- i'll fill this soon.
+- The model:
+Please see the follwing ER diagram to understand the data model:
+https://www.gliffy.com/go/share/schq64urockyd4rnuhic
+
+- The controllers:
+There are four major blueprint instances corresponding to routes related to feed, articles, profile, etc.
+
+- The view:
+We have very few HTML pages that are either rendered using render_template, or data is brought with jquery calls.
+
 
 
 ### Prerequisites
