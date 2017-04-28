@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html>
+    <head>
+	<title>Unplugged</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="{{path}}static/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="{{path}}static/css/unplugged.css">
+	<link rel="stylesheet" type="text/css" href="{{path}}static/css/font-awesome.css">   
+
+	<link rel="stylesheet" type="text/css" href="{{path}}static/css/jquery.bxslider.min.css">   
+	<script type="text/javascript" src="{{path}}static/js/jquery-3.2.0.min.js"></script>
+	<script type="text/javascript" src="{{path}}static/js/unplugged.js"></script>
+	<script type="text/javascript" src="{{path}}static/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="{{path}}static/js/jquery.bxslider.min.js"></script>
+	<script>
+	</script>
+    </head>
+    <body>
+	
+	<nav class="navbar navbar-fixed-top">
+	    <div class="container-fluid">
+		<div class="navbar-header">
+		    <a class="navbar-brand" href="#">Unplugged</a>
+		</div>
+		<p id="ididid" style="display:none">{{id}}</p>
+		<ul class="nav navbar-nav pull-right">
+		    <li><a href="/profiletest#feeds">Feeds</a></li>
+		    <li><a href="/profiletest#circles">Following</a></li>
+		    <li><a href="/profiletest#discover">Discover</a></li>      
+		    <li><a href="/profiletest#canvas">Canvas</a></li>
+		    <li><a href="/feed">Read</a></li>
+		    <li class="nav-profile" id ="user_name"><a href="/profiletest">Nick</a></li>
+		    <li><div class="nav-profile-img"><a href="/profiletest">
+			<div class="nav-pro-img" id="nav-pro"></div>
+		    </a></div></li>
+		    <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#" id="n" >
+			<div class="fa fa-bars" style="color: grey; font-size: 30px;"></div>
+			<ul class="dropdown-menu" id="notification">
+			    <li><a href="#" style="display:none"></a></li>
+			</ul></a>
+		    </li>
+
+		    <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">
+			<div class="fa fa-bars" style="color: grey; font-size: 30px;"></div>
+			<ul class="dropdown-menu">
+
+			    <li><a href="#">Account</a></li>
+			    <li><a href="/canvas">write article</a></li>
+			    <li><a href="/logout">Logout</a></li>
+			    
+			</ul>
+		    </li>
+
+		</ul>
+	    </div>
+	</nav>
+
+
+
+
+
+	<div id="top" class="banner-profile container-fluid"> </div>
+
+	<div class="col-md-3"> <div class="profile-img" id="pro_pic"></div></div>
+	<div class="profile">
+	    <div style="height: 150px;"></div>
+	    <div class="profile-name"> Nick Wilde</div>
+	    <div class="profile-handle"> @nickwilde </div>
+	    <div class="profile-quote">  It's called a hustle, sweetheart. </div>
+	    <div class="profile-break">_______________________</div>
+	    <div class="profile-misc"> 
+		<div id="place" class="fa fa-university" >&nbsp;&nbsp;Zootopia Police Department</div><br/>
+		<div id="email" class="fa fa-envelope " >&nbsp;&nbsp;nickwilde@imawesome.zp</div>
+	    </div>
+	    
+
+	</div>
+
+	<div id="canvas" class="banner container-fluid" style="background-image: url('{{path}}static/assets/canvas-banner.jpg');"> 
+	    <div class="banner-text" style="color: black; text-outline: 2px 2px white; text-shadow: 5px 5px 30px white;">Canvas</div>
+	</div>
+
+	<div class="container-fluid canvas">
+	    
+	    <section>
+		<div class="feed-one">
+		    
+		    <div class="feed-one-content">
+			<dic class="col-md-8">
+			    <div class="feed-one-image" style="background-image: url('{{path}}static/assets/canvas/police.jpg');"></div>
+			</dic>
+
+			<div class="col-md-4">
+			    <p class="feed-one-title">What make
+				s a programming language “cool?”</p>
+			    <p class="feed-one-meta">Programming . 9 march 2017</p>
+			    <p class="feed-one-summary">This should be a moment of triumph for University of Toronto computer science professor Geoffrey Hinton.The British-born 69-year-old is known as the godfather of the strain of artificial intelligence called neural networks </p>
+			</div>
+
+		    </div>
+
+		    
+		</div>
+	    </section>
+
+
+
+	    <section>
+		<div class="feed-three">
+		    
+		    <div class="col-md-4 feed-three-content">
+			<div class="feed-three-image" style="background-image: url('{{path}}static/assets/canvas/fox.jpg');"></div>
+
+			<p class="feed-three-title">What makes a programming language “cool?”</p>
+			<p class="feed-three-meta">Programming . 9 march 2017</p>
+			<p class="feed-three-summary">This should be a moment of triumph for University of Toronto computer science professor Geoffrey Hinton.The British-born 69-year-old is known as the godfather of the strain of artificial intelligence called neural networks </p>
+			
+		    </div>
+
+		    <div class="col-md-4 feed-three-content" style="border-right: solid 1px; border-left: solid 1px ">
+			<div class="feed-three-image" style="background-image: url('{{path}}static/assets/canvas/words.jpg');"></div>
+
+			<p class="feed-three-title">What makes a programming language “cool?”</p>
+			<p class="feed-three-meta">Programming . 9 march 2017</p>
+			<p class="feed-three-summary">This should be a moment of triumph for University of Toronto computer science professor Geoffrey Hinton.The British-born 69-year-old is known as the godfather of the strain of artificial intelligence called neural networks </p>
+			
+		    </div>
+
+		    <div class="col-md-4 feed-three-content">
+			<div class="feed-three-image" style="background-image: url('{{path}}static/assets/canvas/rabbits.jpg');"></div>
+
+			<p class="feed-three-title">What makes a programming language “cool?”</p>
+			<p class="feed-three-meta">Programming . 9 march 2017</p>
+			<p class="feed-three-summary">This should be a moment of triumph for University of Toronto computer science professor Geoffrey Hinton.The British-born 69-year-old is known as the godfather of the strain of artificial intelligence called neural networks </p>
+			
+		    </div>
+		</div>
+	    </section>
+
+	    <section>
+		<div class="feed-two-vert">
+		    
+		    <div class="col-md-6 feed-two-vert-content">
+			<div class="feed-two-vert-image" style="background-image: url('{{path}}static/assets/canvas/judy.jpg');"></div>
+
+			<p class="feed-two-vert-title">What makes a programming language “cool?”</p>
+			<p class="feed-two-vert-meta">Programming . 9 march 2017</p>
+			<p class="feed-two-vert-summary">This should be a moment of triumph for University of Toronto computer science professor Geoffrey Hinton.The British-born 69-year-old is known as the godfather of the strain of artificial intelligence called neural networks </p>
+			
+		    </div>
+
+		    <div class="col-md-6 feed-two-vert-content">
+			<div class="feed-two-vert-image" style="background-image: url('{{path}}static/assets/canvas/carrots.jpg');"></div>
+
+			<p class="feed-two-vert-title">What makes a programming language “cool?”</p>
+			<p class="feed-two-vert-meta">Programming . 9 march 2017</p>
+			<p class="feed-two-vert-summary">This should be a moment of triumph for University of Toronto computer science professor Geoffrey Hinton.The British-born 69-year-old is known as the godfather of the strain of artificial intelligence called neural networks </p>
+			
+		    </div>
+
+		    
+		</div>
+	    </section>
+
+
+	    
+
+
+	</div>
+	<div class ="hg" >
+	</div>
+
+	<script>
+	 var ft = function() {
+	     $(document).ready(function() {
+		 $.ajax({
+		     url:"http://127.0.0.1:8000/profile",
+		     data:JSON.stringify({id:$("#ididid").text()}),
+		     dataType:'json',
+		     contentType:'application/json',
+		     method:'POST',
+		     success: function(a) {
+			 console.log(a);
+			 var h = a.canvas_title.length;
+			 g = 0;
+			 m = a.c_link
+			 $(".profile-name").eq(0).text(a.name);
+			 $(".profile-handle").eq(0).text(a.handle);
+			 $(".profile-quote").eq(0).text(a.tagline);
+			 $("#place").eq(0).text(a.place);
+			 $("#email").eq(0).text(a.email);
+			 $("#pro_pic").css({"background-image":"url(../static/profile/" + a.picture + ")"});
+			 $("#top").css({"background-image":"url(../static/cover/" + a.cover + ")"});
+			 if(h != 0)
+			     {
+				 
+
+				 
+				 $(".feed-one-title").eq(0).html("<a href='" + a.c_link[g] + "'><p>" + a.canvas_title[g] + "</p></a>");
+				 $(".feed-one-meta").eq(0).text(a.canvas_meta[0]);
+				 $(".feed-one-summary").eq(0).html(a.canvas_sum[0]);
+				 $(".feed-one-image").eq(0).css({"background-image":"url(http://127.0.0.1:8000/" + a.canvas_image[0] + ")"});
+				 $(".feed-one-content").eq(0).prop("href",a.c_link[0]);
+				 $(".feed-one-image").eq(0).on('click',function() {
+				     window.location.href = a.c_link[0];}
+				 );
+				 $(".feed-one-summary").eq(0).after("</a>");
+					      ++g;
+				 --h;
+			     }
+			 if(h-2 > 0)
+			     {
+				 for(var i=0;i<3;++i)
+				     {
+					 $(".feed-three-title").eq(i).html("<a href='"+ a.c_link[g] + "'><p>"+ a.canvas_title[g]+"</p></a>");
+					 $(".feed-three-meta").eq(i).text(a.canvas_meta[g]);
+					 $(".feed-three-summary").eq(i).html(a.canvas_sum[g]);
+					 $(".feed-three-image").eq(i).css({"background-image":"url(http://127.0.0.1:8000/" + a.canvas_image[g] + ")"});
+					 if(g == 1)
+					     $(".feed-three-image").eq(i).on('click',function() {
+						 window.location.href = a.c_link[1];
+					     });
+					 if(g ==2 )
+					     $(".feed-three-image").eq(i).on('click',function() {
+						 window.location.href = a.c_link[2];
+					     });
+					 if(g == 3)
+					     $(".feed-three-image").eq(i).on('click',function() {
+						 window.location.href = a.c_link[3];
+					     });
+					 $(".feed-three-title").eq(i).prop("href",a.c_link[g]);
+			     ++g;
+					 --h;
+				     }
+			     }
+			 if(h-1 > 0)
+			     {
+				 for(var i=0;i<2;++i)
+				     {
+					 $(".feed-two-vert-title").eq(i).html("<a href='" + a.c_link[g] + "'><p>" + a.canvas_title[g] + "</p></a>");
+					 $(".feed-two-vert-meta").eq(i).text(a.canvas_meta[g]);
+					 $(".feed-two-vert-summary").eq(i).html(a.canvas_sum[g]);
+					 $(".feed-two-vert-image").eq(i).css({"background-image":"url(http://127.0.0.1:8000/" + a.canvas_image[g] + ")"});
+					 $(".feed-two-vert-image").eq(i).on('click',function() {
+					     window.location.href = a.c_link[g];
+					 });
+					 if(g==1)
+					     $(".feed-two-vert-image").eq(i).on('click',function() {
+						 window.location.href = a.c_link[1];
+					     });
+					 if(g==2)
+					     $(".feed-two-vert-image").eq(i).on('click',function() {
+						 window.location.href = a.c_link[2];
+					     });
+					 if(g==4)
+					     $(".feed-two-vert-image").eq(i).on('click',function() {
+						 window.location.href = a.c_link[4];
+					     });
+					 if(g==5)
+					     $(".feed-two-vert-image").eq(i).on('click',function() {
+						 window.location.href = a.c_link[5];
+					     });
+			     ++g;
+				     }
+			     }
+			 
+			 
+			 
+		     }
+		 });
+		 
+	     });
+	 }
+	 ft();
+	 $.getJSON("/secret",function (a) {
+	     $(".nav-pro-img").eq(0).css({"background-image":"url(../static/profile/" + a.picture + ")"});
+	     $("#user_name").text(a.name);
+	 });
+
+	 function v() {
+	     $.getJSON("/notification",function(a) {
+		 for(var i=0; i<a.u_name.length; ++i)
+		     {
+			 html = "<pre>";
+			 html += "<li><a href='/profile/" + a.u_id[i] + "'>";
+			 html += a.u_name[i];
+			 html += "</a> wrote ";
+			 html += "<a href='/canvas/" + a.a_link[i] + "'>";
+			 html += a.a_title[i];
+			 html += "</a></li></pre>"
+			 $("#notification").append(html);
+		     }
+	     });
+	 }
+	 $("#notification").hover(v());
+
+	</script>
+
+
+    </body>
+ 

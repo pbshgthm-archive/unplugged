@@ -1,0 +1,38 @@
+
+	 var up = function(a)  {
+	     console.log(a.topics);
+	     for( var i=0;i<a.topics.length;++i)
+		 {
+		     html += '<a href="#' + a.topics[i] +'">'
+		     html += '<div class="banner container-fluid" style="background-image: url(\'{{path}}static/assets/';
+		     html += a.t_name[i] + '.jpg';
+		     html += ');"><div class="banner-text">';
+		     html += a.t_name[i];
+		     html += '</div></div>'
+
+		     $.ajax({
+			 url:"http://127.0.0.1:8000/feedi",
+			 type:'POST',
+			 data:JSON.stringify({id:a.topics[i]}),
+			 dataType:'json',
+			 contentType:'application/json',
+			 async: false,
+			 success: function(data) {			   
+			     html += '<div class="container-fluid feed-main"><section><div class="feed-one"><div class="feed-one-content"><dic class="col-md-8"><div class="feed-one-image" style="background-image: url(\'';
+			     html += data[0].image;
+			     console.log(data[0].image);
+			     html += ');"></div></dic><div class="col-md-4"><p class="feed-one-title">';
+			     html += data[0].title;
+			     html += '</p><p class="feed-one-meta">';
+			     html += data[0].time.toString();
+			     html += '</p><p class="feed-one-summary">';
+			     html += data[0].summary;
+			     html += '</p></div></div></div></section>';
+			 }
+		     });
+		     html += '</a>';
+		     
+		 }
+	     console.log(html);
+	     $("#hg").html(html);
+	 }

@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+    <head>
+	<title>Unplugged</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="{{path}}static/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="{{path}}static/css/unplugged.css">
+	<link rel="stylesheet" type="text/css" href="{{path}}static/css/font-awesome.css">   
+
+	<link rel="stylesheet" type="text/css" href="{{path}}static/css/jquery.bxslider.min.css"> 
+	
+	<script type="text/javascript" src="{{path}}static/js/jquery-3.2.0.min.js"></script>
+	<script type="text/javascript" src="{{path}}static/js/unplugged.js"></script>
+	<script type="text/javascript" src="{{path}}static/js/bootstrap.min.js"></script>
+	
+
+	<script>
+	 function update_values() {
+	     $.getJSON("http://127.0.0.1:8000/secret",function(a) {
+		 console.log(a);
+		 $("#user_name").text(a.name);
+		 p  = "url('../static/profile/" + a.picture + "')"
+		 $("#profile_pic").css('background-image',p);
+		 $("#nav-pro").css('background-image',p);
+		 console.log(a.topics);
+		 t = a.topics;
+		 var html = ''
+		 // up(a);
+		 for(var i=0; i<a.topics.length; ++i)
+		     {
+			 html = '';
+			 html += '<a href = "/feed/' + a.topics[i] +'">';
+			 html +='<div class="banner container-fluid" style="background-image: url(\'{{path}}static/assets/';
+			 html += "feed2";
+			 html += '.jpg\');">'
+			 html += '<div class="banner-text">';
+			 html += a.t_name[i];
+			 html += '</div></div>';
+			 html += '	    <div class="container-fluid feed-main">';
+			 html +='</div></a>'
+			 $("#hg").append(html);
+			 fillin(i+1,a.topics[i]);
+		     }
+	     });
+	 }
+	 var fillin = function(i,t) {
+	     html = '';
+	     $.ajax({
+		 url:"http://127.0.0.1:8000/feedi",
+		 type:'POST',
+		 data:JSON.stringify({id:t}),
+		 dataType:'json',
+		 contentType:'application/json',
+		 success: function(data) {
+		     console.log(data.length);
+		     h = data.length;
+		     g = 0;
+		     html =''
+		     html += '<a href="' + data[0].link + '">';
+		     html += '   <section>'
+		     html += '<div class="feed-one"><div class="feed-one-content"><dic class="col-md-8"><div class="feed-one-image" style="background-image: url(\'';
+		     html += data[0].image;
+		     html += '\');"></div></dic><div class="col-md-4"><p class="feed-one-title">';
+		     html += data[0].title;
+		     html += '</p><p class="feed-one-meta">'
+		     html += data[0].time;
+		     html += '</p><p class="feed-one-summary">'
+		     html += data[0].summary;
+		     html += '</p></div></div></div></section></a>'
+		     $(".feed-main").eq(i).append(html);
+		     html = ''
+		     h = h-1;
+		     g = 1;
+		     if(h - g >= 3)
+			 {
+			     html +='<section>';
+			     for(var j = 0;j<3;++j)
+				 {
+				     html += '<a href = "' + data[g+j].link + '">';
+				     html += '<div class="feed-three"><div class="col-md-4 feed-three-content"><div class="feed-three-image" style="background-image: url(\'';
+				     html += data[g+j].image;
+				     html += '\');"></div><p class="feed-three-title">';
+				     html += data[g+j].title;
+				     html += '</p><p class="feed-three-meta">';
+				     html +=  data[g+j].time;
+				     html += '</p><p class="feed-three-summary">';
+				     html += data[g+j].summary;
+				     html += '</p></div></a>';
+				 }
+			     html += '</section>';
+			     $(".feed-main").eq(i).append(html);
+			     
+			     
+			     h = h-3;
+			     g = g+3;
+			 }
+		     if(h >= 2)
+			 {
+			     html = '<section>';
+			     for(var j =0;j<2;++j)
+				 {
+				     html += '<a href="' + data[j+g].link + '">';
+				     html += '<div class="feed-two-vert"><div class="col-md-6 feed-two-vert-content"><div class="feed-two-vert-image" style="background-image: url(\'';
+				     html += data[j+g].image;
+				     html += '\');"></div><p class="feed-two-vert-title">';
+				     html += data[j+g].title;
+				     html += '</p><p class="feed-two-vert-meta">';
+				     html += data[j+g].time;
+				     html += '</p><p class="feed-two-vert-summary">';
+				     html += data[j+g].summary;
+				     html += '</p></div></a>';
+				 }
+			     html += '</section>';
+			     $(".feed-main").eq(i).append(html);
+			     h = h-2;
+			     g = g+2;
+			 }
+		     if(h >= 2)
+			 {
+			     html = '<section>';
+			     for(var j =0;j<2;++j)
+				 {
+				     html += '<a href="' + data[j+g].link + '">';
+				     html += '<div class="feed-two"><div class="col-md-6 feed-two-content"><dic class="col-md-6"><div class="feed-two-image" style="background-image: url(\'';
+				     html += data[g+j].image;
+				     html += '\');"></div></dic><div class="col-md-6"><p class="feed-two-title">';
+				     html += data[g+j].title;
+				     html += '</p><p class="feed-two-meta">';
+				     html += data[g+j].time;
+				     html += '</p><p class="feed-two-summary">';
+				     html += data[g+j].summary;
+				     html += '</p></div></div>';
+				 }
+			     html += '</section>';
+			     $(".feed-main").eq(i).append(html);
+			 }
+		     
+		     
+
+		 }
+	     });
+	 }
+	 fillin(0,$("#ididid").val());
+	 update_values();
+	</script>
+    </head>
+    <body>
+
+
+
+	<p id="ididid">{{id}}</p>
+	<nav class="navbar navbar-fixed-top">
+	    <div class="container-fluid">
+		<div class="navbar-header">
+		    <a class="navbar-brand" href="#">Unplugged</a>
+		</div>
+		<ul class="nav navbar-nav pull-right">
+		    <li><a href="/feed">Feeds</a></li>
+		    <li><a href="/profiletest#circles">Following</a></li>
+		    <li><a href="/profiletest#discover">Discover</a></li>      
+		    <li><a href="/profiletest#canvas">Canvas</a></li>
+		    <li><a href="/feed">Read</a></li>
+		    <li class="nav-profile" id="user_name"><a href="/profiletest">Nick</a></li>
+		    <li><div class="nav-profile-img"><a href="/profiletest">
+			<div class="nav-pro-img" id="profile_pic" style="background-image: url('{{path}}static/profile/nick_profile.jpg');"></div>
+		    </a></div></li>
+		    <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#" id="n" >
+			<div class="fa fa-bars" style="color: grey; font-size: 30px;"></div>
+			<ul class="dropdown-menu" id="notification">
+			    <li><a href="#" style="display:none"></a></li>
+			</ul></a>
+		    </li>
+		    <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">
+			<div class="fa fa-bars" style="color: grey; font-size: 30px;"></div>
+			<ul class="dropdown-menu">
+
+			    <li><a href="#">Account</a></li>
+			    <li><a href="../canvas">write article</a></li>
+			    <li><a href="../logout">Logout</a></li>
+			</ul>
+		    </li>
+
+		</ul>
+	    </div>
+	</nav>
+
+
+
+
+
+
+
+
+
+	<div class="container-fluid">
+
+	    <div class="highlight-list topic-list" id="gh">
+		
+		
+	    </div>
+
+	</div>
+
+
+
+	<div id="hg" class="feed-main">
+	</div>
+
+    </body>
+
+
+    <script type="text/javascript">
+     
+     // discover('discover-topic');
+     function v() {
+	 $.getJSON("/notification",function(a) {
+	     for(var i=0; i<a.u_name.length; ++i)
+		 {
+		     html = "<pre>";
+		     html += "<li><a href='/profile/" + a.u_id[i] + "'>";
+		     html += a.u_name[i];
+		     html += "</a> wrote ";
+		     html += "<a href='/canvas/" + a.a_link[i] + "'>";
+		     html += a.a_title[i];
+		     html += "</a></li></pre>"
+		     $("#notification").append(html);
+		 }
+	 });
+     }
+     $("#notification").hover(v());
+
+
+     
+
+    </script>
+
+
+
+
+
+</html>

@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+    <head>
+	<title>Unplugged</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="{{path}}static/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="{{path}}static/css/unplugged.css">
+	<link rel="stylesheet" type="text/css" href="{{path}}static/css/font-awesome.css">   
+
+	<link rel="stylesheet" type="text/css" href="{{path}}static/css/jquery.bxslider.min.css">   
+	<script type="text/javascript" src="{{path}}static/js/jquery-3.2.0.min.js"></script>
+	<script type="text/javascript" src="{{path}}static/js/unplugged.js"></script>
+	<script type="text/javascript" src="{{path}}static/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="{{path}}static/js/jquery.bxslider.min.js"></script>
+	<script>
+	</script>
+    </head>
+    <body>
+	
+	<nav class="navbar navbar-fixed-top">
+	    <div class="container-fluid">
+		<div class="navbar-header">
+		    <a class="navbar-brand" href="#">Unplugged</a>
+		</div>
+		<p id="ididid" style="display:none">{{id}}</p>
+		<ul class="nav navbar-nav pull-right">
+		    <li><a href="/profiletest#feeds">Feeds</a></li>
+		    <li><a href="/profiletest#circles">Following</a></li>
+		    <li><a href="/profiletest#discover">Discover</a></li>      
+		    <li><a href="/profiletest#canvas">Canvas</a></li>
+		    <li><a href="/feed">Read</a></li>
+		    <li class="nav-profile" id ="user_name"><a href="#">Nick</a></li>
+		    <li><div class="nav-profile-img"><a href="#">
+			<div class="nav-pro-img" id="nav-pro"></div>
+		    </a></div></li>
+		    <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">
+			<div class="fa fa-bars" style="color: grey; font-size: 30px;"></div>
+			<ul class="dropdown-menu">
+
+			    <li><a href="#">Account</a></li>
+			    <li><a href="/canvas">write article</a></li>
+			    <li><a href="/logout">Logout</a></li>
+			    
+			</ul>
+		    </li>
+
+		</ul>
+	    </div>
+	</nav>
+
+
+
+
+
+	<div id="top" class="banner-profile container-fluid"> </div>
+
+	<div class="col-md-3"> <div class="profile-img" id="pro_pic"></div></div>
+	<div class="profile">
+	    <div style="height: 150px;"></div>
+	    <div class="profile-name"> Nick Wilde</div>
+	    <div class="profile-handle"> @nickwilde </div>
+	    <div class="profile-quote">  It's called a hustle, sweetheart. </div>
+	    <div class="profile-break">_______________________</div>
+	    <div class="profile-misc"> 
+		<div id="place" class="fa fa-university" >&nbsp;&nbsp;Zootopia Police Department</div><br/>
+		<div id="email" class="fa fa-envelope " >&nbsp;&nbsp;nickwilde@imawesome.zp</div>
+	    </div>
+	    
+
+	</div>
+
+	<div id="canvas" class="banner container-fluid" style="background-image: url('{{path}}static/assets/canvas-banner.jpg');"> 
+	    <div class="banner-text" style="color: black; text-outline: 2px 2px white; text-shadow: 5px 5px 30px white;">Canvas</div>
+	</div>
+
+
+	
+
+	</div>
+	<div id ="hg" >
+	</div>
+
+	<script>
+	 var ft = function() {
+	     $(document).ready(function() {
+		 $.ajax({
+		     url:"http://127.0.0.1:8000/profile",
+		     data:JSON.stringify({id:$("#ididid").text()}),
+		     dataType:'json',
+		     contentType:'application/json',
+		     method:'POST',
+		     success: function(a) {
+			 console.log(a);
+			 var h = a.canvas_title.length;
+			 g = 0;
+			 m = a.c_link
+			 $(".profile-name").eq(0).text(a.name);
+			 $(".profile-handle").eq(0).text(a.handle);
+			 $(".profile-quote").eq(0).text(a.tagline);
+			 $("#place").eq(0).text(a.place);
+			 $("#email").eq(0).text(a.email);
+			 $("#pro_pic").css({"background-image":"url(../static/profile/" + a.picture + ")"});
+			 $("#top").css({"background-image":"url(../static/cover/" + a.cover + ")"});
+			 var i = 0;
+			 html = '';
+			 while(h- g > 0 )
+			     {
+				 html += '<div class="container-fluid feed-main">';
+				 html +='</div>'
+				 $("#hg").append(html);
+				 var m = run(a,h,g,i);
+				 h = m[1];
+				 g = m[0];
+			     ++i;
+			     }
+
+		     }
+		 });
+		 
+	     });
+	 }
+	 var run = function(data,h,g,i){
+	     var html = "";	
+	     html += '<a href="' + data.c_link[g] + '">';
+	     html += '   <section>'
+	     html += '<div class="feed-one"><div class="feed-one-content"><dic class="col-md-8"><div class="feed-one-image" style="background-image: url(\'../';
+	     html += data.canvas_image[g];
+	     html += '\');"></div></dic><div class="col-md-4"><p class="feed-one-title">';
+	     html += data.canvas_title[g];
+	     html += '</p><p class="feed-one-meta">'
+	     html += data.canvas_meta[g];
+	     html += '</p><p class="feed-one-summary">'
+	     html += data.canvas_sum[g];
+	     html += '</p></div></div></div></section></a>'
+	     $(".feed-main").eq(i).append(html);
+	     html = ''
+	     h = h-1;
+	 ++g;
+	     if(h - g >= 3)
+		 {
+		     html +='<section>';
+		     for(var j = 0;j<3;++j)
+			 {
+			     html += '<a href = "' + data.c_link[g+j] + '">';
+			     html += '<div class="feed-three"><div class="col-md-4 feed-three-content"><div class="feed-three-image" style="background-image: url(\'../';
+			     html += data.canvas_image[g+j];
+			     html += '\');"></div><p class="feed-three-title">';
+			     html += data.canvas_title[g+j];
+			     html += '</p><p class="feed-three-meta">';
+			     html +=  data.canvas_meta[g+j];
+			     html += '</p><p class="feed-three-summary">';
+			     html += data.canvas_sum[g+j].toString();
+			     html += '</p></div></a>';
+			 }
+		     html += '</section>';
+		     $(".feed-main").eq(i).append(html);
+		     
+		     
+		     h = h-3;
+		     g = g+3;
+		 }
+	     if(h >= 2)
+		 {
+		     html = '<section>';
+		     for(var j =0;j<2;++j)
+			 {
+			     html += '<a href="' + data.c_link[g+j] + '">';
+			     html += '<div class="feed-two-vert"><div class="col-md-6 feed-two-vert-content"><div class="feed-two-vert-image" style="background-image: url(\'../';
+			     html += data.canvas_image[g+j];
+			     html += '\');"></div><p class="feed-two-vert-title">';
+			     html += data.canvas_title[g+j];
+			     html += '</p><p class="feed-two-vert-meta">';
+			     html += data.canvas_meta[g+j];
+			     html += '</p><p class="feed-two-vert-summary">';
+			     html += data.canvas_sum[g+j].toString();
+			     html += '</p></div></a>';
+			 }
+		     html += '</section>';
+		     $(".feed-main").eq(i).append(html);
+		     h = h-2;
+		     g = g+2;
+		 }
+	     if(h >= 2)
+		 {
+		     html = '<section>';
+		     for(var j =0;j<2;++j)
+			 {
+			     html += '<a href="' + data[j+g].link + '">';
+			     html += '<div class="feed-two"><div class="col-md-6 feed-two-content"><dic class="col-md-6"><div class="feed-two-image" style="background-image: url(\'../';
+			     html += data[g+j].image;
+			     html += '\');"></div></dic><div class="col-md-6"><p class="feed-two-title">';
+			     html += data[g+j].title;
+			     html += '</p><p class="feed-two-meta">';
+			     html += data[g+j].time;
+			     html += '</p><p class="feed-two-summary">';
+			     html += data[g+j].summary.toString();
+			     html += '</p></div></div>';
+			 }
+		     html += '</section>';
+		     $(".feed-main").eq(i).append(html);
+		 }
+	     
+	     return [g,h]
+	 }
+
+	 ft();
+	 $.getJSON("/secret",function (a) {
+	     $(".nav-pro-img").eq(0).css({"background-image":"url(../static/profile/" + a.picture + ")"});
+	     $("#user_name").text(a.name);
+	 });
+	</script>
+
+
+    </body>
+    

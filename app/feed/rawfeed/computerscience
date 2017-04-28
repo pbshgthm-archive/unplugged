@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/">
+  <channel>
+    <title>Computer Science</title>
+    <link>https://flipboard.com/topic/computerscience</link>
+    <atom:link href="https://flipboard.com/topic/computerscience?rss" rel="self" type="application/rss+xml" />
+    <description></description>
+    <pubDate>Wed, 19 Apr 2017 02:58:31 GMT</pubDate>
+    <generator>Flipboard</generator>
+    <item>
+      <title>The Great AI Recruitment War: Amazon Is On Top, And Apple Is Almost Nowhere To Be Seen</title>
+      <link>https://www.forbes.com/sites/aarontilley/2017/04/18/the-great-ai-recruitment-war-amazon-is-on-top-and-apple-is-almost-nowhere-to-be-seen/</link>
+      <guid isPermaLink="false">flipboard-QS_yWyINTdqepok625wGIg:a:3199486-1492529160</guid>
+      <pubDate>Tue, 18 Apr 2017 15:26:00 GMT</pubDate>
+      <author>Aaron Tilley, Forbes Staff</author>
+      <description>When Matt Zeiler finished his PhD in machine learning from New York University in 2013, the tech giants came scrambling.&#x26;lt;p&#x26;gt;While he was graduating, the young artificial intelligence researcher won the ImageNet competition, which pits teams against each other for who can get the best image recognition. …</description>
+      <media:content url="https://specials-images.forbesimg.com/imageserve/af99ead857c741f1ad168f5ed922546a/960x0.jpg?fit=scale" medium="image" type="image/jpeg" width="960" height="661" />
+      <category domain="https://flipboard.com/topic/artificialintelligence">Artificial Intelligence</category>
+    </item>
+    <item>
+      <title>AI will create many new jobs — here’s how you can prepare</title>
+      <link>https://venturebeat.com/2017/04/18/ai-will-create-many-new-jobs-heres-how-you-can-prepare/</link>
+      <guid isPermaLink="false">flipboard-RiMyqlsrRtm0eYWYtxoHyQ:a:35667896-1492568360</guid>
+      <pubDate>Wed, 19 Apr 2017 02:19:20 GMT</pubDate>
+      <author>Ulrik Juul Christensen, Area9 Group</author>
+      <description>As U.S. Treasury Secretary Steve Mnuchin predicts artificial intelligence (AI) won’t be a threat to American jobs over the next several decades, and still others opine on why he is wrong, both sides are missing an important point: No matter the pace of change as AI makes in-roads into the …</description>
+      <media:content url="https://cdn.flipboard.com/venturebeat.com/2d86861e6efe140c42e898aeff245b0266904d23/original.jpg" medium="image" type="image/jpeg" width="1024" height="767" />
+      <category domain="https://flipboard.com/topic/artificialintelligence">Artificial Intelligence</category>
+    </item>
+    <item>
+      <title>I Tried an Artificial Intelligence Skin Age Predictor — Here's How It Changed My Routine</title>
+      <link>https://www.popsugar.com/beauty/Olay-Skin-Advisor-Review-43436349</link>
+      <guid isPermaLink="false">flipboard-nfHRwNnkS5SeKmWtNnAwPw:a:166157861-1492560391</guid>
+      <pubDate>Wed, 19 Apr 2017 00:06:31 GMT</pubDate>
+      <author>Alessandra Foresto</author>
+      <description>When you think of artificial intelligence (AI), you probably imagine robots or get flashbacks from movies like &#x26;lt;b&#x26;gt;Ex Machina&#x26;lt;/b&#x26;gt; and TV shows like &#x26;lt;b&#x26;gt;Westworld&#x26;lt;/b&#x26;gt;, but what you might not know is that AI is around you. Take Facebook, for example. The way your feed looks is the result of AI, of a machine learning …</description>
+      <media:content url="https://media1.popsugar-assets.com/files/thumbor/9a3ug9k7vFAiXtyDdDrGiSDJNI0/fit-in/1024x1024/filters:format_auto-!!-:strip_icc-!!-/2017/04/16/914/n/1922153/aed6d0a558f3da8dbd16d3.73131671_edit_img_cover_file_43436349_1492367884/i/Olay-Skin-Advisor-Review.jpg" medium="image" type="image/jpeg" width="747" height="942" />
+      <category domain="https://flipboard.com/topic/artificialintelligence">Artificial Intelligence</category>
+    </item>
+    <item>
+      <title>Google's New Chip May Be the Future of AI Systems</title>
+      <link>https://www.fool.com/investing/2017/04/18/googles-new-chip-may-be-the-future-of-ai-systems.aspx</link>
+      <guid isPermaLink="false">flipboard-yJj1aqyiQcyfvDYWBvOhCw:a:23243785-1492565380</guid>
+      <pubDate>Wed, 19 Apr 2017 01:29:40 GMT</pubDate>
+      <author>Danny Vena</author>
+      <description>Google's latest revelation may be the biggest advancement yet in chips that power artificial intelligence systems, but other companies are releasing …</description>
+      <media:content url="https://g.foolcdn.com/image/?url=https%3A%2F%2Fg.foolcdn.com%2Feditorial%2Fimages%2F440079%2Fgoogle-tpu.png&#x26;h=630&#x26;w=1200&#x26;op=resize" medium="image" width="1200" height="630" />
+      <category domain="https://flipboard.com/topic/machinelearning">Machine Learning</category>
+    </item>
+    <item>
+      <title>Facebook turned a JavaScript framework into a VR creation tool</title>
+      <link>http://www.theverge.com/2017/4/18/15348916/facebook-react-vr-javascript-framework</link>
+      <guid isPermaLink="false">flipboard-f2KxyvQJQBeFWnaG2iKBwQ:a:43611565-1492551879</guid>
+      <pubDate>Tue, 18 Apr 2017 21:44:39 GMT</pubDate>
+      <author>Paul Miller</author>
+      <description>Facebook launched React VR today, an open source JavaScript framework for building VR experiences that was announced back in October. It's based on React, which is the user interface code that powers websites like Facebook and Instagram. React VR lets you import 360 panoramic images and 3D models …</description>
+      <media:content url="https://cdn.flipboard.com/vox-cdn.com/87e83eb897e64ccbfd6ffb1e448841dba2b402f0/original.jpg" medium="image" type="image/jpeg" width="2620" height="1747" />
+      <category domain="https://flipboard.com/topic/javascript">JavaScript</category>
+    </item>
+    <item>
+      <title>1 Sales Approach 34x More Effective Than Email, According to New Cornell Study</title>
+      <link>https://www.inc.com/lisa-calhoun/cornell-study-finds-1-method-thats-34x-better-than-email-at-getting-to-yes.html</link>
+      <guid isPermaLink="false">flipboard-c87c849954/inc.com-1492511400</guid>
+      <pubDate>Tue, 18 Apr 2017 10:30:00 GMT</pubDate>
+      <author>Lisa Calhoun</author>
+      <description>We over-estimate email marketing's success rate, says new research.&#x26;lt;p&#x26;gt;If you can measure it, you can manage it, goes the old adage. Partly, that's why email marketing is so successful. If your success rate is only 2%, you just send more. For larger campaigns, you have people who manage the email …</description>
+      <media:content url="https://www.incimages.com/uploaded_files/image/970x450/getty_162924774_185926.jpg" medium="image" type="image/jpeg" width="970" height="450" />
+      <category domain="https://flipboard.com/topic/psychology">Psychology</category>
+    </item>
+    <item>
+      <title>The First Wave of Corporate AI Is Doomed to Fail</title>
+      <link>https://hbr.org/2017/04/the-first-wave-of-corporate-ai-is-doomed-to-fail</link>
+      <guid isPermaLink="false">flipboard-IP8yiHKTQK69xIT_qpQ5wA:a:16820675-1492556375</guid>
+      <pubDate>Tue, 18 Apr 2017 22:59:35 GMT</pubDate>
+      <author>Kartik Hosanagar, Apoorv Saxena</author>
+      <description>Artificial intelligence is a hot topic right now. Driven by a fear of losing out, companies in many industries have announced AI-focused initiatives. Unfortunately, most of these efforts will fail. They will fail not because AI is all hype, but because companies are approaching AI-driven innovation …</description>
+      <media:content url="https://cdn.flipboard.com/hbr.org/adff396c08fc74880024b542dae84bcb9b504d0c/original.jpg" medium="image" type="image/jpeg" width="1200" height="675" />
+      <category domain="https://flipboard.com/topic/machinelearning">Machine Learning</category>
+    </item>
+    <item>
+      <title>How I made an iOS + Android app in 20 days by myself and what I have learned from it</title>
+      <link>https://medium.com/@sprocompany/how-i-made-an-ios-android-app-in-20-days-by-myself-and-what-i-have-learned-from-it-b372cd3a7da</link>
+      <guid isPermaLink="false">flipboard-p3Z_Z6VYQ_a-ClIqWaDMOQ:a:58578678-1492564731</guid>
+      <pubDate>Wed, 19 Apr 2017 01:18:51 GMT</pubDate>
+      <description>What it’s like to build an iOS + Android app by yourself in just 20 days using React Native and ModX that you haven’t even known before&#x26;lt;p&#x26;gt;&#x26;lt;b&#x26;gt;Why it’s&#x26;lt;/b&#x26;gt; …</description>
+      <media:content url="https://cdn-images-1.medium.com/max/600/1*ma9IDBsRdipjnTV792_W9g.jpeg" medium="image" type="image/jpeg" width="600" height="781" />
+      <category domain="https://flipboard.com/topic/javascript">JavaScript</category>
+    </item>
+    <item>
+      <title>Facebook open-sources Caffe2, a new deep learning framework</title>
+      <link>https://venturebeat.com/2017/04/18/facebook-open-sources-caffe2-a-new-deep-learning-framework/</link>
+      <guid isPermaLink="false">flipboard-fBlrhtiRTJyU7rAF54HTgQ:a:105559329-1492556933</guid>
+      <pubDate>Tue, 18 Apr 2017 23:08:53 GMT</pubDate>
+      <author>Jordan Novet</author>
+      <description>At its F8 developer conference in San Jose today, Facebook is announcing the launch of Caffe2, a new open-source framework for deep learning, a trendy type of artificial intelligence (AI). Deep learning generally involves training artificial neural networks on lots of data, like photos, and then …</description>
+      <category domain="https://flipboard.com/topic/deeplearning">Deep Learning</category>
+    </item>
+    <item>
+      <title>Artificial intelligence is the future of customer experience</title>
+      <link>http://www.telegraph.co.uk/business/digital-leaders/horizons/ai-is-the-future-of-customer-experience/</link>
+      <guid isPermaLink="false">flipboard-tetLk8gnSdCDnDB2g-z4-g:a:105559329-1492557475</guid>
+      <pubDate>Tue, 18 Apr 2017 23:17:55 GMT</pubDate>
+      <author>By Conor McGovern, Managing Director, Accenture Analytics, @cbm1001</author>
+      <description>Some of the leading digital businesses are already securing significant advances in their use of AI for everyday dealings with the consumer, and more will surely follow.&#x26;lt;p&#x26;gt;There’s no doubt that customer experience is absolutely essential for brand survival. AI and analytics will increasingly be …</description>
+      <media:content url="https://cdn.flipboard.com/telegraph.co.uk/c8cdbd41e496b4f36e33510ca68a2ddcdd84e3d7/original.jpg" medium="image" type="image/jpeg" width="1280" height="800" />
+      <category domain="https://flipboard.com/topic/artificialintelligence">Artificial Intelligence</category>
+    </item>
+    <item>
+      <title>Bond Tutorial: Bindings in Swift</title>
+      <link>https://www.raywenderlich.com/149753/bond-tutorial-bindings-swift</link>
+      <guid isPermaLink="false">flipboard-_1bYwGbVRwavuSjhOAg_EA:a:312421750-1492567786</guid>
+      <pubDate>Wed, 19 Apr 2017 02:09:46 GMT</pubDate>
+      <description>The name’s Bond, Swift Bond&#x26;lt;p&#x26;gt;&#x26;lt;i&#x26;gt;Note&#x26;lt;/i&#x26;gt;: Updated for Xcode 8.3, iOS 10.3, and Swift 3.1 by Tom Elliott. Original tutorial by Colin Eberhardt.&#x26;lt;p&#x26;gt;Almost any app …</description>
+      <media:content url="https://koenig-media.raywenderlich.com/uploads/2017/04/BondTutorial-feature.png" medium="image" type="image/png" width="500" height="500" />
+      <category domain="https://flipboard.com/topic/javascript">JavaScript</category>
+    </item>
+    <item>
+      <title>Error Handling in Visual Basic .NET</title>
+      <link>https://msdn.microsoft.com/en-us/library/ms973849.aspx</link>
+      <guid isPermaLink="false">flipboard-039c277331/microsoft.com-1492565329</guid>
+      <pubDate>Wed, 19 Apr 2017 01:28:49 GMT</pubDate>
+      <author>msdn.microsoft.com</author>
+      <description>Ken Getz&#x26;lt;br&#x26;gt;MCW Technologies&#x26;lt;p&#x26;gt;February 2002&#x26;lt;p&#x26;gt;&#x26;lt;b&#x26;gt;Summary:&#x26;lt;/b&#x26;gt; Discusses how error handling differs between Visual Basic .NET and Visual Basic 6.0. Main topics …</description>
+      <media:content url="https://msdn.microsoft.com/dynimg/IC8596.gif" medium="image" type="image/gif" width="359" height="333" />
+      <category domain="https://flipboard.com/topic/programming">Programming</category>
+    </item>
+    <item>
+      <title>You Need ES2017's Async Functions. Here's Why ...</title>
+      <link>https://derickbailey.com/2017/04/18/you-need-es7s-async-functions-heres-why/</link>
+      <guid isPermaLink="false">flipboard-hWbeysXZQQOWCUJoi7oJHg:a:1596685-1492531557</guid>
+      <pubDate>Tue, 18 Apr 2017 16:05:57 GMT</pubDate>
+      <description>If you’ve ever written code like this, you know the pain that is asynchronous workflow in JavaScript.&#x26;lt;p&#x26;gt;Nested function after nested function. Multiple …</description>
+      <media:content url="https://derickbailey.com/wp-content/uploads/2016/09/nested-callback-cleanup.jpg" medium="image" type="image/jpeg" width="599" height="406" />
+      <category domain="https://flipboard.com/topic/javascript">JavaScript</category>
+    </item>
+    <item>
+      <title>Princeton researchers discover why AI become racist and sexist</title>
+      <link>https://arstechnica.com/science/2017/04/princeton-scholars-figure-out-why-your-ai-is-racist/</link>
+      <guid isPermaLink="false">flipboard-FIKfojjPTH69JfMvIz7htg:a:4006620-1492549104</guid>
+      <pubDate>Tue, 18 Apr 2017 20:58:24 GMT</pubDate>
+      <author>Annalee Newitz</author>
+      <description>Study of language bias has implications for AI as well as human cognition.&#x26;lt;p&#x26;gt;Ever since Microsoft's chatbot Tay started spouting racist commentary after …</description>
+      <media:content url="https://cdn.arstechnica.net/wp-content/uploads/2017/04/exmachina-800x450.jpg" medium="image" type="image/jpeg" width="800" height="450" />
+      <category domain="https://flipboard.com/topic/artificialintelligence">Artificial Intelligence</category>
+    </item>
+    <item>
+      <title>Data Science: Deep Learning in Python</title>
+      <link>https://medium.com/@RobSm/data-science-deep-learning-in-python-614c1be26bbf</link>
+      <guid isPermaLink="false">flipboard-KXOnExr6Qs-YV6rnO4_SyQ:a:46162008-1492556656</guid>
+      <pubDate>Tue, 18 Apr 2017 23:04:16 GMT</pubDate>
+      <description>This course will get you started in building your FIRST &#x26;lt;b&#x26;gt;artificial neural network&#x26;lt;/b&#x26;gt; using &#x26;lt;b&#x26;gt;deep learning technique&#x26;lt;/b&#x26;gt;s. Following my previous course on …</description>
+      <media:content url="https://cdn-images-1.medium.com/max/800/1*yfizqHNKUuL_RUOkQdzLBQ.jpeg" medium="image" type="image/jpeg" width="750" height="422" />
+      <category domain="https://flipboard.com/topic/machinelearning">Machine Learning</category>
+    </item>
+    <item>
+      <title>Relay Modern: Simpler, faster, more extensible</title>
+      <link>https://code.facebook.com/posts/1362748677097871/relay-modern-simpler-faster-more-extensible/</link>
+      <guid isPermaLink="false">flipboard-EeZvVk5MTsqUSZA1L2amVg:a:129666899-1492554909</guid>
+      <pubDate>Tue, 18 Apr 2017 22:35:09 GMT</pubDate>
+      <description>Today, we're releasing Relay Modern, a new version of Relay designed from the ground up to be easier to use, more extensible and, most of all, able …</description>
+      <media:content url="https://scontent-iad3-1.xx.fbcdn.net/v/t39.2365-6/17531051_1507174879307428_5267407368521515008_n.jpg?oh=7889630f109615974d385dbee0c2be80&#x26;oe=597F0B38" medium="image" type="image/jpeg" width="1200" height="630" />
+      <category domain="https://flipboard.com/topic/javascript">JavaScript</category>
+    </item>
+    <item>
+      <title>Mastercard Releases Masterpass Chatbot for Intuitive Consumer Experiences</title>
+      <link>http://wwd.com/business-news/financial/mastercard-masterpass-chatbot-10869508/</link>
+      <guid isPermaLink="false">flipboard-QCd27oBsShOUUKrUBJ4F7Q:a:1942826912-1492566625</guid>
+      <pubDate>Wed, 19 Apr 2017 01:50:25 GMT</pubDate>
+      <author>Elizabeth Doupnik</author>
+      <description>Mastercard announced today at the Facebook Developer Conference the release of its newest customer service strategy — a Masterpass-enabled bot via …</description>
+      <media:content url="https://pmcwwd.files.wordpress.com/2016/07/masterpass-in-transit-app.jpg?w=640&#x26;h=415&#x26;crop=1" medium="image" type="image/jpeg" width="640" height="415" />
+      <category domain="https://flipboard.com/topic/chatbot">Chatbots</category>
+    </item>
+    <item>
+      <title>Between the Lines | CSS-Tricks</title>
+      <link>https://css-tricks.com/between-the-lines/</link>
+      <guid isPermaLink="false">flipboard-78ortWCXQQuM-2tBDpn8xA:a:236461831-1492554448</guid>
+      <pubDate>Tue, 18 Apr 2017 22:27:28 GMT</pubDate>
+      <description>By David Bachmann On April 18, 2017&#x26;lt;p&#x26;gt;Media queries are great for changing values in sudden snaps at different screen sizes. But, combining the power of …</description>
+      <media:content url="https://cdn.css-tricks.com/wp-content/uploads/2017/04/layout.png" medium="image" type="image/png" width="800" height="600" />
+      <category domain="https://flipboard.com/topic/webdevelopment">Web Development</category>
+    </item>
+    <item>
+      <title>3 Cool AI Projects</title>
+      <link>http://www.informationweek.com/big-data/3-cool-ai-projects/a/d-id/1328666</link>
+      <guid isPermaLink="false">flipboard-WMIi37sGRHO2dKnzoQN18Q:a:114936334-1492543093</guid>
+      <pubDate>Tue, 18 Apr 2017 19:18:13 GMT</pubDate>
+      <description>Are you ready for AI and machine learning? Here's an overview of three use cases to give you a flavor of just what is possible.&#x26;lt;p&#x26;gt;AI is all around us, …</description>
+      <media:content url="http://img.deusm.com/informationweek/2017/04/1328666/Geralt-digitization-2173314_1920.jpg-iwk.jpeg" medium="image" type="image/jpeg" width="489" height="369" />
+      <category domain="https://flipboard.com/topic/machinelearning">Machine Learning</category>
+    </item>
+    <item>
+      <title>AI-powered diagnostic device takes out Tricorder XPrize</title>
+      <link>http://newatlas.com/ai-powered-device-tricorder-xprize/49067/</link>
+      <guid isPermaLink="false">flipboard-hBnYsKxERGmZ2ouXMA2P7w:a:162693379-1492568527</guid>
+      <pubDate>Wed, 19 Apr 2017 02:22:07 GMT</pubDate>
+      <description>Launched in 2012, the Qualcomm Tricorder XPRIZE tasked competing teams with developing a portable and versatile medical diagnostics machine that …</description>
+      <media:content url="http://img-2.newatlas.com/xprize-tricorder-winner-3.jpg?auto=format%2Ccompress&#x26;ch=Width%2CDPR&#x26;fit=crop&#x26;h=347&#x26;q=60&#x26;rect=70%2C0%2C1066%2C600&#x26;w=616&#x26;s=2028732fef93ce586896f8a8dfb20b11" medium="image" type="image/jpeg" width="616" height="347" />
+      <category domain="https://flipboard.com/topic/artificialintelligence">Artificial Intelligence</category>
+    </item>
+    <item>
+      <title>This is Facebook's new plan to get people talking to businesses in Messenger</title>
+      <link>http://www.businessinsider.com/new-facebook-messenger-chat-extensions-discover-tab-and-more-announced-2017-4</link>
+      <guid isPermaLink="false">flipboard-kmLk3a4-Qua3hStOlbb9Ww:a:48159484-1492538653</guid>
+      <pubDate>Tue, 18 Apr 2017 18:04:13 GMT</pubDate>
+      <author>Alex Heath</author>
+      <description>At Facebook’s annual developer conference last year, CEO Mark Zuckerberg unveiled his company’s grand vision for the future of its Messenger communications platform: chat bots.&#x26;lt;p&#x26;gt;"We think that you should just be able to message a business in the same way that you message a friend," he told a packed …</description>
+      <media:content url="https://cdn.flipboard.com/businessinsider.com/1024dcb29e829c8c9eb8b1a3c4892027a175abc6/original.jpg" medium="image" type="image/jpeg" width="907" height="680" />
+      <category domain="https://flipboard.com/topic/chatbot">Chatbots</category>
+    </item>
+    <item>
+      <title>Is Amazon Cornering Yet Another Platform?</title>
+      <link>https://seekingalpha.com/article/4063191-amazon-cornering-yet-another-platform</link>
+      <guid isPermaLink="false">flipboard-2b7f8ab7cc/seekingalpha.com-1492540563</guid>
+      <pubDate>Tue, 18 Apr 2017 18:36:03 GMT</pubDate>
+      <author>Shareholders Unite</author>
+      <description>Amazon seems to be on an inexorable rising path.&#x26;lt;p&#x26;gt;The main reason for this is that management keeps relentlessly focused on the long-term building …</description>
+      <category domain="https://flipboard.com/topic/automation">Automation</category>
+    </item>
+    <item>
+      <title>Google Assistant’s speech recognition API is now open to all developers</title>
+      <link>http://www.androidauthority.com/google-assistant-api-now-open-developers-765038/</link>
+      <guid isPermaLink="false">flipboard-Bhh41GN5RF-lP7BNfo7YZw:a:24152179-1492564787</guid>
+      <pubDate>Wed, 19 Apr 2017 01:19:47 GMT</pubDate>
+      <author>John Callaham</author>
+      <description>The same tools that handle the speech recognition features in Google Assistant can now be used by a larger audience. The Google Cloud Speech API, which went into open beta in the summer of 2016, is now generally available for all third-party developers.&#x26;lt;p&#x26;gt;Google says that the Cloud Speech API can …</description>
+      <media:content url="http://cdn04.androidauthority.net/wp-content/uploads/2016/10/google-pixel-xl-initial-review-aa-32-of-48-google-assistant-840x473.jpg" medium="image" type="image/jpeg" width="840" height="473" />
+      <category domain="https://flipboard.com/topic/google">Google</category>
+    </item>
+    <item>
+      <title>Facebook reimplements React, Relay JavaScript frameworks, focusing on speed, extensibility</title>
+      <link>http://www.techmeme.com/170418/p38</link>
+      <guid isPermaLink="false">flipboard-dKjYTyS0TLulyW5KV-MhHA:a:672325161-1492564317</guid>
+      <pubDate>Wed, 19 Apr 2017 01:11:57 GMT</pubDate>
+      <description></description>
+      <category domain="https://flipboard.com/topic/javascript">JavaScript</category>
+    </item>
+    <item>
+      <title>Facebook Just Added A Bunch Of New Features To Messenger</title>
+      <link>https://www.buzzfeed.com/blakemontgomery/facebook-just-added-a-bunch-of-new-features-to-messenger</link>
+      <guid isPermaLink="false">flipboard-efma5vvcQ1WTynFTwbR1Ag:a:80294823-1492538771</guid>
+      <pubDate>Tue, 18 Apr 2017 18:06:11 GMT</pubDate>
+      <author>Blake Montgomery</author>
+      <description>Lots and lots of bots.&#x26;lt;p&#x26;gt;Posted on April 18, 2017, 18:06 GMT&#x26;lt;p&#x26;gt;Facebook just announced a slew of updates for Messenger, including a "Discover" tab, more games, and lots of bot integrations.&#x26;lt;p&#x26;gt;The direct messaging app is used by 1.2 billion people each month.&#x26;lt;p&#x26;gt;The Discover tab will feature content and bots …</description>
+      <media:content url="https://img.buzzfeed.com/buzzfeed-static/static/2017-04/18/12/asset/buzzfeed-prod-fastlane-02/anigif_sub-buzz-20837-1492534770-1_preview.gif" medium="image" type="image/gif" width="600" height="1080" />
+      <category domain="https://flipboard.com/topic/chatbot">Chatbots</category>
+    </item>
+    <item>
+      <title>Get a lifetime of tech training at your fingertips for only $49.99</title>
+      <link>https://thenextweb.com/offers/2017/04/18/get-lifetime-tech-training-fingertips-49-99/</link>
+      <guid isPermaLink="false">flipboard-dWEBLZHgRQq2I8wxZPGyyQ:a:47933081-1492556852</guid>
+      <pubDate>Tue, 18 Apr 2017 23:07:32 GMT</pubDate>
+      <author>TNW Deals</author>
+      <description>The future is long. Fields of learning you don’t even consider now could become a cornerstone of your professional life next year, or next month… or even sooner. You can be ready for whatever that long future holds with a lifetime subscription to the premium tech training and resources of SitePoint.&#x26;lt;p&#x26;gt;…</description>
+      <media:content url="https://cdn3.tnwcdn.com/wp-content/blogs.dir/1/files/2017/04/hLiueXT-796x398.jpg" medium="image" type="image/jpeg" width="796" height="398" />
+      <category domain="https://flipboard.com/topic/webdesign">Web Design</category>
+    </item>
+    <item>
+      <title>Domain Command Patterns - Validation</title>
+      <link>https://jimmybogard.com/domain-command-patterns-validation/</link>
+      <guid isPermaLink="false">flipboard-66nr5dVqSlWI0QzCaakNVw:a:3212210-1492566681</guid>
+      <pubDate>Wed, 19 Apr 2017 01:51:21 GMT</pubDate>
+      <description>I don't normally like to debate domain modeling patterns (your project won't succeed or fail because of what you pick), I do still like to have a …</description>
+      <media:content url="https://jimmybogardsblog.blob.core.windows.net/jimmybogardsblog/0/2017/settings.png" medium="image" type="image/png" width="512" height="512" />
+      <category domain="https://flipboard.com/topic/javascript">JavaScript</category>
+    </item>
+    <item>
+      <title>Chess Grandmaster Brilliantly Speaks out About How Losing to a Computer Was Good for Humanity</title>
+      <link>https://www.inc.com/tom-popomaronis/chess-grandmaster-brilliantly-speaks-out-about-how-losing-to-a-computer-was-good.html</link>
+      <guid isPermaLink="false">flipboard-ohKInU_kQrG3h4DX9Mu3LA:a:41672638-1492562795</guid>
+      <pubDate>Wed, 19 Apr 2017 00:46:35 GMT</pubDate>
+      <author>Tom Popomaronis</author>
+      <description>AI may have famously defeated Garry Kasparov twenty years ago, but and in reflecting, he's now hopeful about what AI technology will bring mankind in the future.&#x26;lt;p&#x26;gt;Back in the day, artificial intelligence was little more than a blip in the technology radar. Researchers, of course, were not content to …</description>
+      <media:content url="https://www.incimages.com/uploaded_files/image/970x450/getty_518372958_2000133320009280268_187396.jpg" medium="image" type="image/jpeg" width="970" height="450" />
+      <category domain="https://flipboard.com/topic/artificialintelligence">Artificial Intelligence</category>
+    </item>
+    <item>
+      <title>Introducing ScriptBook</title>
+      <link>https://blog.blcklst.com/introducing-scriptbook-1f1115a633af</link>
+      <guid isPermaLink="false">flipboard-V83lwDXWSxmfqM95ZUOC8g:a:4266895-1492566235</guid>
+      <pubDate>Wed, 19 Apr 2017 01:43:55 GMT</pubDate>
+      <description>An exciting new script analysis product that uses artificial intelligence to help you understand your screenplay better.&#x26;lt;p&#x26;gt;We at the Black List are big …</description>
+      <media:content url="https://cdn-images-1.medium.com/max/800/1*UfN-TYeUdzkTxDjRT6rBVg.png" medium="image" type="image/png" width="751" height="518" />
+      <category domain="https://flipboard.com/topic/filmmaking">Filmmaking</category>
+    </item>
+    <item>
+      <title>My talk this Friday in the Machine Learning in Finance workshop - Statistical Modeling, Causal Inference, and Social Science</title>
+      <link>http://andrewgelman.com/2017/04/18/talk-friday-machine-learning-finance-workshop/</link>
+      <guid isPermaLink="false">flipboard-H1_LbYwcQ1STs_KBbZhwrw:a:343379221-1492570363</guid>
+      <pubDate>Wed, 19 Apr 2017 02:52:43 GMT</pubDate>
+      <description>This is kinda weird because I don’t know anything about machine learning in finance. I guess the assumption is that statistical ideas are not domain …</description>
+      <media:content url="http://andrewgelman.com/wp-content/uploads/2017/04/loki_cat-3.jpg" medium="image" type="image/jpeg" width="321" height="270" />
+      <category domain="https://flipboard.com/topic/machinelearning">Machine Learning</category>
+    </item>
+    </channel>
+</rss>

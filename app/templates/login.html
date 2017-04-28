@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="static/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="static/css/signup.css"> 
+    <link rel="stylesheet" type="text/css" href="static/css/font-awesome.css">   
+    <meta charset="utf-8">
+
+    <title>unplugged</title>
+</head>
+
+<body>
+    
+    <div class="fixed-header">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>                        
+                </button>
+                <div class="navbar-name">Unplugged</div>
+            </div>
+            <nav class="main-menu">
+                <ul>
+                    <li><a class="fa nav fa-search fa-1x "></a></li>
+
+                </ul>
+                
+            </nav>
+            
+        </div>
+    </div>
+    
+    
+
+    <!-- ############################################################################################################################################################################################################################################ -->
+
+    <script>
+    </script>
+
+
+    <div class="back col-lg-12">
+        <div class="container">
+
+
+	    <div>
+		
+		<div class="col-lg-1"></div>
+
+		<section class="col-md-10 content" id="home">
+		    
+		    <div class=" col-lg-12 background-1 box">
+
+			<div class="main-title text-center title-text">
+			    <h1>Sign in for Unplugged</h1></div>
+			<div style="height: 30px;"></div>
+
+			<div class="col-lg-2"></div> 
+			<div class="col-lg-8 col-md-8 content-item content-item-1 background">
+			    
+			    <div>
+
+				<form action="" method="post" enctype="multipart/form-data" id="form">
+				    <p id="len"></p>
+				    <input type="text" id="usr_email" name="email" placeholder="Email" onkeyup="unique(this.value)">
+				    <input type="password" id="usr_pass" name="password" placeholder="Password" onkeyup="match2(this.value)">
+				    
+				    <p id="handl"></p>
+				    <br/><br/><br/>
+				    <input type="button" value="login" id="button" onclick="send()">
+				    <p id="success"></p>
+				    <a href="/signup">Not a user? Signup</a>
+				</form>
+			    </div>
+
+			    <div style="height: 50px;"></div>
+			    
+			</div>
+
+		</section>
+
+		
+		
+
+		    </div>
+	    </div>
+
+
+	    
+
+		</section>
+	</div>
+
+
+	<div class="container">
+	    <div class="col-lg-1"></div>
+	    <h2 class="footer col-lg-10 box">Made with      <img src="static/icons/hrt.png" width="15  px"><br/><br/><i>Unplugged Project</i></h2>
+
+	</div>
+
+    </div>
+
+
+
+
+    <!-- ############################################################################################################################################################################################################################################ -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="static/js/jquery.min.js"></script>
+    <script src="static/js/bootstrap.min.js"></script>
+    <script src="static/js/jquery.singlePageNav.min.js"></script>
+
+
+    <script>
+     // Check scroll position and add/remove background to navbar
+     function checkScrollPosition() {
+	 if($(window).scrollTop() > 50) {
+	     $(".fixed-header").addClass("scroll");
+	 } else {        
+	     $(".fixed-header").removeClass("scroll");
+	 }
+     }
+     $(document).ready(function () {   
+	 // Single page nav
+	 $('.fixed-header').singlePageNav({
+             offset: 59,
+             filter: ':not(.external)',
+             updateHash: true        
+	 });
+	 checkScrollPosition();
+	 // nav bar
+	 $('.navbar-toggle').click(function(){
+             $('.main-menu').toggleClass('show');
+	 });
+	 $('.main-menu a').click(function(){
+             $('.main-menu').removeClass('show');
+	 });
+     });
+     $(window).on("scroll", function() {
+	 checkScrollPosition();    
+     });
+    </script>
+    <script>
+     var p;
+     var send = function() {
+	 console.log("gotcha");
+	 var formData = new FormData($("form#form")[0]);
+	 p = $.ajax({
+	     url:"http://127.0.0.1:8000/login", 
+	     type:'POST',
+	     data:formData, 
+	     contentType:false,
+	     processData:false,
+	     dataType:'json',
+	     success: function(response) {
+		 if(response.data === "success")
+		     window.location.replace("/profiletest");
+		 else
+		     window.alert(response.data);
+	     },
+	     error: function(response) {
+		 console.log(response);
+	     },
+	 });
+     };
+    </script>
+
+</body>
+</html>

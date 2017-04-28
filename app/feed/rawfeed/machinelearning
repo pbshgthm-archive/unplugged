@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/">
+  <channel>
+    <title>Machine Learning</title>
+    <link>https://flipboard.com/topic/machinelearning</link>
+    <atom:link href="https://flipboard.com/topic/machinelearning?rss" rel="self" type="application/rss+xml" />
+    <description></description>
+    <pubDate>Wed, 19 Apr 2017 03:00:11 GMT</pubDate>
+    <generator>Flipboard</generator>
+    <item>
+      <title>The Great AI Recruitment War: Amazon Is On Top, And Apple Is Almost Nowhere To Be Seen</title>
+      <link>https://www.forbes.com/sites/aarontilley/2017/04/18/the-great-ai-recruitment-war-amazon-is-on-top-and-apple-is-almost-nowhere-to-be-seen/</link>
+      <guid isPermaLink="false">flipboard-gWsZkm45QSOPYFeHUBT8pw:a:105559329-1492556541</guid>
+      <pubDate>Tue, 18 Apr 2017 23:02:21 GMT</pubDate>
+      <author>Aaron Tilley, Forbes Staff</author>
+      <description>When Matt Zeiler finished his PhD in machine learning from New York University in 2013, the tech giants came scrambling.&#x26;lt;p&#x26;gt;While he was graduating, the young artificial intelligence researcher won the ImageNet competition, which pits teams against each other for who can get the best image recognition. …</description>
+      <media:content url="https://specials-images.forbesimg.com/imageserve/af99ead857c741f1ad168f5ed922546a/960x0.jpg?fit=scale" medium="image" type="image/jpeg" width="960" height="661" />
+      <category domain="https://flipboard.com/topic/artificialintelligence">Artificial Intelligence</category>
+    </item>
+    <item>
+      <title>The First Wave of Corporate AI Is Doomed to Fail</title>
+      <link>https://hbr.org/2017/04/the-first-wave-of-corporate-ai-is-doomed-to-fail</link>
+      <guid isPermaLink="false">flipboard-6mArg0YBT4qCxRnPvIPCWw:a:105559329-1492556695</guid>
+      <pubDate>Tue, 18 Apr 2017 23:04:55 GMT</pubDate>
+      <author>Kartik Hosanagar, Apoorv Saxena</author>
+      <description>Artificial intelligence is a hot topic right now. Driven by a fear of losing out, companies in many industries have announced AI-focused initiatives. Unfortunately, most of these efforts will fail. They will fail not because AI is all hype, but because companies are approaching AI-driven innovation …</description>
+      <media:content url="https://cdn.flipboard.com/hbr.org/adff396c08fc74880024b542dae84bcb9b504d0c/original.jpg" medium="image" type="image/jpeg" width="1200" height="675" />
+      <category domain="https://flipboard.com/topic/programming">Programming</category>
+    </item>
+    <item>
+      <title>Facebook open-sources Caffe2, a new deep learning framework</title>
+      <link>https://venturebeat.com/2017/04/18/facebook-open-sources-caffe2-a-new-deep-learning-framework/</link>
+      <guid isPermaLink="false">flipboard-BcJn130YRtmXshvzw_GSNA:a:46162008-1492550507</guid>
+      <pubDate>Tue, 18 Apr 2017 21:21:47 GMT</pubDate>
+      <author>Jordan Novet</author>
+      <description>At its F8 developer conference in San Jose today, Facebook is announcing the launch of Caffe2, a new open-source framework for deep learning, a trendy type of artificial intelligence (AI). Deep learning generally involves training artificial neural networks on lots of data, like photos, and then …</description>
+      <category domain="https://flipboard.com/topic/deeplearning">Deep Learning</category>
+    </item>
+    <item>
+      <title>Artificial intelligence is the future of customer experience</title>
+      <link>http://www.telegraph.co.uk/business/digital-leaders/horizons/ai-is-the-future-of-customer-experience/</link>
+      <guid isPermaLink="false">flipboard-tetLk8gnSdCDnDB2g-z4-g:a:105559329-1492557475</guid>
+      <pubDate>Tue, 18 Apr 2017 23:17:55 GMT</pubDate>
+      <author>By Conor McGovern, Managing Director, Accenture Analytics, @cbm1001</author>
+      <description>Some of the leading digital businesses are already securing significant advances in their use of AI for everyday dealings with the consumer, and more will surely follow.&#x26;lt;p&#x26;gt;There’s no doubt that customer experience is absolutely essential for brand survival. AI and analytics will increasingly be …</description>
+      <media:content url="https://cdn.flipboard.com/telegraph.co.uk/c8cdbd41e496b4f36e33510ca68a2ddcdd84e3d7/original.jpg" medium="image" type="image/jpeg" width="1280" height="800" />
+      <category domain="https://flipboard.com/topic/customerexperience">Customer Experience</category>
+    </item>
+    <item>
+      <title>I Tried an Artificial Intelligence Skin Age Predictor — Here's How It Changed My Routine</title>
+      <link>https://www.popsugar.com/beauty/Olay-Skin-Advisor-Review-43436349</link>
+      <guid isPermaLink="false">flipboard-nfHRwNnkS5SeKmWtNnAwPw:a:166157861-1492560391</guid>
+      <pubDate>Wed, 19 Apr 2017 00:06:31 GMT</pubDate>
+      <author>Alessandra Foresto</author>
+      <description>When you think of artificial intelligence (AI), you probably imagine robots or get flashbacks from movies like &#x26;lt;b&#x26;gt;Ex Machina&#x26;lt;/b&#x26;gt; and TV shows like &#x26;lt;b&#x26;gt;Westworld&#x26;lt;/b&#x26;gt;, but what you might not know is that AI is around you. Take Facebook, for example. The way your feed looks is the result of AI, of a machine learning …</description>
+      <media:content url="https://media1.popsugar-assets.com/files/thumbor/9a3ug9k7vFAiXtyDdDrGiSDJNI0/fit-in/1024x1024/filters:format_auto-!!-:strip_icc-!!-/2017/04/16/914/n/1922153/aed6d0a558f3da8dbd16d3.73131671_edit_img_cover_file_43436349_1492367884/i/Olay-Skin-Advisor-Review.jpg" medium="image" type="image/jpeg" width="747" height="942" />
+      <category domain="https://flipboard.com/topic/skincare">Skin Care</category>
+    </item>
+    <item>
+      <title>Data Science: Deep Learning in Python</title>
+      <link>https://medium.com/@RobSm/data-science-deep-learning-in-python-614c1be26bbf</link>
+      <guid isPermaLink="false">flipboard-KXOnExr6Qs-YV6rnO4_SyQ:a:46162008-1492556656</guid>
+      <pubDate>Tue, 18 Apr 2017 23:04:16 GMT</pubDate>
+      <description>This course will get you started in building your FIRST &#x26;lt;b&#x26;gt;artificial neural network&#x26;lt;/b&#x26;gt; using &#x26;lt;b&#x26;gt;deep learning technique&#x26;lt;/b&#x26;gt;s. Following my previous course on …</description>
+      <media:content url="https://cdn-images-1.medium.com/max/800/1*yfizqHNKUuL_RUOkQdzLBQ.jpeg" medium="image" type="image/jpeg" width="750" height="422" />
+      <category domain="https://flipboard.com/topic/datascience">Data Science</category>
+    </item>
+    <item>
+      <title>What Netflix can teach us about treating cancer</title>
+      <link>http://theconversation.com/what-netflix-can-teach-us-about-treating-cancer-74806</link>
+      <guid isPermaLink="false">flipboard-zLyGYwDnRSK_kOdP2iEUWA:a:103480479-1492569907</guid>
+      <pubDate>Wed, 19 Apr 2017 02:45:07 GMT</pubDate>
+      <author>Elana Fertig</author>
+      <description>Two years ago, former President Barack Obama announced the Precision Medicine initiative in his State of the Union Address. The initiative aspired to …</description>
+      <media:content url="https://cdn.theconversation.com/files/162238/width1356x668/image-20170323-4948-hcdwjq.jpg" medium="image" type="image/jpeg" width="1356" height="668" />
+      <category domain="https://flipboard.com/topic/cancer">Cancer</category>
+    </item>
+    <item>
+      <title>3 Cool AI Projects</title>
+      <link>http://www.informationweek.com/big-data/3-cool-ai-projects/a/d-id/1328666</link>
+      <guid isPermaLink="false">flipboard-WMIi37sGRHO2dKnzoQN18Q:a:114936334-1492543093</guid>
+      <pubDate>Tue, 18 Apr 2017 19:18:13 GMT</pubDate>
+      <description>Are you ready for AI and machine learning? Here's an overview of three use cases to give you a flavor of just what is possible.&#x26;lt;p&#x26;gt;AI is all around us, …</description>
+      <media:content url="http://img.deusm.com/informationweek/2017/04/1328666/Geralt-digitization-2173314_1920.jpg-iwk.jpeg" medium="image" type="image/jpeg" width="489" height="369" />
+      <category domain="https://flipboard.com/topic/programming">Programming</category>
+    </item>
+    <item>
+      <title>Google's AutoDraw A.I. Draws The Doodles You Tried To</title>
+      <link>https://www.inverse.com/article/30297-autodraw-google-doodle-draw-ai-assistance-art-machine-learning</link>
+      <guid isPermaLink="false">flipboard-3b8906949a/inverse.com-1492558868</guid>
+      <pubDate>Tue, 18 Apr 2017 23:41:08 GMT</pubDate>
+      <author>Graham Templeton</author>
+      <description>Google released a new tool, or perhaps experiment last week, that uses an A.I. to watch what users draw in a simple paint program, and then tries to …</description>
+      <media:content url="https://fsmedia.imgix.net/15/d5/5a/cc/b6e3/4a80/a219/4dbfb6604560/screen-shot-2017-04-13-at-100615-ampng.png?rect=0%2C102%2C1912%2C956&#x26;fm=png&#x26;w=1200&#x26;q=70" medium="image" type="image/png" width="1200" height="600" />
+      <category domain="https://flipboard.com/topic/programming">Programming</category>
+    </item>
+    <item>
+      <title>Google Assistant’s speech recognition API is now open to all developers</title>
+      <link>http://www.androidauthority.com/google-assistant-api-now-open-developers-765038/</link>
+      <guid isPermaLink="false">flipboard-Bhh41GN5RF-lP7BNfo7YZw:a:24152179-1492564787</guid>
+      <pubDate>Wed, 19 Apr 2017 01:19:47 GMT</pubDate>
+      <author>John Callaham</author>
+      <description>The same tools that handle the speech recognition features in Google Assistant can now be used by a larger audience. The Google Cloud Speech API, which went into open beta in the summer of 2016, is now generally available for all third-party developers.&#x26;lt;p&#x26;gt;Google says that the Cloud Speech API can …</description>
+      <media:content url="http://cdn04.androidauthority.net/wp-content/uploads/2016/10/google-pixel-xl-initial-review-aa-32-of-48-google-assistant-840x473.jpg" medium="image" type="image/jpeg" width="840" height="473" />
+      <category domain="https://flipboard.com/topic/google">Google</category>
+    </item>
+    <item>
+      <title>My talk this Friday in the Machine Learning in Finance workshop - Statistical Modeling, Causal Inference, and Social Science</title>
+      <link>http://andrewgelman.com/2017/04/18/talk-friday-machine-learning-finance-workshop/</link>
+      <guid isPermaLink="false">flipboard-H1_LbYwcQ1STs_KBbZhwrw:a:343379221-1492570363</guid>
+      <pubDate>Wed, 19 Apr 2017 02:52:43 GMT</pubDate>
+      <description>This is kinda weird because I don’t know anything about machine learning in finance. I guess the assumption is that statistical ideas are not domain …</description>
+      <media:content url="http://andrewgelman.com/wp-content/uploads/2017/04/loki_cat-3.jpg" medium="image" type="image/jpeg" width="321" height="270" />
+      <category domain="https://flipboard.com/topic/programming">Programming</category>
+    </item>
+    <item>
+      <title>Is Amazon Cornering Yet Another Platform?</title>
+      <link>https://seekingalpha.com/article/4063191-amazon-cornering-yet-another-platform</link>
+      <guid isPermaLink="false">flipboard-2b7f8ab7cc/seekingalpha.com-1492540563</guid>
+      <pubDate>Tue, 18 Apr 2017 18:36:03 GMT</pubDate>
+      <author>Shareholders Unite</author>
+      <description>Amazon seems to be on an inexorable rising path.&#x26;lt;p&#x26;gt;The main reason for this is that management keeps relentlessly focused on the long-term building …</description>
+      <category domain="https://flipboard.com/topic/naturallanguageprocessing">Natural Language Processing</category>
+    </item>
+    <item>
+      <title>Algorithm Aims to Predict Bickering Among Couples</title>
+      <link>http://spectrum.ieee.org/the-human-os/robotics/artificial-intelligence/algorithm-aims-to-predict-bickering-among-couples</link>
+      <guid isPermaLink="false">flipboard-yDSB4IkfQ-OIhlaQuAPKaA:a:305420936-1492530572</guid>
+      <pubDate>Tue, 18 Apr 2017 15:49:32 GMT</pubDate>
+      <author>By Jeremy Hsu</author>
+      <description>Smartphone apps could eventually predict arguments among couples and help nip them in the bud before they blow up. For the first time outside the …</description>
+      <media:content url="http://spectrum.ieee.org/img/CouplefightingiStockphoto489978372-1492457510095.jpg" medium="image" type="image/jpeg" width="620" height="465" />
+      <category domain="https://flipboard.com/topic/programming">Programming</category>
+    </item>
+    <item>
+      <title>The Future Of Data In Banking | Articles | Big Data</title>
+      <link>https://channels.theinnovationenterprise.com/articles/the-future-of-data-in-banking</link>
+      <guid isPermaLink="false">flipboard-XSKCMTysTVWPF3xCFAlC3A:a:77430877-1492558427</guid>
+      <pubDate>Tue, 18 Apr 2017 23:33:47 GMT</pubDate>
+      <description>In the mid-90s, Bill Gates said that 'banking is necessary, banks are not.’ This sentiment has deepened among the population over the last decade, …</description>
+      <media:content url="https://dso7hsslwo1ge.cloudfront.net/images/sources/000/011/960/fullbox/banking.jpg?1492527965" medium="image" type="image/jpeg" width="1278" height="479" />
+      <category domain="https://flipboard.com/topic/analytics">Analytics</category>
+    </item>
+    <item>
+      <title>AI helps organisations assess team morale in Slack</title>
+      <link>http://www.zdnet.com/article/ai-helps-organisations-assess-team-morale-in-slack/</link>
+      <guid isPermaLink="false">flipboard-grdtcfrCS8-SlYpdFCF0ZQ:a:99926054-1492492856</guid>
+      <pubDate>Tue, 18 Apr 2017 05:20:56 GMT</pubDate>
+      <author>Tas Bindi</author>
+      <description>Tokyo-based company AIR has developed an AI tool that allows managers to monitor team morale based on public Slack conversations.&#x26;lt;p&#x26;gt;A bad relationship …</description>
+      <media:content url="http://zdnet4.cbsistatic.com/hub/i/r/2017/04/18/1d21bda8-254a-4e4b-88d7-ba03b92ae212/resize/770xauto/7a446f6512000fd96fda671252922822/vibe-context-shots-02.png" medium="image" type="image/png" width="770" height="495" />
+      <category domain="https://flipboard.com/topic/collaboration">Collaboration</category>
+    </item>
+    <item>
+      <title>Introducing ScriptBook</title>
+      <link>https://blog.blcklst.com/introducing-scriptbook-1f1115a633af</link>
+      <guid isPermaLink="false">flipboard-V83lwDXWSxmfqM95ZUOC8g:a:4266895-1492566235</guid>
+      <pubDate>Wed, 19 Apr 2017 01:43:55 GMT</pubDate>
+      <description>An exciting new script analysis product that uses artificial intelligence to help you understand your screenplay better.&#x26;lt;p&#x26;gt;We at the Black List are big …</description>
+      <media:content url="https://cdn-images-1.medium.com/max/800/1*UfN-TYeUdzkTxDjRT6rBVg.png" medium="image" type="image/png" width="751" height="518" />
+      <category domain="https://flipboard.com/topic/filmmaking">Filmmaking</category>
+    </item>
+    <item>
+      <title>4 ways your finance department can survive automation</title>
+      <link>http://www.businessinsider.com/sc/finance-departments-and-automation-2017-4</link>
+      <guid isPermaLink="false">flipboard-Pe3YJWt4SwGbJErWMP-EDQ:a:48159484-1492529400</guid>
+      <pubDate>Tue, 18 Apr 2017 15:30:00 GMT</pubDate>
+      <author>Sponsor Content by Oracle</author>
+      <description>To keep any company’s finance function current, CFOs and other senior executives must understand how to use machine learning and adaptive intelligence responsibly — with minimal risk to fiduciary integrity. It’s important to understand how these algorithms are operating, what decisions they’re …</description>
+      <media:content url="https://cdn.flipboard.com/businessinsider.com/02d8695c3560f18204bbc394cdb70fae20da160f/original.jpg" medium="image" type="image/jpeg" width="2120" height="1060" />
+      <category domain="https://flipboard.com/topic/programming">Programming</category>
+    </item>
+    <item>
+      <title>Biased bots: Artificial-intelligence systems echo human prejudices</title>
+      <link>https://www.princeton.edu/main/news/archive/S49/24/55M03/index.xml?section=science</link>
+      <guid isPermaLink="false">flipboard-4ff49b87e6/princeton.edu-1492538022</guid>
+      <pubDate>Tue, 18 Apr 2017 17:53:42 GMT</pubDate>
+      <author>www.princeton.edu</author>
+      <description>Science &#x26; Technology Story&#x26;lt;p&#x26;gt;Biased bots: Artificial-intelligence systems echo human prejudices&#x26;lt;p&#x26;gt;Posted April 18, 2017; 12:00 p.m.by Adam Hadhazy for the …</description>
+      <media:content url="https://www.princeton.edu/main/images/news/2017/04/doctor-search-1150.jpg" medium="image" type="image/jpeg" width="1150" height="1243" />
+      <category domain="https://flipboard.com/topic/programming">Programming</category>
+    </item>
+    <item>
+      <title>Mind-reading machine can guess the magic number</title>
+      <link>http://newatlas.com/mind-reading-machine/49049/</link>
+      <guid isPermaLink="false">flipboard-Ol4FtvHCSe6jXLCIU02pkA:a:248576539-1492559075</guid>
+      <pubDate>Tue, 18 Apr 2017 23:44:35 GMT</pubDate>
+      <description>Scientists have made some hugely promising advances when it comes to brain-computer interfaces in recent times, with machines that can turn thoughts …</description>
+      <media:content url="http://img-2.newatlas.com/brain-magic-number-5.jpg?auto=format%2Ccompress&#x26;ch=Width%2CDPR&#x26;fit=crop&#x26;h=347&#x26;q=60&#x26;rect=0%2C71%2C730%2C411&#x26;w=616&#x26;s=b12473e6e286e389be4f292266739639" medium="image" type="image/jpeg" width="616" height="347" />
+      <category domain="https://flipboard.com/topic/programming">Programming</category>
+    </item>
+    <item>
+      <title>Machine learning for the masses: Exploration and discovery</title>
+      <link>http://mobilebusinessinsights.com/2017/04/machine-learning-for-the-masses-exploration-and-discovery/</link>
+      <guid isPermaLink="false">flipboard-ppyCg_M_SH6B6FutFIORQQ:a:70605010-1492561902</guid>
+      <pubDate>Wed, 19 Apr 2017 00:31:42 GMT</pubDate>
+      <description>Nobel Prize-winning author Andre Gide once said, “Man cannot discover new oceans unless he has the courage to lose sight of the shore.”&#x26;lt;p&#x26;gt;The typical …</description>
+      <media:content url="http://mobilebusinessinsights.com/wp-content/uploads/2017/04/machine_learning_blog.jpg" medium="image" type="image/jpeg" width="900" height="600" />
+      <category domain="https://flipboard.com/topic/programming">Programming</category>
+    </item>
+    <item>
+      <title>Deep Learning Model Convertors</title>
+      <link>https://github.com/ysh329/deep-learning-model-convertor/blob/master/README.md</link>
+      <guid isPermaLink="false">flipboard-B9aRH119THyfvraAU6fA2g:a:46162008-1492541192</guid>
+      <pubDate>Tue, 18 Apr 2017 18:46:32 GMT</pubDate>
+      <author>ysh329</author>
+      <description>The project will be updated continuously ......&#x26;lt;p&#x26;gt;Note: &#x26;lt;b&#x26;gt;This is not one convertor for all frameworks, but a collection of different converters.&#x26;lt;/b&#x26;gt; Because …</description>
+      <category domain="https://flipboard.com/topic/programming">Programming</category>
+    </item>
+    <item>
+      <title>Our Machines Now Have Knowledge We’ll Never Understand</title>
+      <link>https://backchannel.com/our-machines-now-have-knowledge-well-never-understand-857a479dcc0e</link>
+      <guid isPermaLink="false">flipboard-E8OFQu9OTzS1S2HsATdhGQ:a:2957531-1492525475</guid>
+      <pubDate>Tue, 18 Apr 2017 14:24:35 GMT</pubDate>
+      <author>Backchannel</author>
+      <description>The new availability of huge amounts of data, along with the statistical tools to crunch these numbers, offers a whole new way of understanding the …</description>
+      <media:content url="https://cdn-images-1.medium.com/max/2000/1*4M7yd3FvydWy2umMONbW9w.jpeg" medium="image" type="image/jpeg" width="1500" height="800" />
+      <category domain="https://flipboard.com/topic/technology">Technology</category>
+    </item>
+    <item>
+      <title>Dive Into NLTK, Part VII: A Preliminary Study on Text Classification</title>
+      <link>http://textminingonline.com/dive-into-nltk-part-vii-a-preliminary-study-on-text-classification</link>
+      <guid isPermaLink="false">flipboard-mX9tbU9UTleqUOhTVwGZrg:a:99926054-1492566995</guid>
+      <pubDate>Wed, 19 Apr 2017 01:56:35 GMT</pubDate>
+      <author>TextMiner</author>
+      <description>This is the seventh article in the series “Dive Into NLTK“, here is an index of all the articles in the series that have been published to date:&#x26;lt;p&#x26;gt;Text …</description>
+      <category domain="https://flipboard.com/topic/datascience">Data Science</category>
+    </item>
+    <item>
+      <title>Brands see visual intelligence as key part of AI strategy</title>
+      <link>http://www.7wdata.be/big-data/brands-see-visual-intelligence-as-key-part-of-ai-strategy/</link>
+      <guid isPermaLink="false">flipboard-8WCCyi_jSTCO5KmVa5tmCQ:a:4095895-1492519439</guid>
+      <pubDate>Tue, 18 Apr 2017 12:43:59 GMT</pubDate>
+      <description>Ever since neural networks began their renewed renaissance in 2012, computer vision has been a ripe field of study and innovation for AI researchers …</description>
+      <media:content url="http://www.7wdata.be/wp-content/uploads/2017/04/clarifai_1200px_topbots_vb.jpeg" medium="image" type="image/jpeg" width="1200" height="664" />
+      <category domain="https://flipboard.com/topic/artificialintelligence">Artificial Intelligence</category>
+    </item>
+    <item>
+      <title>Oracle to acquire Wercker, SnapLogic’s machine learning tech, and NodeSource N|Solid for Alpine Linux — SD Times news digest: April 18, 2017</title>
+      <link>http://sdtimes.com/oracle-acquire-wercker-snaplogics-machine-learning-tech-nodesource-nsolid-alpine-linux-sd-times-news-digest-april-18-2017/</link>
+      <guid isPermaLink="false">flipboard-f5415e7453/sdtimes.com-1492528991</guid>
+      <pubDate>Tue, 18 Apr 2017 15:23:11 GMT</pubDate>
+      <author>sdtimes.com</author>
+      <description>Oracle has entered into a definitive agreement to acquire the continuous integration platform provider Wercker. Wercker enables organizations and …</description>
+      <media:content url="http://sdtimes.com/wp-content/uploads/2017/04/xJUmETD5.jpg" medium="image" type="image/jpeg" width="400" height="400" />
+      <category domain="https://flipboard.com/topic/devops">DevOps</category>
+    </item>
+    <item>
+      <title>AI to Become Key Competitive Factor by 2020, Says Tata</title>
+      <link>http://www.informationweek.com/big-data/big-data-analytics/ai-to-become-key-competitive-factor-by-2020-says-tata/d/d-id/1328642</link>
+      <guid isPermaLink="false">flipboard-gtPx3JjaSYKgNy0u8lR4SA:a:47950570-1492530997</guid>
+      <pubDate>Tue, 18 Apr 2017 15:56:37 GMT</pubDate>
+      <description>Different regions around the world are adopting AI at different rates. A Tata survey illustrates how it may allow its adopters to outstrip …</description>
+      <media:content url="http://img.deusm.com/informationweek/2017/04/1328642/AIdummy.jpg" medium="image" type="image/jpeg" width="489" height="341" />
+      <category domain="https://flipboard.com/topic/cognitivecomputing">Cognitive Computing</category>
+    </item>
+    <item>
+      <title>Q&#x26;A with John Forrester, Chief Marketing Officer at Inbenta</title>
+      <link>http://www.readitquik.com/interviews/in-premises/qa-with-john-forrester-chief-marketing-officer-at-inbenta/</link>
+      <guid isPermaLink="false">flipboard-WF13MyPbTlCD43sotCvofA:a:70605010-1492562520</guid>
+      <pubDate>Wed, 19 Apr 2017 00:42:00 GMT</pubDate>
+      <description>Inbenta provides Artificial Intelligence (AI)-fueled natural language search, which is based on machine learning and Natural Language Processing …</description>
+      <media:content url="http://images.readitquik.com/images/uploads/content_images/johnforrester_786x524_1_58f5e749ab984.jpg" medium="image" type="image/jpeg" width="786" height="524" />
+      <category domain="https://flipboard.com/topic/crm">CRM</category>
+    </item>
+    <item>
+      <title>Self-taught AI is the future of computing, and Google is helping us get there</title>
+      <link>http://tech.firstpost.com/news-analysis/self-taught-ai-is-the-future-of-computing-and-google-is-helping-us-get-there-372209.html</link>
+      <guid isPermaLink="false">flipboard-J1Pb_6nyT8WqQ_y4PKSe7Q:a:1382884560-1492496189</guid>
+      <pubDate>Tue, 18 Apr 2017 06:16:29 GMT</pubDate>
+      <author>Firstpost</author>
+      <description>The problem with artificial intelligence (AI) today is that training one is a slow process. Take Siri, for example. Here’s an AI that will turn 6 …</description>
+      <category domain="https://flipboard.com/topic/artificialintelligence">Artificial Intelligence</category>
+    </item>
+    <item>
+      <title>Introduction to Topic Models</title>
+      <link>https://dzone.com/articles/introduction-to-topic-models</link>
+      <guid isPermaLink="false">flipboard-JVJK4NWfQCOnumPXMA0Jqw:a:1675891-1492560680</guid>
+      <pubDate>Wed, 19 Apr 2017 00:11:20 GMT</pubDate>
+      <author>Maria Jesus Alonso</author>
+      <description>With Topic Models, words in your text data that often occur together are grouped into different topics. With the model, you can assign a given …</description>
+      <category domain="https://flipboard.com/topic/datascience">Data Science</category>
+    </item>
+    <item>
+      <title>How Airlines Are Using Technology To Seem More Human</title>
+      <link>https://www.fastcompany.com/40402713/how-airlines-are-using-technology-to-be-more-human?partner=rss</link>
+      <guid isPermaLink="false">flipboard-GymKeUh3RKWYZ0k8wS6fvw:a:3199563-1492520417</guid>
+      <pubDate>Tue, 18 Apr 2017 13:00:17 GMT</pubDate>
+      <author>By Emily Price</author>
+      <description>With air-travel booking now almost entirely automated, airlines are using AI to create a sense of personalized service that, they hope, will keep customers loyal.&#x26;lt;p&#x26;gt;There was a time when buying an airline ticket required a face-to-face interaction with an employee, someone who could offer you …</description>
+      <media:content url="https://i.ytimg.com/vi/kVA2f1Y0yns/hqdefault.jpg" medium="image" type="image/jpeg" width="480" height="360" />
+      <category domain="https://flipboard.com/topic/airline">Airlines</category>
+    </item>
+    </channel>
+</rss>

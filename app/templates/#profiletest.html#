@@ -1,0 +1,1145 @@
+<!DOCTYPE html>
+<html>
+    <head>
+	<title>Unplugged</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="{{path}}static/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="{{path}}static/css/unplugged.css">
+	<Link rel="stylesheet" type="text/css" href="{{path}}static/css/font-awesome.css">   
+
+	<link rel="stylesheet" type="text/css" href="{{path}}static/css/jquery.bxslider.min.css">   
+	<script type="text/javascript" src="{{path}}static/js/jquery-3.2.0.min.js"></script>
+	<script type="text/javascript" src="{{path}}static/js/unplugged.js"></script>
+	<script type="text/javascript" src="{{path}}static/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="{{path}}static/js/jquery.bxslider.min.js"></script>
+	<script>
+	 var f3 = function(a) {
+	     window.location.href = $(".feed-three-content").eq(a).attr("href");
+	 }
+	 var f2 = function(a) {
+	     window.location.href = $(".feed-two-content").eq(a).attr("href");
+	 }
+	 
+	 var searchs = function(a) {
+	     console.log(a);
+	     $.ajax({
+		 url:"/search",
+		 method:'POST',
+		 data:JSON.stringify({string:a}),
+		 dataType:'json',
+		 contentType:'application/json',
+		 success: function(data) {
+		     console.log("sd"+data[2].length);
+		     for(i=0; i<12 &&  i<data[0].length; ++i)
+			 {
+			     console.log("profile");
+			     $(".charecter").eq(i).text(data[0][i].name);
+			     $(".circle-content").eq(i).css({"background-image":"url(/static/profile/"+data[0][i].image + ")"});
+			     $(".circle-content").eq(i).attr("href","/profile/" + data[0][i].id);
+			     
+			     
+			 }
+		     for(var i = 0; i<15 && i<data[2].length;++i)
+			 {
+			     $(".charecter-1").eq(i).text(data[2][i].name);
+			     $(".topic-content").eq(i).css({"background-image":"url(/static/assets/topic/" + data[2][i].name + ".jpg)"});
+			     $(".topic-content").eq(i).attr("href","/feed/"+data[2][i].id);
+			     console.log(data[2][i].distance+data[2][i].name);
+			     
+			 }
+		     for(var i= 0; i<15 && i<data[1].length; ++i)
+			 {
+			     $(".charecter-1").eq(15 + i).text(data[1][i].title);
+			     $(".topic-content").eq(15 + i).css({"background-image":"url(" + data[1][i].image + ")"});
+			     $(".topic-content").eq(15 + i).attr("href","/canvas/"+data[1][i].id);
+			 }
+		     
+		     
+		     
+		 }
+	     });	     
+	 }
+	 searchs("");
+	 var fun = function (a){
+	     window.location.href = $(".circle-content").eq(a).attr("href");
+	     console.log(a)
+	 }
+	 var r = function (a){
+	     id = "";
+	     id = $(".circle-content").eq(a).attr("href").split("/")[2];
+	     if (id)
+		 {
+		     $.ajax({
+			 url:"/follow",
+			 method:"POST",
+			 data:JSON.stringify({id:id}),
+			 dataType:'json',
+			 contentType:'application/json',
+			 success: function(b) {
+			     if(b.data === "success")
+				 {
+				     if(b.op === "add")
+					 $(".charecter").eq(a).text("*" + $(".charecter").eq(a).text());
+				     else
+					 $(".charecter").eq(a).text($(".charecter").eq(a).text().substring(1));
+				 }
+			 }
+		     });
+		 }
+	     
+	     
+	     
+	 }
+	 
+	 table = ['zero','one','two','three']
+	 var y;
+	 var highlights = function(a) {
+	     var p = {id:a.value}
+	     console.log(a.value + "ds");
+	     $.ajax({
+		 url:"http://127.0.0.1:8000/feedi",
+		 type:'POST',
+		 data:JSON.stringify(p),
+		 contentType:'application/json',
+		 dataType:'json',
+		 success: function(data) {
+		     console.log(data.length+'p');
+		     html = ''
+		     y = data;
+		     for(var i=1;i<=data.length && i<=5;++i)
+			 {
+			     $("."+"t"+i).text(data[i-1].title);
+			     $("."+"m"+i).text(data[i-1].time);
+			     $("."+"s"+i).text(data[i-1].summary);
+			     var p =  data[i-1].image
+			     $("."+"i"+i).css('background-image',"url("+p+")");
+			     $(".feed-one-image").prop('href',data[i-1].link);
+			     $(".t"+i).prop('href',data[i-1].link);
+			     $(".i"+i).eq(0).click(function(){
+				 window.location.href=$(this).prop('href');
+			     });
+			     $(".t"+i).eq(0).click(function(){
+				 window.location.href=$(this).prop('href');
+			     });
+
+			 }
+		 }});
+	 }
+	 var t;
+	 var tt;
+	 function update_values() {
+	     $.getJSON("/secret",
+		       function(a) {
+			   console.log("ss");
+			   
+			   $("title").html(a.name);
+			   $(".profile-name").text(a.name);
+			   $(".profile-quote").text(a.tagline);
+			   $(".profile-handle").text(a.handle);
+			   $("#place").html('&nbsp;&nbsp;'+a.place);
+			   $("#email").html('&nbsp;&nbsp;'+a.email);
+			   $("#user_name").text(a.name);
+			   p  = "url('static/profile/" + a.picture + "')"
+			   $("#pro_pic").css('background-image',p);
+			   $("#nav-pro").css('background-image',p);
+			   p = "url('static/cover/" + a.cover + "')"
+			   console.log(a.cover);
+			   $("#top").css('background-image',p);
+			   console.log(a.topics);
+			   t = a.topics;
+			   
+			   if (t.length > 0)
+			       highlights({value:t[0].toString()});
+			   var html = ''
+			   for(var i = 1; i<=a.topics.length; ++i)
+			       {
+				   console.log(a.topics[i-1]);
+				   //					   $("."+"ccc"+i).eq(y).css({"background-image":"url(static/assets/circles/" + a.circle_image[i-1] +")"});
+				   html +='<div class="slide topic-item">';
+				   html +='<button class="topic" value="'
+				   html += a.topics[i-1];
+				   html +='" onclick="highlights(this);" style="background-image: url(\'{{path}}static/assets/topic/';
+				   html += a.t_name[i-1]+".jpg";
+				   html += "');\"><h3 class=\"charecter-1-topic aaa1\" align=center>"
+				   html += a.t_name[i-1];
+				   html += "</h3></button>"
+				   html +="</div>        "
+			       }
+			   $(".highlight-list").html(html);
+			   console.log($("highlight-list").html());
+			   //run1();
+			   run2();
+			   run3();
+			   html = ''
+			   for(var j=1;j<=a.following.length && j<=5; ++j)
+			       {
+				   html += "<a href="
+				   html += '"/profile/'+a.following[j-1] +'">';
+				   html += ' <div class="slide">';
+				   html += '<div class="circle-list">';
+				   html+='<div class="panel-item ccc3" style="background-image: url(\'static/profile/';
+				   html += a.f_image[j-1];
+				   html += "');\"";
+				   html += "></div>";						   
+				   html += "</div>";
+				   html += "</div>";
+				   html += "</a>";
+				   console.log("p" + html);
+				   
+			       }
+			   var lin = []
+			   var i = 1,t = 0,index = 0,flag = 1;
+			   while(i<=8 && flag!=0)
+			       {
+				   flag = 0;
+				   for(var j=0;j<a.following.length && i<=8; ++j)
+				       {
+					   if(a.fa_id[j].length > t && i<=8)
+					       {
+						   $(".ii" + i).css({"background-image":"url(" + a.fa_image[j][t] + ")"});
+						   $(".tt" + i).text(a.fa_title[j][t]);
+						   $(".mm" + i).text(a.fa_meta[j][t]);
+						   $(".ss" + i).html(a.fa_sum[j][t]);
+						   if(i<4 || i>5)
+						       $(".feed-three-content").eq(i-1).attr("href","/canvas/" + a.fa_id[j][t]);
+						   else
+						       $(".feed-two-content").eq(i-4).attr("href","/canvas/" + a.fa_id[j][t]);
+						   ++i;
+						   flag = 1;
+						   lin.push(a.fa_id[j][t]);
+					       }
+				       }
+				   ++t;
+			       }
+			   console.log("lin"+lin);
+			   
+			   
+			   $(".circle-slider").eq(0).html(html);
+			   console.log(a.canvas_title[0]+"a:A");
+			   console.log($(".feed-one-title").eq(7).text());
+			   for(var i = 0;i<12; ++i)
+			       {
+				   console.log("lsadk;");
+				   console.log($(".circle-content").eq(i).attr("href").split("/")[2]);
+				   if(a.following.includes( parseInt($(".circle-content").eq(i).attr("href").split("/")[2])))
+				       $(".charecter").eq(i).text("*"+$(".charecter").eq(i).text());
+			       }
+		       });
+	 }
+	 update_values();
+	</script>
+
+    </head>
+    <body>
+
+
+
+
+	<nav class="navbar navbar-fixed-top">
+	    <div class="container-fluid">
+		<div class="navbar-header">
+		    <a class="navbar-brand" href="#">Unplugged</a>
+		</div>
+		<ul class="nav navbar-nav pull-right">
+		    <li><a href="#feeds">Feeds</a></li>
+		    <li><a href="#circles">Following</a></li>
+		    <li><a href="#discover-topic">Discover</a></li>      
+		    <li><a href="#canvas">Canvas</a></li>
+		    <li><a href="/feed">Read</a></li>
+		    <li class="nav-profile" id ="user_name"><a href="#">Nick</a></li>
+		    <li><div class="nav-profile-img"><a href="#">
+			<div class="nav-pro-img" id="nav-pro"></div>
+		    </a></div></li>
+
+		    <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#" id="n" >
+			<div class="fa fa-bars" style="color: grey; font-size: 30px;"></div>
+			<ul class="dropdown-menu" id="notification">
+			    <li><a href="#" style="display:block">qwertyuiop</a></li>
+			</ul></a>
+		    </li>
+		    <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">
+			<div class="fa fa-bars" style="color: grey; font-size: 30px;"></div>
+			<ul class="dropdown-menu" id="m">
+
+			    <li><a href="#">Account</a></li>
+			    <li><a href="/canvas">write article</a></li>
+			    <li><a href="/logout">Logout</a></li>
+			    
+			</ul></a>
+		    </li>
+		</ul>
+	    </div>
+	</nav>
+
+
+
+
+
+	<div id="top" class="banner-profile container-fluid"> </div>
+
+	<div class="col-md-3"> <div class="profile-img" id="pro_pic"></div></div>
+	<div class="profile">
+	    <div style="height: 150px;"></div>
+	    <div class="profile-name "> Nick Wilde</div>
+	    <div class="profile-handle"> @nickwilde </div>
+	    <div class="profile-quote">  It's called a hustle, sweetheart. </div>
+	    <div class="profile-break">_______________________</div>
+	    <div class="profile-misc"> 
+		<div id="place" class="fa fa-university" >&nbsp;&nbsp;Zootopia Police Department</div><br/>
+		<div id="email" class="fa fa-envelope " >&nbsp;&nbsp;nickwilde@imawesome.zp</div>
+	    </div>
+	    
+
+	</div>
+
+
+
+	<div id="feeds" class="banner container-fluid" style="background-image: url('{{path}}static/assets/feed2.jpg');"> 
+	    <div class="banner-text">Feeds</div>
+	</div>
+
+
+
+	<div class="container-fluid">
+
+	    <div class="highlight-list topic-list" id="gh">	
+
+	    </div>
+
+	</div>
+
+
+	<div class="container-fluid feed">
+	    
+
+	    <div class="feed-slider">
+
+		<div class="slide">
+		    <section>
+			<div class="feed-one">
+			    
+			    <div class="feed-one-content">
+				<dic class="col-md-8">
+				    <div class="feed-one-image i1" style="background-image: url('{{path}}static/assets/canvas/words.jpg');"></div>
+				</dic>
+
+
+
+
+
+				<div class="col-md-4">
+				    <p class="feed-one-title t1">What makes a programming language “cool?”</p>
+				    <p class="feed-one-meta m1">Programming . 9 march 2017</p>
+				    <p class="feed-one-summary s1">This should be a moment of triumph for University of Toronto computer science professor Geoffrey Hinton.The British-born 69-year-old is known as the godfather of the strain of artificial intelligence called neural networks </p>
+				</div>
+
+			    </div>
+
+			    
+			</div>
+		    </section>
+		</div>
+
+		<div class="slide">
+		    <section>
+			<div class="feed-one">
+			    
+			    <div class="feed-one-content">
+				<dic class="col-md-8">
+				    <div class="feed-one-image i2" style="background-image: url('{{path}}static/assets/canvas/fox.jpg');"></div>
+				</dic>
+
+
+
+
+
+				<div class="col-md-4">
+				    <p class="feed-one-title t2">What makes a programming language “cool?”</p>
+				    <p class="feed-one-meta m2">Programming . 9 march 2017</p>
+				    <p class="feed-one-summary s2">This should be a moment of triumph for University of Toronto computer science professor Geoffrey Hinton.The British-born 69-year-old is known as the godfather of the strain of artificial intelligence called neural networks </p>
+				</div>
+
+			    </div>
+
+			    
+			</div>
+		    </section>
+		</div>
+
+		<div class="slide">
+		    <section>
+			<div class="feed-one">
+			    
+			    <div class="feed-one-content">
+				<dic class="col-md-8">
+				    <div class="feed-one-image i3" style="background-image: url('{{path}}static/assets/canvas/police.jpg');"></div>
+				</dic>
+
+
+
+
+
+				<div class="col-md-4">
+				    <p class="feed-one-title t3">What makes a programming language “cool?”</p>
+				    <p class="feed-one-meta m3">Programming . 9 march 2017</p>
+				    <p class="feed-one-summary s3">This should be a moment of triumph for University of Toronto computer science professor Geoffrey Hinton.The British-born 69-year-old is known as the godfather of the strain of artificial intelligence called neural networks </p>
+				</div>
+
+			    </div>
+
+			    
+			</div>
+		    </section>
+		</div>
+
+
+		<div class="slide">
+		    <section>
+			<div class="feed-one">
+			    
+			    <div class="feed-one-content">
+				<dic class="col-md-8">
+				    <div class="feed-one-image i4" style="background-image: url('{{path}}static/assets/canvas/police.jpg');"></div>
+				</dic>
+
+
+
+
+
+				<div class="col-md-4">
+				    <p class="feed-one-title t4">What makes a programming language “cool?”</p>
+				    <p class="feed-one-meta m4">Programming . 9 march 2017</p>
+				    <p class="feed-one-summary s4">This should be a moment of triumph for University of Toronto computer science professor Geoffrey Hinton.The British-born 69-year-old is known as the godfather of the strain of artificial intelligence called neural networks </p>
+				</div>
+
+			    </div>
+
+			    
+			</div>
+		    </section>
+		</div>
+
+
+		<div class="slide">
+		    <section>
+			<div class="feed-one">
+			    
+			    <div class="feed-one-content">
+				<dic class="col-md-8">
+				    <div class="feed-one-image i5" style="background-image: url('{{path}}static/assets/canvas/police.jpg');"></div>
+				</dic>
+
+
+
+
+
+				<div class="col-md-4">
+				    <p class="feed-one-title t5">What makes a programming language “cool?”</p>
+				    <p class="feed-one-meta m5">Programming . 9 march 2017</p>
+				    <p class="feed-one-summary s5">This should be a moment of triumph for University of Toronto computer science professor Geoffrey Hinton.The British-born 69-year-old is known as the godfather of the strain of artificial intelligence called neural networks </p>
+				</div>
+
+			    </div>
+
+			    
+			</div>
+		    </section>
+		</div>
+
+
+
+		
+
+	    </div>
+
+	    <div id="circles" class="banner container-fluid" style="background-image: url('{{path}}static/assets/circles2.jpg');"> 
+		<div class="banner-text">Following</div>
+	    </div>
+
+
+
+	    <div class="container-fluid">
+
+		<div class="circle-slider">
+		</div>
+
+	    </div>
+
+
+
+
+	    <div class="container-fluid circles">
+		
+
+		<section>
+		    <div class="feed-three">
+			
+			<div class="col-md-4 feed-three-content" onclick="f3(0)">
+			    <div class="feed-three-image ii1" style="background-image: url('{{path}}static/assets/canvas/words.jpg');"></div>
+
+			    <p class="feed-three-title tt1">What makes a programming language “cool?”</p>
+			    <p class="feed-three-meta mm1">Programming . 9 march 2017</p>
+			    <p class="feed-three-summary ss1">This should be a moment of triumph for University of Toronto computer science professor Geoffrey Hinton.The British-born 69-year-old is known as the godfather of the strain of artificial intelligence called neural networks </p>
+			    
+			</div>
+
+			<div class="col-md-4 feed-three-content" onclick="f3(1)" style="border-right: solid 1px; border-left: solid 1px ">
+			    <div class="feed-three-image ii2" style="background-image: url('{{path}}static/assets/canvas/fox.jpg');"></div>
+
+			    <p class="feed-three-title tt2">What makes a programming language “cool?”</p>
+			    <p class="feed-three-meta mm2">Programming . 9 march 2017</p>
+			    <p class="feed-three-summary ss2">This should be a moment of triumph for University of Toronto computer science professor Geoffrey Hinton.The British-born 69-year-old is known as the godfather of the strain of artificial intelligence called neural networks </p>
+			    
+			</div>
+
+			<div class="col-md-4 feed-three-content" onclick="f3(2)">
+			    <div class="feed-three-image ii3" style="background-image: url('{{path}}static/assets/canvas/police.jpg');"></div>
+
+			    <p class="feed-three-title tt3">What makes a programming language “cool?”</p>
+			    <p class="feed-three-meta mm3">Programming . 9 march 2017</p>
+			    <p class="feed-three-summary ss3">This should be a moment of triumph for University of Toronto computer science professor Geoffrey Hinton.The British-born 69-year-old is known as the godfather of the strain of artificial intelligence called neural networks </p>
+			    
+			</div>
+		    </div>
+		</section>
+
+
+
+		<section>
+		    <div class="feed-two">
+			
+			<div class="col-md-6 feed-two-content" onclick="f2(0)"  style="border-right: solid 1px;">
+			    <dic class="col-md-6">
+				<div class="feed-two-image ii4" style="background-image: url('{{path}}static/assets/canvas/rabbits.jpg');"></div>
+			    </dic>
+
+			    <div class="col-md-6">
+				<p class="feed-two-title tt4">What makes a programming language “cool?”</p>
+				<p class="feed-two-meta mm4">Programming . 9 march 2017</p>
+				<p class="feed-two-summary ss4">This should be a moment of triumph for University of Toronto computer science professor Geoffrey Hinton.The British-born 69-year-old is known as the godfather of the strain of artificial intelligence called neural networks </p>
+			    </div>
+
+			</div>
+
+			<div class="col-md-6 feed-two-content" onclick="f2(1)" >
+			    <dic class="col-md-6">
+				<div class="feed-two-image ii5" style="background-image: url('{{path}}static/assets/canvas/words.jpg');"></div>
+			    </dic>
+
+			    <div class="col-md-6">
+				<p class="feed-two-title tt5">What makes a programming language “cool?”</p>
+				<p class="feed-two-meta mm5">Programming . 9 march 2017</p>
+				<p class="feed-two-summary ss5">This should be a moment of triumph for University of Toronto computer science professor Geoffrey Hinton.The British-born 69-year-old is known as the godfather of the strain of artificial intelligence called neural networks </p>
+			    </div>
+
+			</div>
+		    </div>
+		</section>
+
+
+		<section>
+		    <div class="feed-three">
+			
+			<div class="col-md-4 feed-three-content" onclick="f3(3)" >
+			    <div class="feed-three-image ii6" style="background-image: url('{{path}}static/assets/canvas/carrots.jpg');"></div>
+
+			    <p class="feed-three-title tt6">What makes a programming language “cool?”</p>
+			    <p class="feed-three-meta mm6">Programming . 9 march 2017</p>
+			    <p class="feed-three-summary ss6">This should be a moment of triumph for University of Toronto computer science professor Geoffrey Hinton.The British-born 69-year-old is known as the godfather of the strain of artificial intelligence called neural networks </p>
+			    
+			</div>
+
+			<div class="col-md-4 feed-three-content" onclick="f3(4)" style="border-right: solid 1px; border-left: solid 1px ">
+			    <div class="feed-three-image ii7" style="background-image: url('{{path}}static/assets/canvas/fox.jpg');"></div>
+
+			    <p class="feed-three-title tt7">What makes a programming language “cool?”</p>
+			    <p class="feed-three-meta mm7">Programming . 9 march 2017</p>
+			    <p class="feed-three-summary ss7">This should be a moment of triumph for University of Toronto computer science professor Geoffrey Hinton.The British-born 69-year-old is known as the godfather of the strain of artificial intelligence called neural networks </p>
+			    
+			</div>
+
+			<div class="col-md-4 feed-three-content" onclick="f3(5)" >
+			    <div class="feed-three-image ii8" style="background-image: url('{{path}}static/assets/canvas/police.jpg');"></div>
+
+			    <p class="feed-three-title tt8">What makes a programming language “cool?”</p>
+			    <p class="feed-three-meta mm8">Programming . 9 march 2017</p>
+			    <p class="feed-three-summary ss8">This should be a moment of triumph for University of Toronto computer science professor Geoffrey Hinton.The British-born 69-year-old is known as the godfather of the strain of artificial intelligence called neural networks </p>
+			    
+			</div>
+		    </div>
+		</section>
+
+		
+		
+
+
+	    </div>
+
+
+	    <div id="discover" class="banner container-fluid" style="background-image: url('{{path}}static/assets/discover4.jpg');"> 
+		<div class="banner-text">Discover</div>
+	    </div>
+
+	    <div class="container-fluid"  style="height: 1650px;">
+		
+
+		<div class="search">
+		    <form>
+			<input class="discover" type="text" name="search" placeholder=" Search.." onkeyup="searchs(this.value)">
+		    </form>
+		</div>
+
+
+		<div class="row discover-panel">
+		    <div class="col-md-4"> <button class="col-lg-4 col-md-offset-4" onclick="discover('discover-topic')">
+			<div class="panel-item" style="background-image: url('{{path}}static/assets/topic.png');"></div></button></div>
+		    <div class="col-md-4"> <button class="col-lg-4 col-md-offset-4" onclick="discover('discover-circles')">
+			<div class="panel-item" style="background-image: url('{{path}}static/assets/circle.png');"></div></button></div>
+		    <div class="col-md-4"> <button class="col-lg-4 col-md-offset-4" onclick="discover('discover-people')">
+			<div class="panel-item" style="background-image: url('{{path}}static/assets/user.png');"></div></button></div>
+		    
+		</div>
+
+
+
+
+		<div class="discover-topic">
+
+		    <div class="col-md-12 ">
+			<div class="col-md-1"></div>
+			
+			<div class="col-md-2 topic-item">
+			    <div class="topic-content" onclick="func2('0');" style="background-image: url('{{path}}static/assets/topic/police.jpg');"><div class="up" ><li class="fa fa-check fa-2x" onclick="func1('0');"></li></div><h3 class="charecter-1" align=center>Police Dpt.</h3></div>
+			</div>
+			<div class="col-md-2 topic-item">
+			    <div class="topic-content" onclick="func2('1');" style="background-image: url('{{path}}static/assets/topic/fox.jpg');"><div class="up"><li class="fa fa-plus fa-2x" onclick="func1('1');"></li></div><h3 class="charecter-1" align=center>Foxes</h3></div>
+			</div>        
+			<div class="col-md-2 topic-item">
+			    <div class="topic-content" onclick="func2('2');" style="background-image: url('{{path}}static/assets/topic/magic.jpg');"><div class="up "><li class="fa fa-plus fa-2x" onclick="func1('2');"></li></div><h3 class="charecter-1" align=center>Magic</h3></div>
+			</div>        
+			<div class="col-md-2 topic-item">
+			    <div class="topic-content" onclick="func2('3');" style="background-image: url('{{path}}static/assets/topic/rabbit.jpg');"><div class="up "><li class="fa fa-check fa-2x" onclick="func1('3');"></li></div><h3 class="charecter-1" align=center>Rabbits</h3></div>
+			</div>        
+			<div class="col-md-2 topic-item">
+			    <div class="topic-content" onclick="func2('4');" style="background-image: url('{{path}}static/assets/topic/night.jpg');"><div class="up "><li class="fa fa-check fa-2x" onclick="func1('4');"></li></div><h3 class="charecter-1" align=center>Rabbits</h3></div>
+			</div>        
+			
+			<div class="col-md-1"></div>
+		    </div>
+
+
+		    <div class="col-md-12 ">
+			<div class="col-md-1"></div>
+			
+			<div class="col-md-2 topic-item">
+			    <div class="topic-content" onclick="func2('5');" style="background-image: url('{{path}}static/assets/topic/police.jpg');"><div class="up"><li class="fa fa-check fa-2x" onclick="func1('5');"></li></div><h3 class="charecter-1" align=center>Police Dpt.</h3></div>
+			</div>
+			<div class="col-md-2 topic-item">
+			    <div class="topic-content" onclick="func2('6');" style="background-image: url('{{path}}static/assets/topic/fox.jpg');"><div class="up"><li class="fa fa-plus fa-2x" onclick="func1('6');"></li></div><h3 class="charecter-1" align=center>Foxes</h3></div>
+			</div>        
+			<div class="col-md-2 topic-item">
+			    <div class="topic-content" onclick="func2('7');" style="background-image: url('{{path}}static/assets/topic/magic.jpg');"><div class="up "><li class="fa fa-plus fa-2x" onclick="func1('7');"></li></div><h3 class="charecter-1" align=center>Magic</h3></div>
+			</div>        
+			<div class="col-md-2 topic-item">
+			    <div class="topic-content" onclick="func2('8');" style="background-image: url('{{path}}static/assets/topic/rabbit.jpg');"><div class="up "><li class="fa fa-check fa-2x" onclick="func1('8');"></li></div><h3 class="charecter-1" align=center>Rabbits</h3></div>
+			</div>        
+			<div class="col-md-2 topic-item">
+			    <div class="topic-content" onclick="func2('9');" style="background-image: url('{{path}}static/assets/topic/night.jpg');"><div class="up "><li class="fa fa-check fa-2x" onclick="func1('9');"></li></div><h3 class="charecter-1" align=center>Rabbits</h3></div>
+			</div>        
+			
+			<div class="col-md-1"></div>
+		    </div>
+
+
+		    <div class="col-md-12 ">
+			<div class="col-md-1"></div>
+			
+			<div class="col-md-2 topic-item">
+			    <div class="topic-content" onclick="func2('10');" style="background-image: url('{{path}}static/assets/topic/police.jpg');"><div class="up"><li class="fa fa-check fa-2x" onclick="func1('10');"></li></div><h3 class="charecter-1" align=center>Police Dpt.</h3></div>
+			</div>
+			<div class="col-md-2 topic-item">
+			    <div class="topic-content" onclick="func2('11');" style="background-image: url('{{path}}static/assets/topic/fox.jpg');"><div class="up"><li class="fa fa-plus fa-2x" onclick="func1('11');"></li></div><h3 class="charecter-1" align=center>Foxes</h3></div>
+			</div>        
+			<div class="col-md-2 topic-item">
+			    <div class="topic-content" onclick="func2('12');" style="background-image: url('{{path}}static/assets/topic/magic.jpg');"><div class="up "><li class="fa fa-plus fa-2x" onclick="func1('12');"></li></div><h3 class="charecter-1" align=center>Magic</h3></div>
+			</div>        
+			<div class="col-md-2 topic-item">
+			    <div class="topic-content" onclick="func2('13');" style="background-image: url('{{path}}static/assets/topic/rabbit.jpg');"><div class="up "><li class="fa fa-check fa-2x" onclick="func1('13');"></li></div><h3 class="charecter-1" align=center>Rabbits</h3></div>
+			</div>        
+			<div class="col-md-2 topic-item">
+			    <div class="topic-content" onclick="func2('14');" style="background-image: url('{{path}}static/assets/topic/night.jpg');"><div class="up "><li class="fa fa-check fa-2x" onclick="func1('14');"></li></div><h3 class="charecter-1" align=center>Rabbits</h3></div>
+			</div>        
+			
+			<div class="col-md-1"></div>
+		    </div>
+		</div>
+
+
+
+		<div class="discover-people">
+		    <div class="col-md-12">
+			<div class="col-md-1"></div>
+			<div class="col-md-10">
+			    <div class="col-lg-3" style="align-content: center;">
+				<div class="circle-content" style="background-image: url('greet.jpg');" onclick="fun(0)"></div>
+				<h3 class="charecter" onclick="r(0)" align="center">Pearl Crew</h3>
+				
+			    </div>
+			    <div class="col-lg-3" style="align-content: center;">
+				<div class="circle-content" style="background-image: url('greet.jpg');"  onclick="fun(1)"></div>
+				<h3 class="charecter" onclick="r(1)" align="center">Lords</h3>
+				
+			    </div>
+			    <div class="col-lg-3" style="align-content: center;">
+				<div class="circle-content" style="background-image: url('greet.jpg');"  onclick="fun(2)"></div>
+				<h3 class="charecter" onclick="r(2)" align="center">Elizebth family</h3>
+				
+			    </div>
+			    <div class="col-lg-3" style="align-content: center;">
+				<div class="circle-content" style="background-image: url('greet.jpg');"  onclick="fun(3)"></div>
+				<h3 class="charecter" align="center" onclick="r(3)">Lenders</h3>
+				
+			    </div>
+			    <div class="col-lg-3" style="align-content: center;">
+				<div class="circle-content" style="background-image: url('greet.jpg');"  onclick="fun(4)"></div>
+				<h3 class="charecter" align="center" onclick="r(4)">Pirate club</h3>
+				
+			    </div>
+			    <div class="col-lg-3" style="align-content: center;">
+				<div class="circle-content" style="background-image: url('greet.jpg');"  onclick="fun(5)"></div>
+				<h3 class="charecter" onclick="r(5)" align="center">Isle dwellers</h3>
+				
+			    </div>
+			    <div class="col-lg-3" style="align-content: center;">
+				<div class="circle-content" style="background-image: url('greet.jpg');"  onclick="fun(6)"></div>
+				<h3 class="charecter" align="center" onclick="r(6)">Old crew</h3>
+				
+			    </div>
+			    <div class="col-lg-3" style="align-content: center;">
+				<div class="circle-content" style="background-image: url('greet.jpg');"  onclick="fun(7)"></div>
+				<h3 class="charecter" align="center" onclick="r(7)">Dead men</h3>
+				
+			    </div>
+			    <div class="col-lg-3" style="align-content: center;">
+				<div class="circle-content" style="background-image: url('greet.jpg');"  onclick="fun(8)"></div>
+				<h3 class="charecter" align="center" onclick="r(8)">E.I. Company</h3>
+				
+			    </div>
+			    <div class="col-lg-3" style="align-content: center;">
+				<div class="circle-content" style="background-image: url('greet.jpg');"  onclick="fun(9)"></div>
+				<h3 class="charecter" align="center" onclick="r(9)">E.I. Company</h3>
+				
+			    </div>
+			    <div class="col-lg-3" style="align-content: center;">
+				<div class="circle-content" style="background-image: url('greet.jpg');"  onclick="fun(10)"></div>
+				<h3 class="charecter" align="center" onclick="r(10)">E.I. Company</h3>
+				
+			    </div>
+			    <div class="col-lg-3" style="align-content: center;">
+				<div class="circle-content" style="background-image: url('greet.jpg');"  onclick="fun(11)"></div>
+				<h3 class="charecter" align="center" onclick="r(11)">E.I. Company</h3>
+				
+			    </div>
+			</div>
+		    </div>
+
+		</div>
+
+
+
+		<div class="discover-circles">
+		    <div class="col-md-12 ">
+			<div class="col-md-1"></div>
+			
+			<div class="col-md-2 topic-item">
+			    <div class="topic-content" onclick="func2('15');" style="background-image: url('{{path}}static/assets/topic/police.jpg');"><h3 class="charecter-1" align=center>Police Dpt.</h3></div>
+			</div>
+			<div class="col-md-2 topic-item">
+			    <div class="topic-content" onclick="func2('16');" style="background-image: url('{{path}}static/assets/topic/fox.jpg');"><h3 class="charecter-1" align=center>Foxes</h3></div>
+			</div>        
+			<div class="col-md-2 topic-item">
+			    <div class="topic-content" onclick="func2('17');" style="background-image: url('{{path}}static/assets/topic/magic.jpg');"><h3 class="charecter-1" align=center>Magic</h3></div>
+			</div>        
+			<div class="col-md-2 topic-item">
+			    <div class="topic-content" onclick="func2('18');" style="background-image: url('{{path}}static/assets/topic/rabbit.jpg');"><h3 class="charecter-1" align=center>Rabbits</h3></div>
+			</div>        
+			<div class="col-md-2 topic-item">
+			    <div class="topic-content" onclick="func2('19');" style="background-image: url('{{path}}static/assets/topic/night.jpg');"><h3 class="charecter-1" align=center>Rabbits</h3></div>
+			</div>        
+			
+			<div class="col-md-1"></div>
+		    </div>
+
+
+		    <div class="col-md-12 ">
+			<div class="col-md-1"></div>
+			
+			<div class="col-md-2 topic-item">
+			    <div class="topic-content" onclick="func2('20');" style="background-image: url('{{path}}static/assets/topic/police.jpg');"><h3 class="charecter-1" align=center>Police Dpt.</h3></div>
+			</div>
+			<div class="col-md-2 topic-item">
+			    <div class="topic-content" onclick="func2('21');" style="background-image: url('{{path}}static/assets/topic/fox.jpg');"><h3 class="charecter-1" align=center>Foxes</h3></div>
+			</div>        
+			<div class="col-md-2 topic-item">
+			    <div class="topic-content" onclick="func2('22');" style="background-image: url('{{path}}static/assets/topic/magic.jpg');"><h3 class="charecter-1" align=center>Magic</h3></div>
+			</div>        
+			<div class="col-md-2 topic-item">
+			    <div class="topic-content" onclick="func2('23');" style="background-image: url('{{path}}static/assets/topic/rabbit.jpg');"><h3 class="charecter-1" align=center>Rabbits</h3></div>
+			</div>        
+			<div class="col-md-2 topic-item">
+			    <div class="topic-content" onclick="func2('24');" style="background-image: url('{{path}}static/assets/topic/night.jpg');"><h3 class="charecter-1" align=center>Rabbits</h3></div>
+			</div>        
+			
+			<div class="col-md-1"></div>
+		    </div>
+
+
+		    <div class="col-md-12 ">
+			<div class="col-md-1"></div>
+			
+			<div class="col-md-2 topic-item">
+			    <div class="topic-content" onclick="func2('25');" style="background-image: url('{{path}}static/assets/topic/police.jpg');"><h3 class="charecter-1" align=center>Police Dpt.</h3></div>
+			</div>
+			<div class="col-md-2 topic-item">
+			    <div class="topic-content" onclick="func2('26');" style="background-image: url('{{path}}static/assets/topic/fox.jpg');"><h3 class="charecter-1" align=center>Foxes</h3></div>
+			</div>        
+			<div class="col-md-2 topic-item">
+			    <div class="topic-content" onclick="func2('27');" style="background-image: url('{{path}}static/assets/topic/magic.jpg');"><h3 class="charecter-1" align=center>Magic</h3></div>
+			</div>        
+			<div class="col-md-2 topic-item">
+			    <div class="topic-content" onclick="func2('28');" style="background-image: url('{{path}}static/assets/topic/rabbit.jpg');"><h3 class="charecter-1" align=center>Rabbits</h3></div>
+			</div>        
+			<div class="col-md-2 topic-item">
+			    <div class="topic-content" onclick="func2('29');" style="background-image: url('{{path}}static/assets/topic/night.jpg');"><h3 class="charecter-1" align=center>Rabbits</h3></div>
+			</div>        
+			
+			<div class="col-md-1"></div>
+		    </div>
+
+		</div>
+
+	    </div>
+
+
+
+
+	    <div id="canvas" class="banner container-fluid" style="background-image: url('{{path}}static/assets/canvas-banner.jpg');"> 
+		<div class="banner-text" style="color: black; text-outline: 2px 2px white; text-shadow: 5px 5px 30px white;">Canvas</div>
+	    </div>
+
+	    <div class="container-fluid canvas">
+		
+		<section>
+		    <div class="feed-one">
+			
+			<div class="feed-one-content">
+			    <dic class="col-md-8">
+				<div class="feed-one-image" style="background-image: url('{{path}}static/assets/canvas/police.jpg');"></div>
+			    </dic>
+
+			    <div class="col-md-4">
+				<p class="feed-one-title">What make
+				    s a programming language “cool?”</p>
+				<p class="feed-one-meta">Programming . 9 march 2017</p>
+				<p class="feed-one-summary">This should be a moment of triumph for University of Toronto computer science professor Geoffrey Hinton.The British-born 69-year-old is known as the godfather of the strain of artificial intelligence called neural networks </p>
+			    </div>
+
+			</div>
+
+			
+		    </div>
+		</section>
+
+
+
+		<section>
+		    <div class="feed-three">
+			
+			<div class="col-md-4 feed-three-content">
+			    <div class="feed-three-image" style="background-image: url('{{path}}static/assets/canvas/fox.jpg');"></div>
+
+			    <p class="feed-three-title">What makes a programming language “cool?”</p>
+			    <p class="feed-three-meta">Programming . 9 march 2017</p>
+			    <p class="feed-three-summary">This should be a moment of triumph for University of Toronto computer science professor Geoffrey Hinton.The British-born 69-year-old is known as the godfather of the strain of artificial intelligence called neural networks </p>
+			    
+			</div>
+
+			<div class="col-md-4 feed-three-content" style="border-right: solid 1px; border-left: solid 1px ">
+			    <div class="feed-three-image" style="background-image: url('{{path}}static/assets/canvas/words.jpg');"></div>
+
+			    <p class="feed-three-title">What makes a programming language “cool?”</p>
+			    <p class="feed-three-meta">Programming . 9 march 2017</p>
+			    <p class="feed-three-summary">This should be a moment of triumph for University of Toronto computer science professor Geoffrey Hinton.The British-born 69-year-old is known as the godfather of the strain of artificial intelligence called neural networks </p>
+			    
+			</div>
+
+			<div class="col-md-4 feed-three-content">
+			    <div class="feed-three-image" style="background-image: url('{{path}}static/assets/canvas/rabbits.jpg');"></div>
+
+			    <p class="feed-three-title">What makes a programming language “cool?”</p>
+			    <p class="feed-three-meta">Programming . 9 march 2017</p>
+			    <p class="feed-three-summary">This should be a moment of triumph for University of Toronto computer science professor Geoffrey Hinton.The British-born 69-year-old is known as the godfather of the strain of artificial intelligence called neural networks </p>
+			    
+			</div>
+		    </div>
+		</section>
+
+		<section>
+		    <div class="feed-two-vert">
+			
+			<div class="col-md-6 feed-two-vert-content">
+			    <div class="feed-two-vert-image" style="background-image: url('{{path}}static/assets/canvas/judy.jpg');"></div>
+
+			    <p class="feed-two-vert-title">What makes a programming language “cool?”</p>
+			    <p class="feed-two-vert-meta">Programming . 9 march 2017</p>
+			    <p class="feed-two-vert-summary">This should be a moment of triumph for University of Toronto computer science professor Geoffrey Hinton.The British-born 69-year-old is known as the godfather of the strain of artificial intelligence called neural networks </p>
+			    
+			</div>
+
+			<div class="col-md-6 feed-two-vert-content">
+			    <div class="feed-two-vert-image" style="background-image: url('{{path}}static/assets/canvas/carrots.jpg');"></div>
+
+			    <p class="feed-two-vert-title">What makes a programming language “cool?”</p>
+			    <p class="feed-two-vert-meta">Programming . 9 march 2017</p>
+			    <p class="feed-two-vert-summary">This should be a moment of triumph for University of Toronto computer science professor Geoffrey Hinton.The British-born 69-year-old is known as the godfather of the strain of artificial intelligence called neural networks </p>
+			    
+			</div>
+
+			
+		    </div>
+		</section>
+
+
+		
+
+
+	    </div>
+
+
+
+
+    </body>
+
+
+    <script>
+     
+     discover('discover-topic');
+    </script>
+
+    <script>
+     var p = {id:"1"}
+     $.ajax({
+	 url:"http://127.0.0.1:8000/feedi",
+	 type:'POST',
+	 data:JSON.stringify(p),
+	 dataType:'json',
+	 contentType:'application/json',
+	 success: function(data) {
+	     console.log(data);
+	     for(var i=1;i<=6 && i<=data.length;++i)
+		 {
+		     $("."+"t"+i).text(data[i-1].title);
+		     $("."+"m"+i).text(data[i-1].link);
+		     $("."+"s"+i).text(data[i-1].summary);
+		     $("."+"i"+i).css({"background-image":"url("+data[i-1].image+");"});
+		     console.log(data[i-1].image);
+		 }
+	 },
+	 error: function(data) {
+	     console.log(data);
+	 },
+     });
+     var p = {id:"1"}
+     var circles = function(p) {
+	 $.ajax({
+	     url:"http://127.0.0.1:8000/circlei",
+	     type:'POST',
+	     data:JSON.stringify(p),
+	     dataType:'json',
+	     contentType:'application/json',
+	     success: function(data) {
+		 for( var i=1; i<=8 && i<=data.length; ++i)
+		     {
+			 $("."+"ii"+i).css({"background-image":"url("+data[i-1].image + ");"});
+			 $("."+"tt"+i).text(data[i-1].title);
+			 $("."+"mm"+i).text(data[i-1].link);
+			 $("."+"ss"+i).text(data[i-1].summary);
+		     }			   
+	     },
+	 });
+     }
+     $(document).ajaxComplete( function() {     
+	 $(document).ready(function(){
+	     $('.highlight-list').bxSlider({
+		 slideWidth: 300,
+		 minSlides: 6,
+		 maxSlides: 6,
+		 slideMargin: 5,
+		 moveSlides: 2
+	     });
+	     console.log("f");
+	 });
+     });
+     function run2() {
+	 
+	 
+	 $(document).ready(function(){
+	     $('.circle-slider').bxSlider({
+		 slideWidth: 300,
+		 minSlides: 6,
+		 maxSlides: 6,
+		 slideMargin: 5,
+		 moveSlides: 2
+	     });
+	 });
+     }
+     function run3() {
+	 $(document).ready(function(){
+	     $('.feed-slider').bxSlider({
+		 slideWidth: 1800,
+		 minSlides: 1,
+		 maxSlides: 1,
+		 slideMargin: 5,
+		 moveSlides: 1,
+		 auto: true
+	     });
+	 });
+     }
+     
+     function func1(a){
+	 if (!e) var e = window.event;
+	 e.cancelBubble = true;
+	 if (e.stopPropagation) e.stopPropagation();
+	 $.ajax({
+	     url:"/addTopic",
+	     method:"POST",
+	     data:JSON.stringify({id:$(".topic-content").eq(a).attr("href").split("/")[2]}),
+	     dataType:'json',
+	     contentType:'application/json',
+	     success: function(data) {
+		 if(data.data === "success")
+		     {
+			 console.log(data)
+			 //			 window.location.reload();
+		     }
+		 //		     update_values();
+		 
+		 else
+		     window.alert(data);
+	     }
+	 });
+	 
+	 
+	 
+     }
+
+     function func2(a){
+	 console.log(a);
+	 console.log($(".topic-content").eq(a).attr("href"));
+	 window.location.href = $(".topic-content").eq(a).attr("href");
+     }
+     console.log(y);
+     var m;
+     
+     discover('discover-topic')
+     $(document).ready(function() {
+	 $.getJSON("/secret",function(a) {
+	     var h = a.canvas_title.length;
+	     g = 0;
+	     m = a.c_link
+	     if(h != 0)
+		 {
+		     $(".feed-one-title").eq(7).html("<a href='" + a.c_link[g] + "'><p>" + a.canvas_title[g] + "</p></a>");
+		     $(".feed-one-meta").eq(7).text(a.canvas_meta[0]);
+		     $(".feed-one-summary").eq(7).html(a.canvas_sum[0]);
+		     $(".feed-one-image").eq(7).css({"background-image":"url(" + a.canvas_image[0] + ")"});
+		     $(".feed-one-content").eq(7).prop("href",a.c_link[0]);
+		     $(".feed-one-title").prop("href",a.c_link[0]);
+		     $(".feed-one-image").eq(7).on('click',function() {
+			 window.location.href = a.c_link[0];}
+		     );
+		     $(".feed-one-summary").eq(7).after("</a>");
+					      ++g;
+		 }
+	     if(h-2 > 0)
+		 {
+		     for(var i=6;i<9;++i)
+			 {
+			     $(".feed-three-title").eq(i).html("<a href='"+ a.c_link[g] + "'><p>"+ a.canvas_title[g]+"</p></a>");
+			     $(".feed-three-meta").eq(i).text(a.canvas_meta[g]);
+			     $(".feed-three-summary").eq(i).html(a.canvas_sum[g]);
+			     $(".feed-three-image").eq(i).css({"background-image":"url(" + a.canvas_image[g] + ")"});
+			     if(g == 1)
+				 $(".feed-three-image").eq(i).on('click',function() {
+				     window.location.href = a.c_link[1];
+				 });
+			     if(g ==2 )
+				 $(".feed-three-image").eq(i).on('click',function() {
+				     window.location.href = a.c_link[2];
+				 });
+			     if(g == 3)
+				 $(".feed-three-image").eq(i).on('click',function() {
+				     window.location.href = a.c_link[3];
+				 });
+			     $(".feed-three-title").eq(i).prop("href",a.c_link[g]);
+			     ++g;
+			 }
+		 }
+	     if(h-1 > 0)
+		 {
+		     for(var i=0;i<2;++i)
+			 {
+			     $(".feed-two-vert-title").eq(i).html("<a href='" + a.c_link[g] + "'><p>" + a.canvas_title[g] + "</p></a>");
+			     $(".feed-two-vert-meta").eq(i).text(a.canvas_meta[g]);
+			     $(".feed-two-vert-summary").eq(i).html(a.canvas_sum[g]);
+			     $(".feed-two-vert-image").eq(i).css({"background-image":"url(" + a.canvas_image[g] + ")"});
+			     $(".feed-two-vert-image").eq(i).on('click',function() {
+				 window.location.href = a.c_link[g];
+			     });
+			     if(g==1)
+				 $(".feed-two-vert-image").eq(i).on('click',function() {
+				     window.location.href = a.c_link[1];
+				 });
+			     if(g==2)
+				 $(".feed-two-vert-image").eq(i).on('click',function() {
+				     window.location.href = a.c_link[2];
+				 });
+			     if(g==4)
+				 $(".feed-two-vert-image").eq(i).on('click',function() {
+				     window.location.href = a.c_link[4];
+				 });
+			     if(g==5)
+				 $(".feed-two-vert-image").eq(i).on('click',function() {
+				     window.location.href = a.c_link[5];
+				 });
+			     ++g;
+			 }
+		 }
+	     
+	     
+	     
+	 });
+     });
+     discover('discover-circles');
+     function v() {
+	 $("#notification").html("<li style='display:block' onclick='v();console.log(\"refresh\");'>_______refresh______</li>");
+	 console.log("m");
+	 $.getJSON("/notification",function(a) {
+	     for(var i=0; i<a.u_name.length; ++i)
+		 {
+		     html = "<pre>";
+		     html += "<li align='center'><a href='/profile/" + a.u_id[i] + "'>";
+		     html += a.u_name[i];
+		     html += "</a> wrote ";
+		     html += "<a href='/canvas/" + a.a_link[i] + "'>";
+		     html += a.a_title[i];
+		     html += "</a></li></pre>"
+		     $("#notification").append(html);
+		 }
+	 });
+     }
+     $(".fa.fa-bars").eq(0).on("click",v());
+    </script>
+
+
+</html>
