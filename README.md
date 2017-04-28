@@ -15,13 +15,15 @@ Request
 Urllib
 Beautiful soup
 ```
-You will need to use ```Python-3```.
+You will need to use ```Python-2```.
+Hence, it is highly recommended that you work in a python virtual environment, so that newer versions
+of python, in case they are installed, will not mess with the working.
 
 ## Deployment
 
 Once you clone the project, and install the above libraries, just do:
 ```
-python3 run.py
+python run.py
 ```
 to see it run.
 
