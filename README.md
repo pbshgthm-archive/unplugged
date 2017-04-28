@@ -1,27 +1,24 @@
 # Unplugged
 
-An interest based social network
-
-## Getting Started
-
-Our software is in its alpha phse right now. 
+An interest based social network. The project is in its alpha phase right now. 
 
 ### Prerequisites
 Please download the latest versions of the following software to run this project:
+```
 Flask
 Flask sqlalchemy
 Request
 Urllib
 Beautiful soup
-
-You will need to use Python-3.
+```
+You will need to use ```Python-3```.
 
 ## Deployment
 
 Once you clone the project, and install the above libraries, just do:
-'''
+```
 python3 run.py
-'''
+```
 to see it run.
 
 ## Built With
