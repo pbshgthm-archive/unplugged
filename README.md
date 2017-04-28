@@ -4,7 +4,7 @@ An interest based social network. The project is in its alpha phase right now.
 
 ### About
 - The model:
-Please see the follwing ER diagram to understand the data model:
+Please see the following Entity Relationship diagram to understand the data model:
 https://www.gliffy.com/go/share/schq64urockyd4rnuhic
 
 - The controllers:
