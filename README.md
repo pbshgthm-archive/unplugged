@@ -2,6 +2,10 @@
 
 An interest based social network. The project is in its alpha phase right now. 
 
+### About
+- i'll fill this soon.
+
+
 ### Prerequisites
 Please download the latest versions of the following software to run this project:
 ```
