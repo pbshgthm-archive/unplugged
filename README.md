@@ -5,7 +5,7 @@ An interest based social network. The project is in its alpha phase right now.
 ### About
 - The model:
 Please see the following Entity Relationship diagram to understand the data model:
-https://www.gliffy.com/go/share/schq64urockyd4rnuhic
+![image](https://cloud.githubusercontent.com/assets/26631482/25555557/5684701a-2d07-11e7-8eff-b191a0dafecb.png)
 
 - The controllers:
 There are four major blueprint instances corresponding to routes related to feed, articles, profile, etc.
