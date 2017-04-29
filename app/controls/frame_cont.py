@@ -18,7 +18,7 @@ ALLOWED_EXTENSIONS = set(['jpg','jpeg','png'])
 t ={'42': 'Artificial Intelligence', '43': 'Happiness', '24': 'Sports', '25': 'Spirituality', '26': 'Soccer', '27': 'Food', '20': 'Education', '21': 'Management', '22': 'Humor', '23': 'Space', '28': 'Marketing', '29': 'Interior Design', '40': 'Energy', '41': 'Brain', '1': 'love', '0': 'Relationships', '3': 'Music', '2': 'Psychology', '5': 'Math', '4': 'Medicine', '7': 'Literature', '6': 'Gaming', '9': 'Photography', '8': 'Nature', '39': 'Movies', '38': 'Motivation', '11': 'Robots', '10': 'Philosophy', '13': 'Anthropology', '12': 'Entrepreneurship', '15': 'Computer Science', '14': 'Automobiles', '17': 'Art', '16': 'Machine learning', '19': 'Books', '18': 'Gardening', '31': 'Economics', '30': 'Journalism', '37': 'Archaeology', '36': 'Physics', '35': 'Anime', '34': 'Future', '33': 'Urbanism', '32': 'Programming'}
 
 def add(string,val):
-    print("y")
+    print(string)
     string += ", " + str(val)
     return string
 def sub(string,val):
@@ -391,8 +391,8 @@ def secretarticle():
         a=request.form
         b=request.files['image']
         print(a)
-        if( a['aid'] != -1 ):
-            art = Archive.query.get(a['aid'])
+        if( int(a['aid']) != -1 ):
+            art = Archive.query.get(int(a['aid']))
             art.content = a['content']
             art.title = a['title']
             art.time = str(time.strftime("%H:%M:%S"))
@@ -410,20 +410,22 @@ def secretarticle():
             if 'logged_in' in session:
                 if session['logged_in']:
                     u = User.query.get(session['id'])
-                    if(a['aid'] == -1):
+                    if(int(a['aid']) == -1):
                         art = Archive(a['title'],a['content'],str(time.strftime("%H:%M:%S")),str(time.strftime("%d:%m:%y")),"",int(session['id']))
                         db.session.add(art)
                         db.session.commit()
                         b.save(os.path.join( app.config['ARCHIVE_FOLDER'],str(art.id) + '.' + b.filename.rsplit('.', 1)[1].lower() ))
                         art.image = 'static/assets/archive/' +str(art.id) + '.' + b.filename.rsplit('.', 1)[1].lower()
                         art.link = "http://127.0.0.1:8000/canvas/" + str( art.id)
+                        print(u.archived)
                         u.archived  = add(u.archived,art.id)
+                        print(u.archived)
                         for i in u.followers.split(", ")[2:]:
                             a = User.query.get(int(i));
                             a.notification = add(a.notification,u.id)
                             a.notification = add(a.notification,art.id)
-                            db.session.commit()
-                            return jsonify({"data":"success","id":art.id})
+                        db.session.commit()
+                        return jsonify({"data":"success","id":art.id,"uid":u.id})
             
                     
 @mod_frame.route("/profile/<string:id>",methods=['GET'])
