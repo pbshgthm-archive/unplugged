@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" type="text/css" href="{{path}}static/css/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="{{path}}static/css/unplugged.css">
-	<link rel="stylesheet" type="text/css" href="{{path}}static/css/font-awesome.css">   
+	<Link rel="stylesheet" type="text/css" href="{{path}}static/css/font-awesome.css">   
 
 	<link rel="stylesheet" type="text/css" href="{{path}}static/css/jquery.bxslider.min.css">   
 	<script type="text/javascript" src="{{path}}static/js/jquery-3.2.0.min.js"></script>
@@ -146,7 +146,9 @@
 			   console.log(a.cover);
 			   $("#top").css('background-image',p);
 			   console.log(a.topics);
-			   t = a.topics;
+
+
+						      t = a.topics;
 			   
 			   if (t.length > 0)
 			       highlights({value:t[0].toString()});
@@ -200,8 +202,10 @@
 						   $(".tt" + i).text(a.fa_title[j][t]);
 						   $(".mm" + i).text(a.fa_meta[j][t]);
 						   $(".ss" + i).html(a.fa_sum[j][t]);
-						   if(i<4 || i>5)
-						       $(".feed-three-content").eq(i-1).attr("href","/canvas/" + a.fa_id[j][t]);
+						   if(i<4)
+							 $(".feed-three-content").eq(i-1).attr("href","/canvas/" + a.fa_id[j][t]);
+							 else if(i > 5)
+									   $(".feed-three-content").eq(i-3).attr("href","/canvas/" + a.fa_id[j][t]);
 						   else
 						       $(".feed-two-content").eq(i-4).attr("href","/canvas/" + a.fa_id[j][t]);
 						   ++i;
@@ -270,6 +274,7 @@
 		</ul>
 	    </div>
 	</nav>
+
 
 
 

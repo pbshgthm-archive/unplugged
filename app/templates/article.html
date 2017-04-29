@@ -27,14 +27,14 @@
 		    <a class="navbar-brand" href="#">Unplugged</a>
 		</div>
 		<ul class="nav navbar-nav pull-right">
-		    <li><a href="#feeds">Feeds</a></li>
-		    <li><a href="#circles">Following</a></li>
-		    <li><a href="#discover-topic">Discover</a></li>      
-		    <li><a href="#canvas">Canvas</a></li>
+		   		    <li><a href="#feeds">Feeds</a></li>
+		    <li><a href="/profiletest#circles">Following</a></li>
+		    <li><a href="/profiletest#discover">Discover</a></li>      
+		    <li><a href="/profiletest#canvas">Canvas</a></li>
 		    <li><a href="/feed">Read</a></li>
-		    <li class="nav-profile" id ="user_name"><a href="#">Nick</a></li>
-		    <li><div class="nav-profile-img"><a href="#">
-			<div class="nav-pro-img" id="nav-pro"></div>
+		    <li class="nav-profile" id="user_name"><a href="/profiletest">Nick</a></li>
+		    <li><div class="nav-profile-img"><a href="/profiletest">
+			<div class="nav-pro-img" id="profile_pic" style="background-image: url('{{path}}static/profile/nick_profile.jpg');"></div>
 		    </a></div></li>
 
 		    <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#" id="n" >
@@ -59,6 +59,9 @@
 
 
 
+
+
+
 <div  class="signup-body container-fluid"> 
 	
 <div style="height: 150px;"></div>
@@ -66,7 +69,7 @@
 <div class="signup-text">Article<button id="edit-icon" class="fa fa-pencil" style="font-size: 40px; margin-top: 30px; float: right; display: none" onclick="edit()"></button>
 </div>
 
-
+<p id="ididid" style="display:none;">{{aid}}</p>
 
 
           <div class="article" id= "article-title" contentEditable="false" placeholder="Title"></div>
@@ -74,7 +77,6 @@
 	      <input type="text" id="ttitle" name="title" style="display:none;">
 	      <input type="text" id="tcontent" name="content" style="display:none;">
 	      <input type="text" id="aid" name="aid" style="display:none;">
-		    
               <label id="upload" style="display: none;" class="btn btn-default btn-file">Upload Image <input type="file" id="imgInp" name="image" style="display: none;"></label>
 	  </form>
               <img id="atricle-image" src="#" alt="your image" style="display: none" class="upload-image" 01/>
@@ -184,14 +186,13 @@
  function articleadd(){
      $("#ttitle").val($("#article-title").text());
 		    $("#tcontent").val($("#article-content").html().toString());
-		    $("#aid").val({{aid}});
-		  //  $("#imgInp").val($("#atricle-image").val())
+		    $("#aid").val(parseInt($("#ididid").text()));
      var formData = new FormData($("form#form")[0]);
      console.log(formData);
      $.ajax({
 	 url:'http://127.0.0.1:8000/secret/article',
-	 type: 'POST',
-	 dataType: 'json',
+	 type:'POST',
+	 dataType:'json',
 	 data:formData,
 	 processData:false,
 	 contentType:false,
@@ -202,16 +203,7 @@
 
  }
 
- $.getJSON("/secret",function(a) {
-     console.log(a);
-     $("#user_name").text(a.name);
-     p  = "url('static/profile/" + a.picture + "')"
-     $("#profile_pic").css('background-image',p);
-     $("#nav-pro").css('background-image',p);
-     console.log(a.topics);
- });
-		    // edit();
-
+		   
 		    	 function update_values() {
 	     $.getJSON("/secret",
 		       function(a) {
@@ -225,15 +217,15 @@
 			   $("#email").html('&nbsp;&nbsp;'+a.email);
 			   $("#user_name").text(a.name);
 			   p  = "url('../static/profile/" + a.picture + "')"
-			   $("#pro_pic").css('background-image',p);
+			   $("#profile_pic").css('background-image',p);
 			   $("#nav-pro").css('background-image',p);
-			   p = "url('static/cover/" + a.cover + "')"
+			   p = "url('../static/cover/" + a.cover + "')"
 			   console.log(a.cover);
 			   $("#top").css('background-image',p);
 			   console.log(a.topics);
-			   t = a.topics;
 		    });}
 		    update_values();
+
 		     function v() {
 	 $("#notification").html("<li style='display:block' onclick='v();console.log(\"refresh\");'>_______refresh______</li>");
 	 console.log("m");
@@ -251,8 +243,9 @@
 		 }
 	 });
      }
-     $(".fa.fa-bars").eq(0).on("click",v());
-    
+					     $(".fa.fa-bars").eq(0).on("click",v());
+					     if($("#ididid").text() == "-1")
+					     edit();
 </script>
 
 
