@@ -5,14 +5,14 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" type="text/css" href="{{path}}static/css/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="{{path}}static/css/unplugged.css">
-	<link rel="stylesheet" type="text/css" href="{{path}}static/css/font-awesome.css">   
+	<link rel="stylesheet" type="text/css" href="{{path}}static/css/font-awesome.css">
 
-	<link rel="stylesheet" type="text/css" href="{{path}}static/css/jquery.bxslider.min.css"> 
-	
+	<link rel="stylesheet" type="text/css" href="{{path}}static/css/jquery.bxslider.min.css">
+
 	<script type="text/javascript" src="{{path}}static/js/jquery-3.2.0.min.js"></script>
 	<script type="text/javascript" src="{{path}}static/js/unplugged.js"></script>
 	<script type="text/javascript" src="{{path}}static/js/bootstrap.min.js"></script>
-	
+
 
 	<script>
 	 function update_values() {
@@ -34,11 +34,22 @@
 			 html += '.jpg\');"><div class="banner-text">';
 			 html +=  "{{topic}}";
 			 html += '</div></div>';
-			 
+
 			 $("#hg").append(html);
 		     }
 	     });
 	 }
+
+   var csrf_token = "{{ csrf_token() }}";
+
+$.ajaxSetup({
+    beforeSend: function(xhr, settings) {
+        if (!/^(GET|HEAD|OPTIONS|TRACE)$/i.test(settings.type) && !this.crossDomain) {
+            xhr.setRequestHeader("X-CSRFToken", csrf_token);
+        }
+    }
+});
+
 	 var fillin = function(i,t) {
 	     html = '';
 	     $.ajax({
@@ -63,14 +74,14 @@
 			     g = m[0];
 			     ++i;
 			 }
-		     
+
 		 },
-		 
+
 	     });
-	     
+
 	 }
-	 
-	     
+
+
 	     update_values();
 	</script>
     </head>
@@ -87,7 +98,7 @@
 		<ul class="nav navbar-nav pull-right">
 		    <li><a href="#feeds">Feeds</a></li>
 		    <li><a href="/profiletest#circles">Following</a></li>
-		    <li><a href="/profiletest#discover">Discover</a></li>      
+		    <li><a href="/profiletest#discover">Discover</a></li>
 		    <li><a href="/profiletest#canvas">Canvas</a></li>
 		    <li><a href="/feed">Read</a></li>
 		    <li class="nav-profile" id="user_name"><a href="/profiletest">Nick</a></li>
@@ -129,7 +140,7 @@
     <script type="text/javascript">
      // discover('discover-topic');
      var run = function(data,h,g,i){
-	 var html = "";	
+	 var html = "";
 	 html += '<a href="' + data[g].link + '">';
 	 html += '   <section>'
 	 html += '<div class="feed-one"><div class="feed-one-content"><dic class="col-md-8"><div class="feed-one-image" style="background-image: url(\'';
@@ -163,8 +174,8 @@
 		     }
 		 html += '</section>';
 		 $(".feed-main").eq(i).append(html);
-		 
-		 
+
+
 		 h = h-3;
 		 g = g+3;
 	     }
@@ -208,10 +219,10 @@
 		 html += '</section>';
 		 $(".feed-main").eq(i).append(html);
 	     }
-	 
+
 	 return [g,h]
      }
-     
+
      fillin(0,$("#ididid").text());
      function v() {
 	 $.getJSON("/notification",function(a) {

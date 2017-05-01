@@ -4,22 +4,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="static/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="static/css/signup.css"> 
-    <link rel="stylesheet" type="text/css" href="static/css/font-awesome.css">   
+    <link rel="stylesheet" type="text/css" href="static/css/signup.css">
+    <link rel="stylesheet" type="text/css" href="static/css/font-awesome.css">
     <meta charset="utf-8">
 
     <title>unplugged</title>
 </head>
 
 <body>
-    
+
     <div class="fixed-header">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle">
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>                        
+                    <span class="icon-bar"></span>
                 </button>
                 <div class="navbar-name">Unplugged</div>
             </div>
@@ -28,13 +28,13 @@
                     <li><a class="fa nav fa-search fa-1x "></a></li>
 
                 </ul>
-                
+
             </nav>
-            
+
         </div>
     </div>
-    
-    
+
+
 
     <!-- ############################################################################################################################################################################################################################################ -->
 
@@ -143,23 +143,24 @@
 
 
 	    <div>
-		
+
 		<div class="col-lg-1"></div>
 
 		<section class="col-md-10 content" id="home">
-		    
+
 		    <div class=" col-lg-12 background-1 box">
 
 			<div class="main-title text-center title-text">
 			    <h1>Signup for Unplugged</h1></div>
 			<div style="height: 30px;"></div>
 
-			<div class="col-lg-2"></div> 
+			<div class="col-lg-2"></div>
 			<div class="col-lg-8 col-md-8 content-item content-item-1 background">
-			    
+
 			    <div>
 				<a href="/login">already a User? login</a>
 				<form action="" method="post" enctype="multipart/form-data" id="form">
+           <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/>
 				    <input type="text" id="usr_name" name="name" placeholder="Name" onkeyup="enable()">
 				    Profile pic
 	 			    <input type="file" id="photo" name="photo">
@@ -182,19 +183,19 @@
 			    </div>
 
 			    <div style="height: 50px;"></div>
-			    
+
 			</div>
 
 		</section>
 
-		
-		
+
+
 
 		    </div>
 	    </div>
 
 
-	    
+
 
 		</section>
 	</div>
@@ -235,16 +236,16 @@
      function checkScrollPosition() {
 	 if($(window).scrollTop() > 50) {
 	     $(".fixed-header").addClass("scroll");
-	 } else {        
+	 } else {
 	     $(".fixed-header").removeClass("scroll");
 	 }
      }
-     $(document).ready(function () {   
+     $(document).ready(function () {
 	 // Single page nav
 	 $('.fixed-header').singlePageNav({
              offset: 59,
              filter: ':not(.external)',
-             updateHash: true        
+             updateHash: true
 	 });
 	 checkScrollPosition();
 	 // nav bar
@@ -256,18 +257,29 @@
 	 });
      });
      $(window).on("scroll", function() {
-	 checkScrollPosition();    
+	 checkScrollPosition();
      });
     </script>
     <script>
      document.getElementById('button').disabled = true;
      var send = function() {
 	 console.log("gotcha");
+
+   var csrf_token = "{{ csrf_token() }}";
+
+    $.ajaxSetup({
+        beforeSend: function(xhr, settings) {
+            if (!/^(GET|HEAD|OPTIONS|TRACE)$/i.test(settings.type) && !this.crossDomain) {
+                xhr.setRequestHeader("X-CSRFToken", csrf_token);
+            }
+        }
+    });
+
 	 var formData = new FormData($("form#form")[0]);
 	 $.ajax({
-	     url:"http://127.0.0.1:8000/signup", 
+	     url:"http://127.0.0.1:8000/signup",
 	     type:'POST',
-	     data:formData, 
+	     data:formData,
 	     contentType:false,
 	     processData:false,
 	     dataType:'json',

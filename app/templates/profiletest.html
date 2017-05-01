@@ -5,9 +5,9 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" type="text/css" href="{{path}}static/css/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="{{path}}static/css/unplugged.css">
-	<Link rel="stylesheet" type="text/css" href="{{path}}static/css/font-awesome.css">   
+	<Link rel="stylesheet" type="text/css" href="{{path}}static/css/font-awesome.css">
 
-	<link rel="stylesheet" type="text/css" href="{{path}}static/css/jquery.bxslider.min.css">   
+	<link rel="stylesheet" type="text/css" href="{{path}}static/css/jquery.bxslider.min.css">
 	<script type="text/javascript" src="{{path}}static/js/jquery-3.2.0.min.js"></script>
 	<script type="text/javascript" src="{{path}}static/js/unplugged.js"></script>
 	<script type="text/javascript" src="{{path}}static/js/bootstrap.min.js"></script>
@@ -19,7 +19,16 @@
 	 var f2 = function(a) {
 	     window.location.href = $(".feed-two-content").eq(a).attr("href");
 	 }
-	 
+
+   var csrf_token = "{{ csrf_token() }}";
+
+$.ajaxSetup({
+    beforeSend: function(xhr, settings) {
+        if (!/^(GET|HEAD|OPTIONS|TRACE)$/i.test(settings.type) && !this.crossDomain) {
+            xhr.setRequestHeader("X-CSRFToken", csrf_token);
+        }
+    }
+});
 	 var searchs = function(a) {
 	     console.log(a);
 	     $.ajax({
@@ -36,8 +45,8 @@
 			     $(".charecter").eq(i).text(data[0][i].name);
 			     $(".circle-content").eq(i).css({"background-image":"url(/static/profile/"+data[0][i].image + ")"});
 			     $(".circle-content").eq(i).attr("href","/profile/" + data[0][i].id);
-			     
-			     
+
+
 			 }
 		     for(var i = 0; i<15 && i<data[2].length;++i)
 			 {
@@ -45,7 +54,7 @@
 			     $(".topic-content").eq(i).css({"background-image":"url(/static/assets/topic/" + data[2][i].name + ".jpg)"});
 			     $(".topic-content").eq(i).attr("href","/feed/"+data[2][i].id);
 			     console.log(data[2][i].distance+data[2][i].name);
-			     
+
 			 }
 		     for(var i= 0; i<15 && i<data[1].length; ++i)
 			 {
@@ -53,11 +62,11 @@
 			     $(".topic-content").eq(15 + i).css({"background-image":"url(" + data[1][i].image + ")"});
 			     $(".topic-content").eq(15 + i).attr("href","/canvas/"+data[1][i].id);
 			 }
-		     
-		     
-		     
+
+
+
 		 }
-	     });	     
+	     });
 	 }
 	 searchs("");
 	 var fun = function (a){
@@ -86,11 +95,11 @@
 			 }
 		     });
 		 }
-	     
-	     
-	     
+
+
+
 	 }
-	 
+
 	 table = ['zero','one','two','three']
 	 var y;
 	 var highlights = function(a) {
@@ -131,7 +140,7 @@
 	     $.getJSON("/secret",
 		       function(a) {
 			   console.log("ss");
-			   
+
 			   $("title").html(a.name);
 			   $(".profile-name").text(a.name);
 			   $(".profile-quote").text(a.tagline);
@@ -149,7 +158,7 @@
 
 
 						      t = a.topics;
-			   
+
 			   if (t.length > 0)
 			       highlights({value:t[0].toString()});
 			   var html = ''
@@ -182,12 +191,12 @@
 				   html+='<div class="panel-item ccc3" style="background-image: url(\'static/profile/';
 				   html += a.f_image[j-1];
 				   html += "');\"";
-				   html += "></div>";						   
+				   html += "></div>";
 				   html += "</div>";
 				   html += "</div>";
 				   html += "</a>";
 				   console.log("p" + html);
-				   
+
 			       }
 			   var lin = []
 			   var i = 1,t = 0,index = 0,flag = 1;
@@ -216,8 +225,8 @@
 				   ++t;
 			       }
 			   console.log("lin"+lin);
-			   
-			   
+
+
 			   $(".circle-slider").eq(0).html(html);
 			   console.log(a.canvas_title[0]+"a:A");
 			   console.log($(".feed-one-title").eq(7).text());
@@ -247,7 +256,7 @@
 		<ul class="nav navbar-nav pull-right">
 		    <li><a href="#feeds">Feeds</a></li>
 		    <li><a href="#circles">Following</a></li>
-		    <li><a href="#discover-topic">Discover</a></li>      
+		    <li><a href="#discover-topic">Discover</a></li>
 		    <li><a href="#canvas">Canvas</a></li>
 		    <li><a href="/feed">Read</a></li>
 		    <li class="nav-profile" id ="user_name"><a href="#">Nick</a></li>
@@ -268,7 +277,7 @@
 			    <li><a href="#">Account</a></li>
 			    <li><a href="/canvas">write article</a></li>
 			    <li><a href="/logout">Logout</a></li>
-			    
+
 			</ul></a>
 		    </li>
 		</ul>
@@ -289,17 +298,17 @@
 	    <div class="profile-handle"> @nickwilde </div>
 	    <div class="profile-quote">  It's called a hustle, sweetheart. </div>
 	    <div class="profile-break">_______________________</div>
-	    <div class="profile-misc"> 
+	    <div class="profile-misc">
 		<div id="place" class="fa fa-university" >&nbsp;&nbsp;Zootopia Police Department</div><br/>
 		<div id="email" class="fa fa-envelope " >&nbsp;&nbsp;nickwilde@imawesome.zp</div>
 	    </div>
-	    
+
 
 	</div>
 
 
 
-	<div id="feeds" class="banner container-fluid" style="background-image: url('{{path}}static/assets/feed2.jpg');"> 
+	<div id="feeds" class="banner container-fluid" style="background-image: url('{{path}}static/assets/feed2.jpg');">
 	    <div class="banner-text">Feeds</div>
 	</div>
 
@@ -307,7 +316,7 @@
 
 	<div class="container-fluid">
 
-	    <div class="highlight-list topic-list" id="gh">	
+	    <div class="highlight-list topic-list" id="gh">
 
 	    </div>
 
@@ -315,14 +324,14 @@
 
 
 	<div class="container-fluid feed">
-	    
+
 
 	    <div class="feed-slider">
 
 		<div class="slide">
 		    <section>
 			<div class="feed-one">
-			    
+
 			    <div class="feed-one-content">
 				<dic class="col-md-8">
 				    <div class="feed-one-image i1" style="background-image: url('{{path}}static/assets/canvas/words.jpg');"></div>
@@ -340,7 +349,7 @@
 
 			    </div>
 
-			    
+
 			</div>
 		    </section>
 		</div>
@@ -348,7 +357,7 @@
 		<div class="slide">
 		    <section>
 			<div class="feed-one">
-			    
+
 			    <div class="feed-one-content">
 				<dic class="col-md-8">
 				    <div class="feed-one-image i2" style="background-image: url('{{path}}static/assets/canvas/fox.jpg');"></div>
@@ -366,7 +375,7 @@
 
 			    </div>
 
-			    
+
 			</div>
 		    </section>
 		</div>
@@ -374,7 +383,7 @@
 		<div class="slide">
 		    <section>
 			<div class="feed-one">
-			    
+
 			    <div class="feed-one-content">
 				<dic class="col-md-8">
 				    <div class="feed-one-image i3" style="background-image: url('{{path}}static/assets/canvas/police.jpg');"></div>
@@ -392,7 +401,7 @@
 
 			    </div>
 
-			    
+
 			</div>
 		    </section>
 		</div>
@@ -401,7 +410,7 @@
 		<div class="slide">
 		    <section>
 			<div class="feed-one">
-			    
+
 			    <div class="feed-one-content">
 				<dic class="col-md-8">
 				    <div class="feed-one-image i4" style="background-image: url('{{path}}static/assets/canvas/police.jpg');"></div>
@@ -419,7 +428,7 @@
 
 			    </div>
 
-			    
+
 			</div>
 		    </section>
 		</div>
@@ -428,7 +437,7 @@
 		<div class="slide">
 		    <section>
 			<div class="feed-one">
-			    
+
 			    <div class="feed-one-content">
 				<dic class="col-md-8">
 				    <div class="feed-one-image i5" style="background-image: url('{{path}}static/assets/canvas/police.jpg');"></div>
@@ -446,18 +455,18 @@
 
 			    </div>
 
-			    
+
 			</div>
 		    </section>
 		</div>
 
 
 
-		
+
 
 	    </div>
 
-	    <div id="circles" class="banner container-fluid" style="background-image: url('{{path}}static/assets/circles2.jpg');"> 
+	    <div id="circles" class="banner container-fluid" style="background-image: url('{{path}}static/assets/circles2.jpg');">
 		<div class="banner-text">Following</div>
 	    </div>
 
@@ -474,18 +483,18 @@
 
 
 	    <div class="container-fluid circles">
-		
+
 
 		<section>
 		    <div class="feed-three">
-			
+
 			<div class="col-md-4 feed-three-content" onclick="f3(0)">
 			    <div class="feed-three-image ii1" style="background-image: url('{{path}}static/assets/canvas/words.jpg');"></div>
 
 			    <p class="feed-three-title tt1">What makes a programming language “cool?”</p>
 			    <p class="feed-three-meta mm1">Programming . 9 march 2017</p>
 			    <p class="feed-three-summary ss1">This should be a moment of triumph for University of Toronto computer science professor Geoffrey Hinton.The British-born 69-year-old is known as the godfather of the strain of artificial intelligence called neural networks </p>
-			    
+
 			</div>
 
 			<div class="col-md-4 feed-three-content" onclick="f3(1)" style="border-right: solid 1px; border-left: solid 1px ">
@@ -494,7 +503,7 @@
 			    <p class="feed-three-title tt2">What makes a programming language “cool?”</p>
 			    <p class="feed-three-meta mm2">Programming . 9 march 2017</p>
 			    <p class="feed-three-summary ss2">This should be a moment of triumph for University of Toronto computer science professor Geoffrey Hinton.The British-born 69-year-old is known as the godfather of the strain of artificial intelligence called neural networks </p>
-			    
+
 			</div>
 
 			<div class="col-md-4 feed-three-content" onclick="f3(2)">
@@ -503,7 +512,7 @@
 			    <p class="feed-three-title tt3">What makes a programming language “cool?”</p>
 			    <p class="feed-three-meta mm3">Programming . 9 march 2017</p>
 			    <p class="feed-three-summary ss3">This should be a moment of triumph for University of Toronto computer science professor Geoffrey Hinton.The British-born 69-year-old is known as the godfather of the strain of artificial intelligence called neural networks </p>
-			    
+
 			</div>
 		    </div>
 		</section>
@@ -512,7 +521,7 @@
 
 		<section>
 		    <div class="feed-two">
-			
+
 			<div class="col-md-6 feed-two-content" onclick="f2(0)"  style="border-right: solid 1px;">
 			    <dic class="col-md-6">
 				<div class="feed-two-image ii4" style="background-image: url('{{path}}static/assets/canvas/rabbits.jpg');"></div>
@@ -544,14 +553,14 @@
 
 		<section>
 		    <div class="feed-three">
-			
+
 			<div class="col-md-4 feed-three-content" onclick="f3(3)" >
 			    <div class="feed-three-image ii6" style="background-image: url('{{path}}static/assets/canvas/carrots.jpg');"></div>
 
 			    <p class="feed-three-title tt6">What makes a programming language “cool?”</p>
 			    <p class="feed-three-meta mm6">Programming . 9 march 2017</p>
 			    <p class="feed-three-summary ss6">This should be a moment of triumph for University of Toronto computer science professor Geoffrey Hinton.The British-born 69-year-old is known as the godfather of the strain of artificial intelligence called neural networks </p>
-			    
+
 			</div>
 
 			<div class="col-md-4 feed-three-content" onclick="f3(4)" style="border-right: solid 1px; border-left: solid 1px ">
@@ -560,7 +569,7 @@
 			    <p class="feed-three-title tt7">What makes a programming language “cool?”</p>
 			    <p class="feed-three-meta mm7">Programming . 9 march 2017</p>
 			    <p class="feed-three-summary ss7">This should be a moment of triumph for University of Toronto computer science professor Geoffrey Hinton.The British-born 69-year-old is known as the godfather of the strain of artificial intelligence called neural networks </p>
-			    
+
 			</div>
 
 			<div class="col-md-4 feed-three-content" onclick="f3(5)" >
@@ -569,27 +578,28 @@
 			    <p class="feed-three-title tt8">What makes a programming language “cool?”</p>
 			    <p class="feed-three-meta mm8">Programming . 9 march 2017</p>
 			    <p class="feed-three-summary ss8">This should be a moment of triumph for University of Toronto computer science professor Geoffrey Hinton.The British-born 69-year-old is known as the godfather of the strain of artificial intelligence called neural networks </p>
-			    
+
 			</div>
 		    </div>
 		</section>
 
-		
-		
+
+
 
 
 	    </div>
 
 
-	    <div id="discover" class="banner container-fluid" style="background-image: url('{{path}}static/assets/discover4.jpg');"> 
+	    <div id="discover" class="banner container-fluid" style="background-image: url('{{path}}static/assets/discover4.jpg');">
 		<div class="banner-text">Discover</div>
 	    </div>
 
 	    <div class="container-fluid"  style="height: 1650px;">
-		
+
 
 		<div class="search">
 		    <form>
+          <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/>
 			<input class="discover" type="text" name="search" placeholder=" Search.." onkeyup="searchs(this.value)">
 		    </form>
 		</div>
@@ -602,7 +612,7 @@
 			<div class="panel-item" style="background-image: url('{{path}}static/assets/circle.png');"></div></button></div>
 		    <div class="col-md-4"> <button class="col-lg-4 col-md-offset-4" onclick="discover('discover-people')">
 			<div class="panel-item" style="background-image: url('{{path}}static/assets/user.png');"></div></button></div>
-		    
+
 		</div>
 
 
@@ -612,69 +622,69 @@
 
 		    <div class="col-md-12 ">
 			<div class="col-md-1"></div>
-			
+
 			<div class="col-md-2 topic-item">
 			    <div class="topic-content" onclick="func2('0');" style="background-image: url('{{path}}static/assets/topic/police.jpg');"><div class="up" ><li class="fa fa-check fa-2x" onclick="func1('0');"></li></div><h3 class="charecter-1" align=center>Police Dpt.</h3></div>
 			</div>
 			<div class="col-md-2 topic-item">
 			    <div class="topic-content" onclick="func2('1');" style="background-image: url('{{path}}static/assets/topic/fox.jpg');"><div class="up"><li class="fa fa-plus fa-2x" onclick="func1('1');"></li></div><h3 class="charecter-1" align=center>Foxes</h3></div>
-			</div>        
+			</div>
 			<div class="col-md-2 topic-item">
 			    <div class="topic-content" onclick="func2('2');" style="background-image: url('{{path}}static/assets/topic/magic.jpg');"><div class="up "><li class="fa fa-plus fa-2x" onclick="func1('2');"></li></div><h3 class="charecter-1" align=center>Magic</h3></div>
-			</div>        
+			</div>
 			<div class="col-md-2 topic-item">
 			    <div class="topic-content" onclick="func2('3');" style="background-image: url('{{path}}static/assets/topic/rabbit.jpg');"><div class="up "><li class="fa fa-check fa-2x" onclick="func1('3');"></li></div><h3 class="charecter-1" align=center>Rabbits</h3></div>
-			</div>        
+			</div>
 			<div class="col-md-2 topic-item">
 			    <div class="topic-content" onclick="func2('4');" style="background-image: url('{{path}}static/assets/topic/night.jpg');"><div class="up "><li class="fa fa-check fa-2x" onclick="func1('4');"></li></div><h3 class="charecter-1" align=center>Rabbits</h3></div>
-			</div>        
-			
+			</div>
+
 			<div class="col-md-1"></div>
 		    </div>
 
 
 		    <div class="col-md-12 ">
 			<div class="col-md-1"></div>
-			
+
 			<div class="col-md-2 topic-item">
 			    <div class="topic-content" onclick="func2('5');" style="background-image: url('{{path}}static/assets/topic/police.jpg');"><div class="up"><li class="fa fa-check fa-2x" onclick="func1('5');"></li></div><h3 class="charecter-1" align=center>Police Dpt.</h3></div>
 			</div>
 			<div class="col-md-2 topic-item">
 			    <div class="topic-content" onclick="func2('6');" style="background-image: url('{{path}}static/assets/topic/fox.jpg');"><div class="up"><li class="fa fa-plus fa-2x" onclick="func1('6');"></li></div><h3 class="charecter-1" align=center>Foxes</h3></div>
-			</div>        
+			</div>
 			<div class="col-md-2 topic-item">
 			    <div class="topic-content" onclick="func2('7');" style="background-image: url('{{path}}static/assets/topic/magic.jpg');"><div class="up "><li class="fa fa-plus fa-2x" onclick="func1('7');"></li></div><h3 class="charecter-1" align=center>Magic</h3></div>
-			</div>        
+			</div>
 			<div class="col-md-2 topic-item">
 			    <div class="topic-content" onclick="func2('8');" style="background-image: url('{{path}}static/assets/topic/rabbit.jpg');"><div class="up "><li class="fa fa-check fa-2x" onclick="func1('8');"></li></div><h3 class="charecter-1" align=center>Rabbits</h3></div>
-			</div>        
+			</div>
 			<div class="col-md-2 topic-item">
 			    <div class="topic-content" onclick="func2('9');" style="background-image: url('{{path}}static/assets/topic/night.jpg');"><div class="up "><li class="fa fa-check fa-2x" onclick="func1('9');"></li></div><h3 class="charecter-1" align=center>Rabbits</h3></div>
-			</div>        
-			
+			</div>
+
 			<div class="col-md-1"></div>
 		    </div>
 
 
 		    <div class="col-md-12 ">
 			<div class="col-md-1"></div>
-			
+
 			<div class="col-md-2 topic-item">
 			    <div class="topic-content" onclick="func2('10');" style="background-image: url('{{path}}static/assets/topic/police.jpg');"><div class="up"><li class="fa fa-check fa-2x" onclick="func1('10');"></li></div><h3 class="charecter-1" align=center>Police Dpt.</h3></div>
 			</div>
 			<div class="col-md-2 topic-item">
 			    <div class="topic-content" onclick="func2('11');" style="background-image: url('{{path}}static/assets/topic/fox.jpg');"><div class="up"><li class="fa fa-plus fa-2x" onclick="func1('11');"></li></div><h3 class="charecter-1" align=center>Foxes</h3></div>
-			</div>        
+			</div>
 			<div class="col-md-2 topic-item">
 			    <div class="topic-content" onclick="func2('12');" style="background-image: url('{{path}}static/assets/topic/magic.jpg');"><div class="up "><li class="fa fa-plus fa-2x" onclick="func1('12');"></li></div><h3 class="charecter-1" align=center>Magic</h3></div>
-			</div>        
+			</div>
 			<div class="col-md-2 topic-item">
 			    <div class="topic-content" onclick="func2('13');" style="background-image: url('{{path}}static/assets/topic/rabbit.jpg');"><div class="up "><li class="fa fa-check fa-2x" onclick="func1('13');"></li></div><h3 class="charecter-1" align=center>Rabbits</h3></div>
-			</div>        
+			</div>
 			<div class="col-md-2 topic-item">
 			    <div class="topic-content" onclick="func2('14');" style="background-image: url('{{path}}static/assets/topic/night.jpg');"><div class="up "><li class="fa fa-check fa-2x" onclick="func1('14');"></li></div><h3 class="charecter-1" align=center>Rabbits</h3></div>
-			</div>        
-			
+			</div>
+
 			<div class="col-md-1"></div>
 		    </div>
 		</div>
@@ -688,62 +698,62 @@
 			    <div class="col-lg-3" style="align-content: center;">
 				<div class="circle-content" style="background-image: url('greet.jpg');" onclick="fun(0)"></div>
 				<h3 class="charecter" onclick="r(0)" align="center">Pearl Crew</h3>
-				
+
 			    </div>
 			    <div class="col-lg-3" style="align-content: center;">
 				<div class="circle-content" style="background-image: url('greet.jpg');"  onclick="fun(1)"></div>
 				<h3 class="charecter" onclick="r(1)" align="center">Lords</h3>
-				
+
 			    </div>
 			    <div class="col-lg-3" style="align-content: center;">
 				<div class="circle-content" style="background-image: url('greet.jpg');"  onclick="fun(2)"></div>
 				<h3 class="charecter" onclick="r(2)" align="center">Elizebth family</h3>
-				
+
 			    </div>
 			    <div class="col-lg-3" style="align-content: center;">
 				<div class="circle-content" style="background-image: url('greet.jpg');"  onclick="fun(3)"></div>
 				<h3 class="charecter" align="center" onclick="r(3)">Lenders</h3>
-				
+
 			    </div>
 			    <div class="col-lg-3" style="align-content: center;">
 				<div class="circle-content" style="background-image: url('greet.jpg');"  onclick="fun(4)"></div>
 				<h3 class="charecter" align="center" onclick="r(4)">Pirate club</h3>
-				
+
 			    </div>
 			    <div class="col-lg-3" style="align-content: center;">
 				<div class="circle-content" style="background-image: url('greet.jpg');"  onclick="fun(5)"></div>
 				<h3 class="charecter" onclick="r(5)" align="center">Isle dwellers</h3>
-				
+
 			    </div>
 			    <div class="col-lg-3" style="align-content: center;">
 				<div class="circle-content" style="background-image: url('greet.jpg');"  onclick="fun(6)"></div>
 				<h3 class="charecter" align="center" onclick="r(6)">Old crew</h3>
-				
+
 			    </div>
 			    <div class="col-lg-3" style="align-content: center;">
 				<div class="circle-content" style="background-image: url('greet.jpg');"  onclick="fun(7)"></div>
 				<h3 class="charecter" align="center" onclick="r(7)">Dead men</h3>
-				
+
 			    </div>
 			    <div class="col-lg-3" style="align-content: center;">
 				<div class="circle-content" style="background-image: url('greet.jpg');"  onclick="fun(8)"></div>
 				<h3 class="charecter" align="center" onclick="r(8)">E.I. Company</h3>
-				
+
 			    </div>
 			    <div class="col-lg-3" style="align-content: center;">
 				<div class="circle-content" style="background-image: url('greet.jpg');"  onclick="fun(9)"></div>
 				<h3 class="charecter" align="center" onclick="r(9)">E.I. Company</h3>
-				
+
 			    </div>
 			    <div class="col-lg-3" style="align-content: center;">
 				<div class="circle-content" style="background-image: url('greet.jpg');"  onclick="fun(10)"></div>
 				<h3 class="charecter" align="center" onclick="r(10)">E.I. Company</h3>
-				
+
 			    </div>
 			    <div class="col-lg-3" style="align-content: center;">
 				<div class="circle-content" style="background-image: url('greet.jpg');"  onclick="fun(11)"></div>
 				<h3 class="charecter" align="center" onclick="r(11)">E.I. Company</h3>
-				
+
 			    </div>
 			</div>
 		    </div>
@@ -755,69 +765,69 @@
 		<div class="discover-circles">
 		    <div class="col-md-12 ">
 			<div class="col-md-1"></div>
-			
+
 			<div class="col-md-2 topic-item">
 			    <div class="topic-content" onclick="func2('15');" style="background-image: url('{{path}}static/assets/topic/police.jpg');"><h3 class="charecter-1" align=center>Police Dpt.</h3></div>
 			</div>
 			<div class="col-md-2 topic-item">
 			    <div class="topic-content" onclick="func2('16');" style="background-image: url('{{path}}static/assets/topic/fox.jpg');"><h3 class="charecter-1" align=center>Foxes</h3></div>
-			</div>        
+			</div>
 			<div class="col-md-2 topic-item">
 			    <div class="topic-content" onclick="func2('17');" style="background-image: url('{{path}}static/assets/topic/magic.jpg');"><h3 class="charecter-1" align=center>Magic</h3></div>
-			</div>        
+			</div>
 			<div class="col-md-2 topic-item">
 			    <div class="topic-content" onclick="func2('18');" style="background-image: url('{{path}}static/assets/topic/rabbit.jpg');"><h3 class="charecter-1" align=center>Rabbits</h3></div>
-			</div>        
+			</div>
 			<div class="col-md-2 topic-item">
 			    <div class="topic-content" onclick="func2('19');" style="background-image: url('{{path}}static/assets/topic/night.jpg');"><h3 class="charecter-1" align=center>Rabbits</h3></div>
-			</div>        
-			
+			</div>
+
 			<div class="col-md-1"></div>
 		    </div>
 
 
 		    <div class="col-md-12 ">
 			<div class="col-md-1"></div>
-			
+
 			<div class="col-md-2 topic-item">
 			    <div class="topic-content" onclick="func2('20');" style="background-image: url('{{path}}static/assets/topic/police.jpg');"><h3 class="charecter-1" align=center>Police Dpt.</h3></div>
 			</div>
 			<div class="col-md-2 topic-item">
 			    <div class="topic-content" onclick="func2('21');" style="background-image: url('{{path}}static/assets/topic/fox.jpg');"><h3 class="charecter-1" align=center>Foxes</h3></div>
-			</div>        
+			</div>
 			<div class="col-md-2 topic-item">
 			    <div class="topic-content" onclick="func2('22');" style="background-image: url('{{path}}static/assets/topic/magic.jpg');"><h3 class="charecter-1" align=center>Magic</h3></div>
-			</div>        
+			</div>
 			<div class="col-md-2 topic-item">
 			    <div class="topic-content" onclick="func2('23');" style="background-image: url('{{path}}static/assets/topic/rabbit.jpg');"><h3 class="charecter-1" align=center>Rabbits</h3></div>
-			</div>        
+			</div>
 			<div class="col-md-2 topic-item">
 			    <div class="topic-content" onclick="func2('24');" style="background-image: url('{{path}}static/assets/topic/night.jpg');"><h3 class="charecter-1" align=center>Rabbits</h3></div>
-			</div>        
-			
+			</div>
+
 			<div class="col-md-1"></div>
 		    </div>
 
 
 		    <div class="col-md-12 ">
 			<div class="col-md-1"></div>
-			
+
 			<div class="col-md-2 topic-item">
 			    <div class="topic-content" onclick="func2('25');" style="background-image: url('{{path}}static/assets/topic/police.jpg');"><h3 class="charecter-1" align=center>Police Dpt.</h3></div>
 			</div>
 			<div class="col-md-2 topic-item">
 			    <div class="topic-content" onclick="func2('26');" style="background-image: url('{{path}}static/assets/topic/fox.jpg');"><h3 class="charecter-1" align=center>Foxes</h3></div>
-			</div>        
+			</div>
 			<div class="col-md-2 topic-item">
 			    <div class="topic-content" onclick="func2('27');" style="background-image: url('{{path}}static/assets/topic/magic.jpg');"><h3 class="charecter-1" align=center>Magic</h3></div>
-			</div>        
+			</div>
 			<div class="col-md-2 topic-item">
 			    <div class="topic-content" onclick="func2('28');" style="background-image: url('{{path}}static/assets/topic/rabbit.jpg');"><h3 class="charecter-1" align=center>Rabbits</h3></div>
-			</div>        
+			</div>
 			<div class="col-md-2 topic-item">
 			    <div class="topic-content" onclick="func2('29');" style="background-image: url('{{path}}static/assets/topic/night.jpg');"><h3 class="charecter-1" align=center>Rabbits</h3></div>
-			</div>        
-			
+			</div>
+
 			<div class="col-md-1"></div>
 		    </div>
 
@@ -828,15 +838,15 @@
 
 
 
-	    <div id="canvas" class="banner container-fluid" style="background-image: url('{{path}}static/assets/canvas-banner.jpg');"> 
+	    <div id="canvas" class="banner container-fluid" style="background-image: url('{{path}}static/assets/canvas-banner.jpg');">
 		<div class="banner-text" style="color: black; text-outline: 2px 2px white; text-shadow: 5px 5px 30px white;">Canvas</div>
 	    </div>
 
 	    <div class="container-fluid canvas">
-		
+
 		<section>
 		    <div class="feed-one">
-			
+
 			<div class="feed-one-content">
 			    <dic class="col-md-8">
 				<div class="feed-one-image" style="background-image: url('{{path}}static/assets/canvas/police.jpg');"></div>
@@ -851,7 +861,7 @@
 
 			</div>
 
-			
+
 		    </div>
 		</section>
 
@@ -859,14 +869,14 @@
 
 		<section>
 		    <div class="feed-three">
-			
+
 			<div class="col-md-4 feed-three-content">
 			    <div class="feed-three-image" style="background-image: url('{{path}}static/assets/canvas/fox.jpg');"></div>
 
 			    <p class="feed-three-title">What makes a programming language “cool?”</p>
 			    <p class="feed-three-meta">Programming . 9 march 2017</p>
 			    <p class="feed-three-summary">This should be a moment of triumph for University of Toronto computer science professor Geoffrey Hinton.The British-born 69-year-old is known as the godfather of the strain of artificial intelligence called neural networks </p>
-			    
+
 			</div>
 
 			<div class="col-md-4 feed-three-content" style="border-right: solid 1px; border-left: solid 1px ">
@@ -875,7 +885,7 @@
 			    <p class="feed-three-title">What makes a programming language “cool?”</p>
 			    <p class="feed-three-meta">Programming . 9 march 2017</p>
 			    <p class="feed-three-summary">This should be a moment of triumph for University of Toronto computer science professor Geoffrey Hinton.The British-born 69-year-old is known as the godfather of the strain of artificial intelligence called neural networks </p>
-			    
+
 			</div>
 
 			<div class="col-md-4 feed-three-content">
@@ -884,21 +894,21 @@
 			    <p class="feed-three-title">What makes a programming language “cool?”</p>
 			    <p class="feed-three-meta">Programming . 9 march 2017</p>
 			    <p class="feed-three-summary">This should be a moment of triumph for University of Toronto computer science professor Geoffrey Hinton.The British-born 69-year-old is known as the godfather of the strain of artificial intelligence called neural networks </p>
-			    
+
 			</div>
 		    </div>
 		</section>
 
 		<section>
 		    <div class="feed-two-vert">
-			
+
 			<div class="col-md-6 feed-two-vert-content">
 			    <div class="feed-two-vert-image" style="background-image: url('{{path}}static/assets/canvas/judy.jpg');"></div>
 
 			    <p class="feed-two-vert-title">What makes a programming language “cool?”</p>
 			    <p class="feed-two-vert-meta">Programming . 9 march 2017</p>
 			    <p class="feed-two-vert-summary">This should be a moment of triumph for University of Toronto computer science professor Geoffrey Hinton.The British-born 69-year-old is known as the godfather of the strain of artificial intelligence called neural networks </p>
-			    
+
 			</div>
 
 			<div class="col-md-6 feed-two-vert-content">
@@ -907,15 +917,15 @@
 			    <p class="feed-two-vert-title">What makes a programming language “cool?”</p>
 			    <p class="feed-two-vert-meta">Programming . 9 march 2017</p>
 			    <p class="feed-two-vert-summary">This should be a moment of triumph for University of Toronto computer science professor Geoffrey Hinton.The British-born 69-year-old is known as the godfather of the strain of artificial intelligence called neural networks </p>
-			    
+
 			</div>
 
-			
+
 		    </div>
 		</section>
 
 
-		
+
 
 
 	    </div>
@@ -927,7 +937,7 @@
 
 
     <script>
-     
+
      discover('discover-topic');
     </script>
 
@@ -969,11 +979,11 @@
 			 $("."+"tt"+i).text(data[i-1].title);
 			 $("."+"mm"+i).text(data[i-1].link);
 			 $("."+"ss"+i).text(data[i-1].summary);
-		     }			   
+		     }
 	     },
 	 });
      }
-     $(document).ajaxComplete( function() {     
+     $(document).ajaxComplete( function() {
 	 $(document).ready(function(){
 	     $('.highlight-list').bxSlider({
 		 slideWidth: 300,
@@ -986,8 +996,8 @@
 	 });
      });
      function run2() {
-	 
-	 
+
+
 	 $(document).ready(function(){
 	     $('.circle-slider').bxSlider({
 		 slideWidth: 300,
@@ -1010,7 +1020,7 @@
 	     });
 	 });
      }
-     
+
      function func1(a){
 	 if (!e) var e = window.event;
 	 e.cancelBubble = true;
@@ -1028,14 +1038,14 @@
 			 //			 window.location.reload();
 		     }
 		 //		     update_values();
-		 
+
 		 else
 		     window.alert(data);
 	     }
 	 });
-	 
-	 
-	 
+
+
+
      }
 
      function func2(a){
@@ -1045,7 +1055,7 @@
      }
      console.log(y);
      var m;
-     
+
      discover('discover-topic')
      $(document).ready(function() {
 	 $.getJSON("/secret",function(a) {
@@ -1120,9 +1130,9 @@
 			     ++g;
 			 }
 		 }
-	     
-	     
-	     
+
+
+
 	 });
      });
      discover('discover-circles');

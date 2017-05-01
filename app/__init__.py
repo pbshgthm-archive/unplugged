@@ -4,6 +4,10 @@ from sqlalchemy import event
 from sqlalchemy.engine import Engine
 from sqlite3 import Connection as SQLite3Connection
 
+from flask_wtf.csrf import CSRFProtect
+
+csrf = CSRFProtect(app)
+
 @event.listens_for(Engine, "connect")
 def _set_sqlite_pragma(dbapi_connection, connection_record):
     if isinstance(dbapi_connection, SQLite3Connection):
@@ -71,14 +75,3 @@ app.register_blueprint(mod_archive)
 app.register_blueprint(mod_perform_search)
 
 db.create_all()
-
-
-
-
-
-
-         
-         
-         
-
-
